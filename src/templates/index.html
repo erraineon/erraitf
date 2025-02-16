@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
+<style>
+  @media (min-width: 720px) {
+  :root {
+      --scale-factor: 2;
+  }
+}
+
+@media (min-width: 1080px) {
+  :root {
+      --scale-factor: 3;
+  }
+}
+
+main {
+  width: 360px;
+}
+
+</style>
+{% endblock %}
+{% block content %}
+<h1>{{ section.title | safe }}</h1>
+<section>
+  <h1>Posts</h1>
+  <ul>
+    {% for page in section.pages %}
+    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+<section>
+  <h1>Twitter</h1>
+  <ul>
+    <li>
+      <a href="https://x.com/errai/">Main</a>
+    </li>
+    <li>
+      <a href="https://x.com/gooeypaws/">NSFW</a>
+    </li>
+    <li>
+      <a href="https://x.com/latexterior/">Priv</a>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h1>BlueSky</h1>
+  <ul>
+    <li>
+      <a href="https://bsky.app/profile/errai.bsky.social/">Main</a>
+    </li>
+    <li>
+      <a href="https://bsky.app/profile/errai.tf/">NSFW</a>
+    </li>
+  </ul>
+</section>
+<section>
+  <h1>Lists</h1>
+  <ul>
+    <li>
+      <a href="https://letterboxd.com/errai/films/">Movies</a>
+    </li>
+    <li>
+      <a href="https://myanimelist.net/animelist/erraineon">Anime</a>
+    </li>
+    <li>
+      <a href="https://www.backloggd.com/u/errai/">Games</a>
+    </li>
+    <li>
+      <a href="https://open.spotify.com/user/8ilrts1c4oeoj08k1t2pkokwc?si=428a127a80c844d5">Music</a>
+    </li>
+  </ul>
+</section>
+<section>
+  <h1>Contact</h1>
+  <ul>
+    <li>
+      <a href="https://discordapp.com/users/382774230267330567"><img src="discord.png" /> erraineon</a>
+    </li>
+    <li>
+      <a href="https://t.me/errai"><img src="telegram.png" /> errai</a>
+    </li>
+  </ul>
+</section>
+<section>
+  <h1>Other</h1>
+  <ul>
+    <li>
+      <a href="https://steamcommunity.com/id/erraineon/">Steam</a>
+    </li>
+    <li>
+      <a href="https://www.furaffinity.net/user/errai">FA</a>
+    </li>
+    <li>
+      <a href="https://github.com/erraineon">GitHub</a>
+    </li>
+  </ul>
+</section>
+{% endblock content %}

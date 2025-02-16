@@ -1,0 +1,153 @@
+:root {
+    --scale-factor: 1;
+    --color-light: #e6e6e6;
+    --color-dark: #262626;
+    --color-accent: #f12667;
+}
+
+@font-face {
+    font-family: 'IBM';
+    src: url('font.ttf');
+}
+
+@media (min-width: 1280px) {
+    :root {
+        --scale-factor: 2;
+    }
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'IBM', sans-serif;
+    font-size: 16px;
+    font-weight: 100;
+    min-width: 0;
+}
+
+h1 {
+    line-height: 32px;
+}
+
+strong {
+    color: var(--color-accent);
+}
+
+html {
+    transform-origin: top left;
+    scale: var(--scale-factor);
+    width: calc(100vw/var(--scale-factor));
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh/var(--scale-factor));
+    background-color: var(--color-light);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width: 640px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 36px 122px 118px 36px;
+    border-image: url(border.png) 36 122 118 36;
+    image-rendering: pixelated;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+ol {
+    margin-left: 24px;
+}
+
+article {
+    margin-right: -86px;
+    margin-bottom: -72px;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+section {
+    padding: 8px;
+    border: 1px solid var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: var(--color-light);
+}
+
+section,
+article {
+    h1:first-child {
+        color: var(--color-dark);
+        background-color: var(--color-light);
+        padding: 0px 4px;
+        position: absolute;
+        top: -10px;
+        line-height: 16px;
+    }
+}
+
+section ul li a {
+    color: var(--color-light);
+    padding: 2px 4px;
+    background-color: var(--color-dark);
+    text-decoration: none;
+}
+
+a>img {
+    display: inline-block;
+    vertical-align: text-bottom;
+    background-color: var(--color-light);
+}
+
+a:hover {
+    color: var(--color-accent);
+
+    img {
+        background-color: var(--color-accent);
+    }
+}
+
+article>h1:first-child {
+    top: -35px;
+    left: -4px;
+}
+
+code {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    color: var(--color-light);
+    padding: 1px 4px;
+    background-color: var(--color-dark);
+}
+
+pre {
+    overflow-x: auto;
+    padding: 8px;
+    background-color: var(--color-dark);
+    display: inline-block;
+}
+
+pre code {
+    display: inline-block;
+}
+
+p:not(:last-child),
+pre:not(:last-child) {
+    margin-bottom: 8px;
+}
