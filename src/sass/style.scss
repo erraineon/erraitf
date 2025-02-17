@@ -25,14 +25,6 @@
     min-width: 0;
 }
 
-h1 {
-    line-height: 32px;
-}
-
-strong {
-    color: var(--color-accent);
-}
-
 html {
     transform-origin: top left;
     scale: var(--scale-factor);
@@ -60,14 +52,22 @@ main {
     image-rendering: pixelated;
 }
 
-ul {
+nav ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
+    margin: 0;
 }
 
-ol {
+nav ul li a {
+    color: var(--color-light);
+    padding: 2px 4px;
+    background-color: var(--color-dark);
+    text-decoration: none;
+}
+
+ul, ol {
     margin-left: 24px;
 }
 
@@ -80,7 +80,7 @@ article {
     gap: 16px;
 }
 
-section {
+section, nav, figure {
     padding: 8px;
     border: 1px solid var(--color-dark);
     display: flex;
@@ -89,8 +89,23 @@ section {
     background: var(--color-light);
 }
 
+figure {
+    align-self: flex-start;
+    border: 1px solid var(--color-dark);
+    margin: 8px;
+    div {
+        display:table;
+        figcaption {
+            display:table-caption;
+            caption-side:bottom;
+        }
+    }
+}
+
 section,
-article {
+nav,
+article,
+figure {
     h1:first-child {
         color: var(--color-dark);
         background-color: var(--color-light);
@@ -99,13 +114,6 @@ article {
         top: -10px;
         line-height: 16px;
     }
-}
-
-section ul li a {
-    color: var(--color-light);
-    padding: 2px 4px;
-    background-color: var(--color-dark);
-    text-decoration: none;
 }
 
 a>img {
@@ -150,4 +158,12 @@ pre code {
 p:not(:last-child),
 pre:not(:last-child) {
     margin-bottom: 8px;
+}
+
+h1 {
+    line-height: 32px;
+}
+
+strong {
+    color: var(--color-accent);
 }

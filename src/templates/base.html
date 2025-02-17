@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+{%- if page %}
+{%- set resource = page %}
+{%- elif section %}
+{%- set resource = section %}
+{%- endif %}
 
 <head>
+  <title>{{resource.title | safe}}</title>
   <meta charset="utf-8">
-  <title>Errai's website</title>
-  {% block css %}
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light only">
+  <meta property="og:url" content="https://errai.tf">
+  <meta name="description" content="{{resource.description | safe}}">
+  <meta property="og:description" content="{{resource.description | safe}}">
+  <meta property="og:title" content="{{resource.title | safe}}">
+  {% if resource.extra.image %}<meta property="og:image" content="{{resource.extra.image}}">{% endif %}
   <link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
-  {% endblock css %}
+  {% block css %} {% endblock %}
 </head>
 
 <body>

@@ -1,7 +1,6 @@
-{% extends "base.html" %}
+{% extends "section.html" %}
 
 {% block css %}
-<link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
 <style>
   @media (min-width: 720px) {
   :root {
@@ -23,15 +22,15 @@ main {
 {% endblock %}
 {% block content %}
 <h1>{{ section.title | safe }}</h1>
-<section>
+<nav>
   <h1>Posts</h1>
   <ul>
     {% for page in section.pages %}
     <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
     {% endfor %}
   </ul>
-</section>
-<section>
+</nav>
+<nav>
   <h1>Twitter</h1>
   <ul>
     <li>
@@ -44,9 +43,9 @@ main {
       <a href="https://x.com/latexterior/">Priv</a>
     </li>
   </ul>
-</section>
+</nav>
 
-<section>
+<nav>
   <h1>BlueSky</h1>
   <ul>
     <li>
@@ -56,8 +55,8 @@ main {
       <a href="https://bsky.app/profile/errai.tf/">NSFW</a>
     </li>
   </ul>
-</section>
-<section>
+</nav>
+<nav>
   <h1>Lists</h1>
   <ul>
     <li>
@@ -73,8 +72,8 @@ main {
       <a href="https://open.spotify.com/user/8ilrts1c4oeoj08k1t2pkokwc?si=428a127a80c844d5">Music</a>
     </li>
   </ul>
-</section>
-<section>
+</nav>
+<nav>
   <h1>Contact</h1>
   <ul>
     <li>
@@ -84,8 +83,8 @@ main {
       <a href="https://t.me/errai"><img src="telegram.png" /> errai</a>
     </li>
   </ul>
-</section>
-<section>
+</nav>
+<nav>
   <h1>Other</h1>
   <ul>
     <li>
@@ -98,5 +97,5 @@ main {
       <a href="https://github.com/erraineon">GitHub</a>
     </li>
   </ul>
-</section>
+</nav>
 {% endblock content %}

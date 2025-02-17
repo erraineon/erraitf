@@ -1,9 +1,13 @@
 +++
 title = "Reversing Super Fighter M"
 date = 2024-02-16
+description = "Delightful little tricks"
 +++
+{% topic(title="Objective") %}
+Super Fighter M was a bootleg mobile gacha game using blatantly ripped assets from Nintendo games. It was shut down sometime in the early 2020s, and was known for its memorably absurd, often out of character voice lines of the caliber of "Your friend is waiting for you in the garage" or "I have something important to tell you in advance."
 
-{% postsection(title="Objective") %}
+{{figure(title="Evil Mario", filename="devil.png", caption='"Bowser means nothing to me."')}}
+
 After watching [this video](https://www.youtube.com/watch?v=H9S5iVxCdEQ), I wanted to unearth the rest of the voice clips.
 
 I downloaded [the most recent version of the game](https://download.cnet.com/download/super-fighter-m/3000-android-super-fighter-m.html), unzipped the .apk and .obb files, and decompiled the project by loading the `bin` directory into [Asset Ripper](https://github.com/AssetRipper/AssetRipper). No scripts were decompiled, since the game was pre-compiled with IL2CPP. But at least, the assets were visible.
@@ -13,7 +17,7 @@ There were 248 .ogg files in the `Assets\defenders\resources\audio\pet` director
 I downloaded an [old version](https://www.vg-resource.com/thread-39792.html) of the game. Since It doesn't use IL2CPP, the assemblies could be decompiled. Things got interesting.
 {% end %}
 
-{% postsection(title="Missing link") %}
+{% topic(title="Missing link") %}
 In the decompiled assemblies, this part of `GTLauncher` stood out:
 ```
 byte[] sourceData = File.ReadAllBytes(
@@ -108,8 +112,8 @@ input.Close();
 I re-ran Asset Ripper, now also accounting for the newly unpacked asset bundles. With decompiled binaries (even though from an older version) and presumably most of the game assets unpacked, I was almost ready to put it all together.
 {% end %}
 
-{% postsection(title="Showtime") %}
-After decompiling the decrypted Geart3D.dll assembly, I realized that it not only handled the unpacking process for the .pak file, but it also contained most of the game's logic, which came in handy to join sound clips, icons, and models together.
+{% topic(title="Showtime") %}
+After decompiling the decrypted Geart3D.dll assembly, I realized that it not only handled the unpacking process for the .pak file, but also contained most of the game's logic, which came in handy to join sound clips, icons, and models together.
 
 The game actually does use SQLite to read asset associations from the `db.bytes` file (although in older version this file was encrypted and disguised as `UI.pak`. Another of God's little tests). I queried the information I needed from the `type_pet` table (containing the audio entries for each character), and translated some of the text from Chinese using DeepL.
 
