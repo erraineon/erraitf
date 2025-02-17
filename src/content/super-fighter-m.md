@@ -2,6 +2,8 @@
 title = "Reversing Super Fighter M"
 date = 2024-02-16
 description = "Delightful little tricks"
+[extra]
+image = "devil.png"
 +++
 {% topic(title="Objective") %}
 Super Fighter M was a bootleg mobile gacha game using blatantly ripped assets from Nintendo games. It was shut down sometime in the early 2020s, and was known for its memorably absurd, often out of character voice lines of the caliber of "Your friend is waiting for you in the garage" or "I have something important to tell you in advance."
