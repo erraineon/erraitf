@@ -1,12 +1,4 @@
 {% extends "base.html" %}
-
-{% block tags %}
-  <meta name="description" content="{{page.description | safe}}">
-  <meta property="og:description" content="{{page.description | safe}}">
-  <meta property="og:title" content="Errai's website">
-  <meta property="og:image" content="icon.png">
-{% endblock %}
-
 {% block content %}
 <h1>{{ page.title | safe }}</h1>
 {{ page.content | safe }}
