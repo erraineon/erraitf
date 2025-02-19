@@ -1,8 +1,26 @@
 :root {
     --scale-factor: 1;
-    --color-light: #e6e6e6;
-    --color-dark: #262626;
-    --color-accent: #f12667;
+}
+
+$color-light: #e6e6e6;
+$color-dark: #262626;
+$color-accent: #f12667;
+
+@mixin inverted {
+    color: $color-light;
+    background-color: $color-dark;
+}
+
+@mixin light {
+    filter: invert(100%) sepia(0%) saturate(7438%) hue-rotate(55deg) brightness(84%) contrast(117%);
+}
+
+@mixin dark {
+    filter: invert(10%) sepia(0%) saturate(0%) hue-rotate(155deg) brightness(99%) contrast(88%);
+}
+
+@mixin accent {
+    filter: invert(27%) sepia(77%) saturate(3015%) hue-rotate(325deg) brightness(94%) contrast(101%);
 }
 
 @font-face {
@@ -25,6 +43,10 @@
     min-width: 0;
 }
 
+*:not(a){
+    color: $color-dark;
+}
+
 html {
     transform-origin: top left;
     scale: var(--scale-factor);
@@ -37,7 +59,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: calc(100vh/var(--scale-factor));
-    background-color: var(--color-light);
+    background-color: $color-light;
 }
 
 main {
@@ -47,28 +69,22 @@ main {
     width: 640px;
     box-sizing: border-box;
     border-style: solid;
+    border-color: transparent;
     border-width: 36px 122px 118px 36px;
-    border-image: url(border.png) 36 122 118 36;
     image-rendering: pixelated;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin: 0;
-}
-
-nav ul li a {
-    color: var(--color-light);
-    padding: 2px 4px;
-    background-color: var(--color-dark);
-    text-decoration: none;
-}
-
-ul, ol {
-    margin-left: 24px;
+article::before{
+    content: "";
+    position:absolute;
+    inset: 0;
+    margin: -36px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 36px 122px 118px 36px;
+    border-image: url(border.png) 36 122 118 36;
+    image-rendering: pixelated;
+    @include dark;
 }
 
 article {
@@ -80,19 +96,38 @@ article {
     gap: 16px;
 }
 
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+}
+
+nav ul li a {
+    @include inverted;
+    padding: 2px 4px;
+    text-decoration: none;
+}
+
+ul, ol {
+    margin-left: 24px;
+}
 section, nav, figure {
     padding: 8px;
-    border: 1px solid var(--color-dark);
+    border: 1px solid $color-dark;
     display: flex;
     flex-direction: column;
     position: relative;
-    background: var(--color-light);
+    background-color: rgba($color-light, 0.9);
+    gap: 8px;
 }
 
 figure {
-    align-self: flex-start;
-    border: 1px solid var(--color-dark);
     margin: 8px;
+    align-self: flex-start;
+    border: 1px solid $color-dark;
     div {
         display:table;
         figcaption {
@@ -107,8 +142,8 @@ nav,
 article,
 figure {
     h1:first-child {
-        color: var(--color-dark);
-        background-color: var(--color-light);
+        color: $color-dark;
+        background-color: $color-light;
         padding: 0px 4px;
         position: absolute;
         top: -10px;
@@ -119,51 +154,50 @@ figure {
 a>img {
     display: inline-block;
     vertical-align: text-bottom;
-    background-color: var(--color-light);
+    @include light;
+}
+
+a>img:last-of-type{
+    margin-right: 4px;
 }
 
 a:hover {
-    color: var(--color-accent);
+    color: $color-accent;
 
     img {
-        background-color: var(--color-accent);
+        @include accent;
     }
 }
 
 article>h1:first-child {
+    color: $color-light;
+    background: $color-accent;
     top: -35px;
     left: -4px;
 }
 
 code {
+    @include inverted;
     overflow-wrap: break-word;
     word-wrap: break-word;
     word-break: break-word;
-    color: var(--color-light);
     padding: 1px 4px;
-    background-color: var(--color-dark);
 }
 
 pre {
+    @include inverted;
     overflow-x: auto;
     padding: 8px;
-    background-color: var(--color-dark);
-    display: inline-block;
-}
-
-pre code {
-    display: inline-block;
-}
-
-p:not(:last-child),
-pre:not(:last-child) {
-    margin-bottom: 8px;
-}
-
-h1 {
-    line-height: 32px;
 }
 
 strong {
-    color: var(--color-accent);
+    color: $color-accent;
+}
+
+.youtube{
+    width: 100%; 
+    aspect-ratio: 16 / 9;
+    iframe{
+        width: 100%; height: 100%;
+    }
 }
