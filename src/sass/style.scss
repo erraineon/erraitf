@@ -201,3 +201,23 @@ strong {
         width: 100%; height: 100%;
     }
 }
+
+.playlist{
+    box-shadow: inset 0 0 0 1px rgba(black, 0.25);
+}
+
+.playlist:hover{
+    color: $color-dark;
+}
+
+.aqua{
+    background: #34D399;
+}
+
+.scarlet{
+    background: #DF3813;
+}
+
+.magenta{
+    background: #EC398A;
+}
