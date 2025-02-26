@@ -202,12 +202,12 @@ strong {
     }
 }
 
-.playlist{
-    box-shadow: inset 0 0 0 1px rgba(black, 0.25);
-}
-
-.playlist:hover{
-    color: $color-dark;
+.square {
+    height: 6px;
+    width: 6px;
+    margin: 0px 4px;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .aqua{
