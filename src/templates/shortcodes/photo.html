@@ -1,10 +1,10 @@
 <div class="gallery">
-    {% set width = 362 -%}
+    {% set width = 364 -%}
     {% for filename in filenames -%}
     {% set path = page.colocated_path ~ filename -%}
     {% set image = resize_image(path=path, width=width, quality=100, op="fit_width") -%}
     <a href="{{ get_url(path=path) }}" target="_blank">
-        <img src="{{ image.url }}" style="width: calc({{width}}px/var(--scale-factor));" />
+        <img src="{{ image.url }}" />
     </a>
     {%- endfor %}
 </div>

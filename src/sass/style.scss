@@ -113,7 +113,7 @@ nav ul li a {
 
 ul,
 ol {
-    margin-left: 24px;
+    margin-left: 28px;
 }
 
 section,
@@ -231,15 +231,25 @@ strong {
 }
 
 .gallery {
-    img {
-        margin-bottom: 2px;
-        float: left;
-    }
+    $gap: 2px;
+    display: flex;
+    gap: $gap;
+    flex-wrap: wrap;
 
     a {
-        text-decoration: none;
-        &:not(:last-of-type)>img {
-            margin-right: 2px;
+        flex: 1 1 30%;
+
+        @media (max-width: 800px) {
+            flex-basis: calc(50% - $gap);
+        }
+
+        @media (max-width: 400px) {
+            flex-basis: calc(100%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
         }
     }
 }

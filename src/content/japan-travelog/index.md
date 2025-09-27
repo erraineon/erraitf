@@ -3,7 +3,7 @@ title = "Japan trip 2025"
 date = 2025-09-27
 description = "My experiences and photos."
 [extra]
-image = "p (8).jpg"
+image = "japan-travelog/p (8).jpg"
 +++
 {% topic(title="Observations") %}
 My boyfriend and I took a trip to Japan this year. Here are some fun patterns we've noticed.
@@ -57,10 +57,11 @@ My boyfriend and I took a trip to Japan this year. Here are some fun patterns we
 1. 3.5 stars on Tabelog's 5-star system means the food is excellent.
 1. Starbucks is surprisingly decent.
 1. Vending machines sell cheap, fresh food.
+1. My favorite food was the curry at Hinoya in Akihabara for $8. My least favorite was McDonalds in Shibuya.
 
 **Shopping**
 
-39. There are a lot of Anker stores. No idea why.
+40. There are a lot of Anker stores. No idea why.
 1. Malls, malls, malls. 8-story tall, and most are deserted.
 1. There are plenty of minimally concealed adult bars and stores.
 1. Alcohol is dramatically cheaper than in the US.
