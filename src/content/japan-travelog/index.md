@@ -39,7 +39,7 @@ My boyfriend and I took a trip to Japan this year. Here are some fun patterns we
 21. The train system is elegantly and consistently designed.
 1. Google Maps is exceptionally detailed and useful for transit.
 1. Passengers will rather stand than occupy vacant priority seats.
-1. On the escalator, stand on the right side and walk on the left.
+1. On escalators in Tokyo, stand on the left and walk on the right.
 1. The high-speed trains run every 3 minutes vs Boston's hourly commuter rail.
 1. Bullet trains are absurdly smooth and quiet.
 1. The ticket inspector bows to the cabin before entering.
