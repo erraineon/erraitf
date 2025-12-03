@@ -15,7 +15,9 @@
   <meta name="description" content="{{resource.description | safe}}">
   <meta property="og:description" content="{{resource.description | safe}}">
   <meta property="og:title" content="{{resource.title | safe}}">
-  {% if resource.extra.image %}<meta property="og:image" content="{{get_url(path=resource.extra.image)}}">{% endif %}
+  {% if resource.extra.image %}
+  <meta property="og:image" content="{{get_url(path=resource.extra.image)}}">
+  {% endif %}
   <link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
   {% block css %} {% endblock %}
 </head>
@@ -23,6 +25,7 @@
 <body>
   <main>
     <article>
+      <h1>{{resource.title | safe}}</h1>
       {% block content %} {% endblock %}
     </article>
   </main>

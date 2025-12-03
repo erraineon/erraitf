@@ -8,7 +8,7 @@ image = "japan-travelog/p (8).jpg"
 {% topic(title="Observations") %}
 My boyfriend and I took a trip to Japan this year. Here are some fun patterns we've noticed.
 
-**Environment**
+## Environment
 
 1. Tokyo is the biggest city in the world. It totally feels like it.
 1. Lighting is spottier. Photos look naturally more dramatic.
@@ -20,7 +20,7 @@ My boyfriend and I took a trip to Japan this year. Here are some fun patterns we
 1. The deer in Nara will torment tourists when they smell food.
 1. In Arashiyama, there are many signs warning to not piss off the macaques.
 
-**Culture**
+## Culture
 
 10. You can easily get around without knowing a word of Japanese.
 1. Tokens, tickets, receipts, keys. Everything has its system.
@@ -34,7 +34,7 @@ My boyfriend and I took a trip to Japan this year. Here are some fun patterns we
 1. Drunk people actually fall asleep in Shibuya.
 1. TikTokers sprint to the center of Shibuya Square to take selfies as soon as the crossing light turns on.
 
-**Transportation**
+## Transportation
 
 21. The train system is elegantly and consistently designed.
 1. Google Maps is exceptionally detailed and useful for transit.
@@ -45,7 +45,7 @@ My boyfriend and I took a trip to Japan this year. Here are some fun patterns we
 1. The ticket inspector bows to the cabin before entering.
 1. Taxis are rather pricey but pretty much unnecessary.
 
-**Food**
+## Food
 
 29. Almost every restaurant takes credit cards.
 1. Reservations are a must over the weekend.
@@ -59,7 +59,7 @@ My boyfriend and I took a trip to Japan this year. Here are some fun patterns we
 1. Vending machines sell cheap, fresh food.
 1. My favorite food was the curry at Hinoya in Akihabara for $8. My least favorite was McDonalds in Shibuya.
 
-**Shopping**
+## Shopping
 
 40. There are a lot of Anker stores. No idea why.
 1. Malls, malls, malls. 8-story tall, and most are deserted.
