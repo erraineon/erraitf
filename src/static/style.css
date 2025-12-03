@@ -1,0 +1,512 @@
+:root {
+    --background-color: #f9f9f9;
+    --magenta-color: #f12667;
+    --green-color: #B8F026;
+    --blue-color: #151145;
+    --cyan-color: #24E4DE;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('soehne-900.otf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('soehne-900i.otf');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('soehne-700.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('soehne-700i.otf');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('soehne-400.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('soehne-400i.otf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('soehne-200.otf');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Soehne';
+    src: url('soehne-200i.otf');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Soehne Mono';
+    src: url('soehne-mono-400.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Soehne Mono';
+    src: url('soehne-mono-700.otf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FuturaCyrillicMedium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FuturaCyrillicDemi.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FuturaCyrillicHeavy.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FuturaCyrillicBold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FuturaCyrillicExtraBold.ttf');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FuturaCyrillicBook.ttf');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura';
+    src: url('FuturaCyrillicLight.ttf');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Icons';
+    src: url('./Icons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class*='icon-']:before {
+    display: inline-block;
+    font-family: 'Icons';
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+.icon-discord:before {
+    content: '\0041';
+}
+
+.icon-telegram:before {
+    content: '\0042';
+}
+
+.icon-furaffinity:before {
+    content: '\0043';
+}
+
+.icon-myanimelist:before {
+    content: '\0044';
+}
+
+.icon-music-circle:before {
+    content: '\0045';
+}
+
+.icon-spotify:before {
+    content: '\0046';
+}
+
+.icon-github:before {
+    content: '\0047';
+}
+
+.icon-steam:before {
+    content: '\0048';
+}
+
+.icon-letterboxd:before {
+    content: '\0049';
+}
+
+.icon-18-plus:before {
+    content: '\004a';
+}
+
+.icon-twitter:before {
+    content: '\004b';
+}
+
+.icon-lock:before {
+    content: '\004c';
+}
+
+.green {
+    --metro-line-color: var(--green-color);
+}
+
+.cyan {
+    --metro-line-color: var(--cyan-color);
+}
+
+.magenta {
+    --metro-line-color: var(--magenta-color);
+}
+
+.aqua {
+    color: #34D399;
+}
+
+.scarlet {
+    color: #DF3813;
+}
+
+.pink {
+    color: #EC398A;
+}
+
+html {
+    font-family: 'Soehne', serif;
+    font-size: 18px;
+    background-color: var(--background-color);
+    color: var(--blue-color);
+}
+
+article>h1:first-of-type {
+    font-weight: 900;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    min-width: min-content;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    max-width: 32rem;
+}
+
+article {
+    min-width: 0;
+}
+
+nav {
+    --metro-line-color: var(--blue-color);
+    --metro-line-thickness: 3rem;
+    --metro-sub-line-thickness: 0.3rem;
+    --metro-sub-line-angle: 30deg;
+    --metro-sub-line-margin: 2.5rem;
+    --metro-station-size: 3rem;
+    --metro-station-gap: 1rem;
+    --metro-station-border-thickness: 0.3rem;
+    --metro-station-label-angle: 45deg;
+    --metro-station-label-margin: 0.8rem;
+
+    color: var(--metro-line-color);
+    text-transform: uppercase;
+    font-family: 'Futura', Arial, sans-serif;
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--blue-color);
+
+        &:hover {
+            & * {
+                transition: all 0.1s ease-in-out;
+            }
+
+            i {
+                font-size: 1.8rem;
+            }
+
+            small {
+                font-size: 1rem;
+            }
+
+            span,
+            .metro-station-label>small {
+                font-weight: 500;
+                color: var(--metro-line-color);
+            }
+        }
+
+        &>i,
+        &>small {
+            font-style: normal;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: var(--metro-station-size);
+            height: var(--metro-station-size);
+            background-color: var(--background-color);
+            border: var(--metro-station-border-thickness) solid var(--metro-line-color);
+            border-radius: 50%;
+            box-sizing: border-box;
+            font-weight: bold;
+            color: var(--blue-color);
+        }
+
+        &>i {
+            font-size: 1.4rem;
+        }
+
+        &>small {
+            font-size: 0.8rem;
+        }
+
+        .metro-station-label {
+            small {
+                font-size: 0.7rem;
+            }
+
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    /* Metro line */
+    .horizontal-line {
+        display: inline-grid;
+        grid-template-rows: auto var(--metro-station-size) auto;
+        grid-auto-flow: column;
+        column-gap: var(--metro-station-gap);
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            background-color: var(--metro-line-color);
+            border-radius: var(--metro-station-size);
+            height: var(--metro-line-thickness);
+            width: 100%;
+            position: absolute;
+            grid-row: 2 / 2;
+            z-index: -1;
+        }
+
+        /* Main metro station */
+        &>* {
+            grid-row: 1 / span 3;
+            display: grid;
+            grid-template-rows: subgrid;
+            place-items: start;
+
+            &>a {
+                display: contents;
+
+                &>span {
+                    margin-top: calc(-100% * (1 - sin(var(--metro-station-label-angle))));
+                    grid-row: 1;
+                    align-self: end;
+                    writing-mode: sideways-lr;
+                    transform: rotate(var(--metro-station-label-angle));
+                    transform-origin: bottom;
+                    margin-bottom: var(--metro-station-label-margin);
+                }
+
+                &:hover>span {
+                    /* Prevent vertical text growth from moving layout around */
+                    font-weight: normal;
+                }
+
+                &>i {
+                    grid-row: 2;
+                }
+            }
+
+            &>.vertical-line {
+                grid-row: 3;
+                align-self: start;
+                transform-origin: center calc(var(--metro-station-size)/-2);
+                transform: rotate(calc(-1 * var(--metro-sub-line-angle)));
+                margin-bottom: calc(-100% * (1 - sin(var(--metro-sub-line-angle))));
+
+                &>* {
+                    transform: rotate(var(--metro-sub-line-angle));
+                }
+
+                &>:first-of-type {
+                    margin-top: var(--metro-sub-line-margin);
+                }
+
+                *>a {
+                    font-weight: 200;
+                    font-size: small;
+                }
+
+                &::before {
+                    width: var(--metro-sub-line-thickness);
+                    margin-top: calc(var(--metro-station-size)/-2);
+                }
+            }
+
+        }
+    }
+
+    .vertical-line {
+        display: inline-flex;
+        list-style-type: none;
+        flex-direction: column;
+        align-items: center;
+        list-style: none;
+        position: relative;
+        gap: var(--metro-station-gap);
+
+        &::before {
+            content: '';
+            background-color: var(--metro-line-color);
+            border-radius: var(--metro-station-size);
+            position: absolute;
+            height: 100%;
+            width: 60%;
+            z-index: -1;
+        }
+
+        &>*>a {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            position: relative;
+
+            &>span,
+            &>.metro-station-label {
+                left: calc(var(--metro-station-size) + var(--metro-station-label-margin));
+                position: absolute;
+                text-wrap-mode: nowrap;
+            }
+        }
+    }
+}
+
+pre,
+code {
+    color: var(--background-color);
+    background-color: var(--blue-color);
+    font-family: 'Soehne Mono';
+}
+
+code {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+}
+
+pre {
+    overflow-x: auto;
+    padding: 0.2rem;
+}
+
+figure {
+    float: right;
+
+    h3 {
+        text-align: center;
+    }
+
+    div {
+        display: table;
+
+        figcaption {
+            display: table-caption;
+            caption-side: bottom;
+            font-style: italic;
+            text-align: center;
+        }
+    }
+}
+
+.youtube {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.gallery {
+    --gallery-gap: 0.2rem;
+    display: flex;
+    gap: var(--gallery-gap);
+    flex-wrap: wrap;
+
+    a {
+        flex: 1 1 30%;
+
+        @media (max-width: 800px) {
+            flex-basis: calc(50% - var(--gallery-gap));
+        }
+
+        @media (max-width: 400px) {
+            flex-basis: calc(100%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

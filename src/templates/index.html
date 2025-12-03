@@ -1,103 +1,127 @@
 {% extends "section.html" %}
 
-{% block css %}
-<style>
-  @media (min-width: 720px) {
-  :root {
-      --scale-factor: 2;
-  }
-}
-
-@media (min-width: 1080px) and (min-height: 1280px) {
-  :root {
-      --scale-factor: 3;
-  }
-}
-
-main {
-  width: 360px;
-}
-
-</style>
-{% endblock %}
 {% block content %}
-<h1>{{ section.title | safe }}</h1>
-<nav>
-  <h1>Posts</h1>
-  <ul>
+<p>34 y/o dev from Boston, gooey dragon of some kind.
+<p>I'm curious, playful, introverted, and drawn to modest people with a sense of humor. My main hobbies are photography,
+  art, and gamedev. I enjoy atmospheric black metal, ambient techno, cryptic games, and mystery movies/anime.
+</p>
+<nav class="cyan">
+  <h1>Posts/Atlas</h1>
+  <ul class="vertical-line">
     {% for page in section.pages %}
-    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    <li><a href="{{ page.permalink | safe }}">
+        <small>M{% if loop.index < 10 %}0{% endif %}{{ section.pages | length - loop.index0}}</small>
+            <div class="metro-station-label">
+              <span>{{ page.title }}</span>
+              <small>{{ page.description }}</small>
+            </div>
+      </a></li>
     {% endfor %}
   </ul>
 </nav>
-<nav>
-  <h1>Socials</h1>
-  <ul>
+<nav class="magenta">
+  <h1>Links/Exterior</h1>
+  <ul class="horizontal-line">
     <li>
-      <a href="https://bsky.app/profile/errai.bsky.social/"><img src="bluesky.png" class="icon" />Main</a>
+      <a href="https://x.com/errai/">
+        <span>Twitter</span>
+        <i class="icon-twitter"></i>
+      </a>
+      <ul class="vertical-line">
+        <li>
+          <a href="https://x.com/gooeypaws/">
+            <i class="icon-18-plus"></i>
+            <span>NSFW</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/dryflat/">
+            <i class="icon-lock"></i>
+            <span>Personal</span>
+          </a>
+        </li>
+      </ul>
     </li>
     <li>
-      <a href="https://x.com/errai/"><img src="twitter.png" class="icon" />Main</a>
+      <a href="https://github.com/erraineon">
+        <i class="icon-github"></i>
+        <span>GitHub</span>
+      </a>
     </li>
     <li>
-      <a href="https://x.com/dryflat/"><img src="twitter.png" class="icon" /><img src="lock.png" class="icon" />Personal</a>
+      <a href="https://steamcommunity.com/id/erraineon/">
+        <i class="icon-steam"></i>
+        <span>Steam</span>
+      </a>
+      <ul class="vertical-line">
+        <li>
+          <a href="https://www.backloggd.com/u/errai/">
+            <i>B</i>
+            <span>Backloggd</span>
+          </a>
+        </li>
+      </ul>
     </li>
     <li>
-      <a href="https://bsky.app/profile/errai.tf/"><img src="bluesky.png" class="icon" /><img src="nsfw.png" class="icon" />NSFW</a>
+      <a href="https://letterboxd.com/errai/films/">
+        <i class="icon-letterboxd"></i>
+        <span>Letterboxd</span>
+      </a>
     </li>
     <li>
-      <a href="https://x.com/gooeypaws/"><img src="twitter.png" class="icon" /><img src="nsfw.png" class="icon" />NSFW</a>
+      <a href="https://myanimelist.net/profile/erraineon">
+        <i class="icon-myanimelist"></i>
+        <span>MyAnimeList</span>
+      </a>
+    </li>
+    <li>
+      <a href="https://open.spotify.com/user/8ilrts1c4oeoj08k1t2pkokwc?si=428a127a80c844d5">
+        <i class="icon-spotify"></i>
+        <span>Spotify</span>
+      </a>
+      <ul class="vertical-line">
+        <li>
+          <a href="https://open.spotify.com/playlist/3B2O6Jp0OXhGPxUegjrumu?si=8ea205bdfb424651">
+            <i class="aqua icon-music-circle"></i>
+            <span>.tech</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://open.spotify.com/playlist/0x5UoFb29S1VnyyrFcexsx?si=aeec391ce52c49b2">
+            <i class="scarlet icon-music-circle"></i>
+            <span>.drive</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://open.spotify.com/playlist/16y6QJqM9m2gLRvjL2nuDp?si=fac508ca23c4438a">
+            <i class="pink icon-music-circle"></i>
+            <span>.flow</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://www.furaffinity.net/user/errai">
+        <i class="icon-furaffinity"></i>
+        <span>FurAffinity</span>
+      </a>
     </li>
   </ul>
 </nav>
-<nav>
-  <h1>Links</h1>
-  <ul>
+<nav class="green">
+  <h1>Contact/Radar</h1>
+  <ul class="horizontal-line">
     <li>
-      <a href="https://letterboxd.com/errai/films/"><img src="letterboxd.png" class="icon" />Letterboxd</a>
+      <a href="https://discordapp.com/users/382774230267330567">
+        <i class="icon-discord"></i>
+        <span>Discord</span>
+      </a>
     </li>
     <li>
-      <a href="https://www.backloggd.com/u/errai/"><img src="backloggd.png" class="icon" />Backloggd</a>
-    </li>
-    <li>
-      <a href="https://steamcommunity.com/id/erraineon/"><img src="steam.png" class="icon" />Steam</a>
-    </li>
-    <li>
-      <a href="https://github.com/erraineon"><img src="github.png" class="icon" />GitHub</a>
-    </li>
-    <li>
-      <a href="https://open.spotify.com/user/8ilrts1c4oeoj08k1t2pkokwc?si=428a127a80c844d5"><img src="spotify.png" class="icon" />Spotify</a>
-    </li>
-    <li>
-      <a href="https://myanimelist.net/animelist/erraineon"><img src="myanimelist.png" class="icon" />MyAnimeList</a>
-    </li>
-    <li>
-      <a href="https://www.furaffinity.net/user/errai"><img src="furaffinity.png" class="icon" />FurAffinity</a>
-    </li>
-  </ul>
-</nav>
-<nav>
-  <h1>Playlists</h1>
-  <ul>
-    <li>
-      <a href="https://open.spotify.com/playlist/3B2O6Jp0OXhGPxUegjrumu?si=8ea205bdfb424651"><div class="square aqua"></div>.tech</a>
-    </li>
-    <li>
-      <a href="https://open.spotify.com/playlist/0x5UoFb29S1VnyyrFcexsx?si=aeec391ce52c49b2"><div class="square scarlet"></div>.drive</a>
-    </li>
-    <li>
-      <a href="https://open.spotify.com/playlist/16y6QJqM9m2gLRvjL2nuDp?si=fac508ca23c4438a"><div class="square magenta"></div>.flow</a>
-    </li>
-  </ul>
-</nav>
-<nav>
-  <h1>Contact</h1>
-  <ul>
-    <li>
-      <a href="https://discordapp.com/users/382774230267330567"><img src="discord.png" class="icon" />erraineon</a>
-    </li>
-    <li>
-      <a href="https://t.me/errai"><img src="telegram.png" class="icon" />errai</a>
+      <a href="https://t.me/errai">
+        <i class="icon-telegram"></i>
+        <span>Telegram</span>
+      </a>
     </li>
   </ul>
 </nav>
