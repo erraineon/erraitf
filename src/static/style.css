@@ -236,7 +236,8 @@ body {
 main {
     display: flex;
     align-items: center;
-    margin: 1rem;
+    width: calc(100vw - 2rem);
+    margin-bottom: 1rem;
     max-width: 32rem;
 }
 
@@ -258,7 +259,9 @@ nav {
 
     color: var(--metro-line-color);
     text-transform: uppercase;
-    font-family: 'Futura', Arial, sans-serif;
+    font-family: 'Futura',
+        Arial,
+        sans-serif;
 
     ul {
         margin: 0;
@@ -391,7 +394,7 @@ nav {
 
                 *>a {
                     font-weight: 200;
-                    font-size: small;
+                    font-size: 0.8rem;
                 }
 
                 &::before {
@@ -459,6 +462,7 @@ pre {
 }
 
 figure {
+    margin: 1rem;
     float: right;
 
     h3 {
