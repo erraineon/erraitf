@@ -190,6 +190,10 @@
     content: '\004c';
 }
 
+.icon-instagram:before {
+    content: '\004d';
+}
+
 .green {
     --metro-line-color: var(--green-color);
 }
