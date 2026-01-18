@@ -77,6 +77,13 @@
 }
 
 @font-face {
+    font-family: 'Soehne Schmal';
+    src: url('soehne-schmal-400.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Futura';
     src: url('FuturaCyrillicMedium.ttf');
     font-weight: normal;
@@ -141,57 +148,47 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale
 }
-
-.icon-discord:before {
-    content: '\0041';
+.icon-bluesky:before {
+  content: "\e900";
 }
-
-.icon-telegram:before {
-    content: '\0042';
-}
-
-.icon-furaffinity:before {
-    content: '\0043';
-}
-
-.icon-myanimelist:before {
-    content: '\0044';
-}
-
-.icon-music-circle:before {
-    content: '\0045';
-}
-
-.icon-spotify:before {
-    content: '\0046';
-}
-
-.icon-github:before {
-    content: '\0047';
-}
-
-.icon-steam:before {
-    content: '\0048';
-}
-
-.icon-letterboxd:before {
-    content: '\0049';
-}
-
-.icon-18-plus:before {
-    content: '\004a';
-}
-
-.icon-twitter:before {
-    content: '\004b';
-}
-
-.icon-lock:before {
-    content: '\004c';
-}
-
 .icon-instagram:before {
-    content: '\004d';
+  content: "\e901";
+}
+.icon-discord:before {
+  content: "\e906";
+}
+.icon-furaffinity:before {
+  content: "\e907";
+}
+.icon-github:before {
+  content: "\e908";
+}
+.icon-letterboxd:before {
+  content: "\e909";
+}
+.icon-lock:before {
+  content: "\e90a";
+}
+.icon-music-circle:before {
+  content: "\e90b";
+}
+.icon-myanimelist:before {
+  content: "\e90c";
+}
+.icon-steam:before {
+  content: "\e90e";
+}
+.icon-twitter:before {
+  content: "\e910";
+}
+.icon-18-plus:before {
+  content: "\e9d1";
+}
+.icon-spotify:before {
+  content: "\ea94";
+}
+.icon-telegram:before {
+  content: "\ea95";
 }
 
 .green {
@@ -272,6 +269,12 @@ nav {
         padding: 0;
     }
 
+    h4 {
+            margin: 0;
+            font-family: 'Soehne Schmal';
+            font-weight: normal;
+        }
+
     a {
         text-decoration: none;
         color: var(--blue-color);
@@ -349,6 +352,12 @@ nav {
             position: absolute;
             grid-row: 2 / 2;
             z-index: -1;
+        }
+
+        &>h4 {
+            position: absolute;
+            margin-left: calc(var(--metro-station-size)/4);
+            grid-row: 3;
         }
 
         /* Main metro station */
