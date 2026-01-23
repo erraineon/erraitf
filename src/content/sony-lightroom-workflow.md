@@ -2,6 +2,8 @@
 title = "My photography workflow"
 date = 2025-07-12
 description = "Nothing works like it should."
+[taxonomies]
+types=["memory"]
 [extra]
 +++
 {% topic(title="The goal") %}

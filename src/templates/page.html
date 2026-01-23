@@ -1,14 +1,22 @@
 {% extends "base.html" %}
-{% block content %}
-{{ page.content | safe }}
-<nav class="magenta">
-    <ul class="vertical-line">
-        <li>
-            <a href="{{get_url(path='')}}">
-                <small>H01</small>
-                <span>Return home</span>
-            </a>
-        </li>
-    </ul>
-</nav>
-{% endblock content %}
+{% block body %}
+
+<body>
+    <main>
+        <article>
+            <h1>{{resource.title | safe}}</h1>
+            {{ page.content | safe }}
+            <nav class="magenta">
+                <ul class="vertical-line">
+                    <li>
+                        <a href="{{get_url(path='')}}">
+                            <small>H01</small>
+                            <span>Return home</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </article>
+    </main>
+</body>
+{% endblock %}

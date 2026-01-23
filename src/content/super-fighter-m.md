@@ -2,6 +2,8 @@
 title = "Reversing Super Fighter M"
 date = 2024-02-16
 description = "Delightful little tricks"
+[taxonomies]
+types=["devlog"]
 [extra]
 image = "devil.png"
 +++

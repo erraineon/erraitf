@@ -11,6 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light only">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:url" content="https://errai.tf">
   <meta name="description" content="{{resource.description | safe}}">
   <meta property="og:description" content="{{resource.description | safe}}">
@@ -22,13 +23,6 @@
   {% block css %} {% endblock %}
 </head>
 
-<body>
-  <main>
-    <article>
-      <h1>{{resource.title | safe}}</h1>
-      {% block content %} {% endblock %}
-    </article>
-  </main>
-</body>
+{% block body %} {% endblock %}
 
 </html>

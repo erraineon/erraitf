@@ -2,6 +2,8 @@
 title = "Japan trip 2025"
 date = 2025-09-27
 description = "My experiences and photos."
+[taxonomies]
+types=["memory"]
 [extra]
 image = "japan-travelog/p (8).jpg"
 +++
