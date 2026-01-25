@@ -52,7 +52,7 @@ With some tweaks, the library works well. Here's an example of before and after 
 
 ## Cut, cut
 
-Next, my goal was to implement a turret that shot blades at logos, cutting them instead of shattering them. NVBlast [[supports]](https://nvidia-omniverse.github.io/PhysX/blast/docs/api/extensions/ext_authoring.html#fracturetool) said function:
+Next, my goal was to implement a turret that shot blades at logos, cutting them instead of shattering them. NVBlast [supports](https://nvidia-omniverse.github.io/PhysX/blast/docs/api/extensions/ext_authoring.html#fracturetool) said function:
 
 ```c++
 virtual int32_t cut(

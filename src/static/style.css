@@ -512,8 +512,8 @@ nav {
 
 pre,
 code {
-    color: var(--background-color);
-    background-color: var(--blue-color);
+    color: var(--violet-color);
+    background-color: white;
     font-family: 'Soehne Mono';
 }
 
