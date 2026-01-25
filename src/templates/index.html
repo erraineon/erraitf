@@ -4,13 +4,12 @@
 <body class="">
   <main>
     <article>
+      <h1><span class=light>ERRAI/</span><span class="magenta">NEON</span></h1>
       <div class="bio">
-        <h1>ERRAI/<span class="magenta">NEON</span></h1>
-        <p>34 y/o dev from Boston, gooey dragon of some kind.
-        <p>I'm curious, playful, introverted, and drawn to modest people with a sense of humor. My main hobbies are
-          photography,
-          art, and gamedev. I enjoy atmospheric black metal, ambient techno, cryptic games, and mystery movies/anime.
-        </p>
+        <p>34 y/o dev from Boston • Dragon amalgam • He/Him
+        <p>Curious, playful, introverted, and drawn to modest people with a sense of humor. My main hobbies are
+          photography, art, gamedev, reverse engineering, and composing music. I enjoy atmospheric black metal, ambient
+          techno, cryptic games, and mystery movies/anime.</p>
       </div>
       <div class="metro-lines-row">
         {% set types = get_taxonomy(kind="types") %}
@@ -18,7 +17,7 @@
 
         <nav class="{{ config.extra.taxonomies['types'][term.slug].colorClass }}">
           <ul class="vertical-line">
-            <h4>{{term.slug}}</h4>
+            <h1>{{term.slug}}</h1>
             {% for page in term.pages %}
             <li><a href="{{ page.permalink | safe }}">
                 <small>
@@ -36,11 +35,37 @@
       </div>
       <nav class="magenta">
         <ul class="horizontal-line">
-          <h4>Contact/Radar</h4>
+          <h1>Contact/Radar</h1>
           <li>
             <a href="https://discordapp.com/users/382774230267330567">
               <i class="icon-discord"></i>
               <span>Discord</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/errai">
+              <i class="icon-telegram"></i>
+              <span>Telegram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://bsky.app/profile/errai.bsky.social/">
+              <span>BlueSky</span>
+              <i class="icon-bluesky"></i>
+            </a>
+            <ul class="vertical-line">
+              <li>
+                <a href="https://bsky.app/profile/gooeypaws.bsky.social/">
+                  <i class="icon-18-plus"></i>
+                  <span>NSFW</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/erraineon/">
+              <i class="icon-instagram"></i>
+              <span>Instagram</span>
             </a>
           </li>
           <li>
@@ -64,66 +89,20 @@
             </ul>
           </li>
           <li>
-            <a href="https://www.instagram.com/erraineon/">
-              <i class="icon-instagram"></i>
-              <span>Instagram</span>
+            <a href="https://www.furaffinity.net/user/errai">
+              <i class="icon-furaffinity"></i>
+              <span>FurAffinity</span>
             </a>
-          </li>
-          <li>
-            <a href="https://t.me/errai">
-              <i class="icon-telegram"></i>
-              <span>Telegram</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://bsky.app/profile/errai.bsky.social/">
-              <span>BlueSky</span>
-              <i class="icon-bluesky"></i>
-            </a>
-            <ul class="vertical-line">
-              <li>
-                <a href="https://bsky.app/profile/gooeypaws.bsky.social/">
-                  <i class="icon-18-plus"></i>
-                  <span>NSFW</span>
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
       </nav>
       <nav class="green">
         <ul class="horizontal-line">
-          <h4>Links/Atlas</h4>
+          <h1>Links/Atlas</h1>
           <li>
             <a href="https://github.com/erraineon">
               <i class="icon-github"></i>
               <span>GitHub</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://steamcommunity.com/id/erraineon/">
-              <i class="icon-steam"></i>
-              <span>Steam</span>
-            </a>
-            <ul class="vertical-line">
-              <li>
-                <a href="https://www.backloggd.com/u/errai/">
-                  <i>B</i>
-                  <span>Backloggd</span>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="https://letterboxd.com/errai/films/">
-              <i class="icon-letterboxd"></i>
-              <span>Letterboxd</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://myanimelist.net/profile/erraineon">
-              <i class="icon-myanimelist"></i>
-              <span>MyAnimeList</span>
             </a>
           </li>
           <li>
@@ -150,12 +129,38 @@
                   <span>.flow</span>
                 </a>
               </li>
+              <li>
+                <a href="https://open.spotify.com/playlist/3KdI0XSdn5F5NZR1v2fwCD?si=c9ac3ed812fa41c0">
+                  <i class="deepblue icon-music-circle"></i>
+                  <span>.sonar</span>
+                </a>
+              </li>
             </ul>
           </li>
           <li>
-            <a href="https://www.furaffinity.net/user/errai">
-              <i class="icon-furaffinity"></i>
-              <span>FurAffinity</span>
+            <a href="https://letterboxd.com/errai/films/">
+              <i class="icon-letterboxd"></i>
+              <span>Letterboxd</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://steamcommunity.com/id/erraineon/">
+              <i class="icon-steam"></i>
+              <span>Steam</span>
+            </a>
+            <ul class="vertical-line">
+              <li>
+                <a href="https://www.backloggd.com/u/errai/">
+                  <i>B</i>
+                  <span>Backloggd</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="https://myanimelist.net/profile/erraineon">
+              <i class="icon-myanimelist"></i>
+              <span>MyAnimeList</span>
             </a>
           </li>
         </ul>

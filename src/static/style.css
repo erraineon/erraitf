@@ -235,6 +235,10 @@
     color: #EC398A;
 }
 
+.deepblue {
+    color: #063c4f;
+}
+
 html {
     font-family: 'Soehne', serif;
     font-size: 18px;
@@ -242,8 +246,8 @@ html {
     color: var(--blue-color);
 }
 
-article>h1:first-of-type {
-    font-weight: 900;
+.light {
+    font-weight: normal;
 }
 
 body {
@@ -264,6 +268,14 @@ main {
 
 article {
     min-width: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+.bio {
+    max-width: 36rem;
 }
 
 .metro-lines-row {
@@ -294,12 +306,12 @@ nav {
     ul {
         margin: 0;
         padding: 0;
-    }
 
-    h4 {
-        margin: 0;
-        font-family: 'Soehne Schmal';
-        font-weight: normal;
+        h1 {
+            margin: 0;
+            font-size: 0.8rem;
+            font-weight: normal;
+        }
     }
 
     a {
@@ -380,7 +392,7 @@ nav {
             z-index: -1;
         }
 
-        &>h4 {
+        &>h1 {
             position: absolute;
             margin-left: calc(var(--metro-station-size)/4);
             grid-row: 3;
@@ -418,6 +430,7 @@ nav {
 
             &>.vertical-line {
                 --vertical-line-margin: 0;
+                --metro-station-gap: 0.5rem;
                 width: var(--metro-station-size);
                 grid-row: 3;
                 align-self: start;
@@ -459,7 +472,7 @@ nav {
         position: relative;
         margin-top: var(--vertical-line-margin);
 
-        &>h4 {
+        &>h1 {
             grid-column: 1 / 1;
             position: absolute;
             top: calc(var(--vertical-line-margin)*-1);
@@ -510,6 +523,7 @@ code {
     word-break: break-word;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
+    line-height: 1rem;
 }
 
 pre {
@@ -518,11 +532,12 @@ pre {
 }
 
 figure {
-    margin: 1rem;
+    margin: 0 0 0 1rem;
     float: right;
 
     h3 {
         text-align: center;
+        margin: 0;
     }
 
     div {
