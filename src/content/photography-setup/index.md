@@ -31,6 +31,7 @@ I've been using it since 2023 and I love it.
 - Tons of customizable controls with good ergonomics.
 - Extremely fast startup time, even compared to the a7RIV.
 - 8-stop in-body image stabilization lets me shoot handheld at 70mm, 1s. It's phenomenal.
+- Great dynamic range: almost 15 stops of dynamic range let me correct shadows and highlights in post while preserving lots of detail.
 - The eye-tracking is great. I don't really shoot portraits, but it's awesome for bird photography.
 - It doesn't get in the way of my shooting. That's the most important aspect of any camera.
 
@@ -75,6 +76,7 @@ When paired with a Sony FE 2.0x Teleconverter, it turns into a good F5.6 400mm, 
 #### Sony E 30mm F3.5 Macro
 
 An old and inexpensive macro lens I got in 2021. I use it rarely, but it's small and excels at what it does.
+
 ---
 
 ## Gear and accessories
