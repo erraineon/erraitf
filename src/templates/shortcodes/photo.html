@@ -1,4 +1,5 @@
 <div class="gallery">
+    {% if filenames -%}
     {% set width = 364 -%}
     {% for filename in filenames -%}
     {% set path = page.colocated_path ~ filename -%}
@@ -7,4 +8,12 @@
         <img src="{{ image.url }}" />
     </a>
     {%- endfor %}
+    {%- endif %}
+    {% if urls -%}
+    {% for url in urls -%}
+    <a href="{{ url }}" target="_blank">
+        <img src="{{ url }}" />
+    </a>
+    {%- endfor %}
+    {%- endif %}
 </div>
