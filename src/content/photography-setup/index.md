@@ -25,7 +25,7 @@ I've been using it since 2023 and I love it.
 {{figure(title="Sony a7RV", filename="body.jpg")}}
 
 - Built like a tank and weather-sealed.
-- A bright, multi-angle scren.
+- A bright, multi-angle screen.
 - Remote shutter/shooting capabilities.
 - A fantastic high-resolution viewfinder.
 - Tons of customizable controls with good ergonomics.
@@ -51,8 +51,8 @@ I've been using it since 2023 and I love it.
 - **C1**: while held, focuses on a small area in the center.
   - Especially useful when the frame is busy or the subject is small, for instance a bird.
 - **C2**: (on top of the camera) cycles through focus areas.
-  - I rarely use it. the movable large area and the the center focus triggered by C1 are usually sufficient.
-- **C3**: opens the focus mode switcher. I mostly shoot in Continuous AF and Manual ocus.
+  - I rarely use it. the movable large area and the center focus triggered by C1 are usually sufficient.
+- **C3**: opens the focus mode switcher. I mostly shoot in Continuous AF and Manual focus.
 - **Joystick**: moves the current focus area.
 - **Disp**: cycles between screen on and screen off. In conjunction with Auto Standby, it saves a ton of battery life.
 - **Touch screen**: disabled, since sling-carrying the camera will register a lot of accidental inputs.
