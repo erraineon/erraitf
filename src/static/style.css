@@ -150,61 +150,21 @@
     -moz-osx-font-smoothing: grayscale
 }
 
-.icon-bluesky:before {
-    content: "\e900";
-}
-
-.icon-instagram:before {
-    content: "\e901";
-}
-
-.icon-discord:before {
-    content: "\e906";
-}
-
-.icon-furaffinity:before {
-    content: "\e907";
-}
-
-.icon-github:before {
-    content: "\e908";
-}
-
-.icon-letterboxd:before {
-    content: "\e909";
-}
-
-.icon-lock:before {
-    content: "\e90a";
-}
-
-.icon-music-circle:before {
-    content: "\e90b";
-}
-
-.icon-myanimelist:before {
-    content: "\e90c";
-}
-
-.icon-steam:before {
-    content: "\e90e";
-}
-
-.icon-twitter:before {
-    content: "\e910";
-}
-
-.icon-18-plus:before {
-    content: "\e9d1";
-}
-
-.icon-spotify:before {
-    content: "\ea94";
-}
-
-.icon-telegram:before {
-    content: "\ea95";
-}
+.icon-18-plus:before{content:'\0041';}
+.icon-bluesky:before{content:'\0042';}
+.icon-discord:before{content:'\0043';}
+.icon-furaffinity:before{content:'\0044';}
+.icon-github:before{content:'\0045';}
+.icon-instagram:before{content:'\0046';}
+.icon-letterboxd:before{content:'\0047';}
+.icon-lock:before{content:'\0048';}
+.icon-music-circle:before{content:'\0049';}
+.icon-myanimelist:before{content:'\004a';}
+.icon-spotify:before{content:'\004b';}
+.icon-steam:before{content:'\004c';}
+.icon-telegram:before{content:'\004d';}
+.icon-twitter:before{content:'\004e';}
+.icon-lastfm:before{content:'\004f';}
 
 .green {
     --metro-line-color: var(--green-color);
@@ -396,6 +356,7 @@ nav {
             position: absolute;
             margin-left: calc(var(--metro-station-size)/4);
             grid-row: 3;
+            place-self: start;
         }
 
         /* Main metro station */
