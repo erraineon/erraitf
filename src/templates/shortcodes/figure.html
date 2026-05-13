@@ -1,5 +1,5 @@
 <figure>
-    {% if title %}<h3>{{title}}</h3>{% endif %}
+    {%- if title %}<h3>{{title}}</h3>{% endif %}
     <div>
         {%- set basePath = page.colocated_path | default(value="") -%}
         {%- set path = basePath ~ filename -%}
