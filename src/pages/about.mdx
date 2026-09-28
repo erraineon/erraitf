@@ -1,0 +1,85 @@
+---
+---
+import { Image } from "astro:assets";
+import "../styles/global.css";
+import { Icon } from "astro-icon/components";
+import heroImage from "../assets/hero.png";
+import PageLayout from "../layouts/PageLayout.astro";
+import { Links } from "../data/links";
+import LinkIcon from "../components/LinkIcon.astro";
+
+export const likes = [
+    { subject: "Programming", favorite: "C#" },
+    { subject: "Game development" },
+    { subject: "Reverse engineering" },
+    { subject: "Photography" },
+    { subject: "Puzzle games", favorite: "Blue Prince" },
+    { subject: "Metroidvanias", favorite: "Animal Well" },
+    { subject: "Stealth games", favorite: "Hitman" },
+    { subject: "Surreal games", favorite: "Killer7" },
+    { subject: "Movies", favorite: "One Battle After Another" },
+    { subject: "TV shows", favorite: "The Wire" },
+    { subject: "Anime", favorite: "Kaiba" },
+    { subject: "Playing music" },
+    { subject: "Ambient techno", favorite: "cv313" },
+    { subject: "Post-Metal", favorite: "Genghis Tron" },
+    { subject: "Tea & coffee", favorite: "Espresso" },
+    { subject: "Whiskey & wine", favorite: "Santori Hibiki" },
+    { subject: "Cooking"},
+    { subject: "Home improvement" },
+    { subject: "Fashion" },
+    { subject: "Minimalism" },
+    { subject: "Industrial decay" },
+    { subject: "Curry" },
+];
+
+<PageLayout title="About me" description="My bio and tidbits about me.">
+
+    <figure class="sm:float-right sm:ml-4 flex flex-col mx-auto mt-[1.5em] sm:mb-4 p-4 max-w-72 outline outline-black/5">
+        <Image src={heroImage} alt="Artwork of Errai." />
+        <figcaption class="text-center">Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/).</figcaption>
+    </figure>
+
+    I'm Errai (*eh-RA-ee*, he/him, 34)—a developer, photographer, and digital artist forever drawn to the unknown.
+
+    Originally from Rome, Italy, I currently live in the dense and eclectic neighborhoods of Somerville, MA with my boyfriend, a freelance artist who goes by [Sumiaou](https://sumiaou.carrd.co).
+    
+    By day, I work as a remote software engineer. Off the clock, I shoot street and wildlife photography, build games, and experiment with new projects and recipes.
+
+    Quiet and introverted, I love exploring mysteries, learning new skills, and having a good laugh. Shy at first but I melt quickly—and I'm always happy to connect with people on the same wavelength.
+
+    Part of the furry fandom (mostly on the digital side), and my avatar is a dragon/monster of some kind. If you'd like to know more, check out [Errai's reference page (NSFW)](/reference-page).
+
+    ## Likes
+
+	<ul class="ps-0 flex flex-wrap gap-2">
+		{likes.map((item) => (
+			<li class="font-sans mt-0 mb-0 flex items-baseline gap-1.5 px-2 py-0.5 bg-gray-200 text-nowrap">
+				<span>{item.subject}</span>
+				{item.favorite && (
+					<>
+						<Icon name="lucide:heart" class="text-xs text-accent-600 shrink-0" />
+						<a class="no-underline text-xs text-gray-500">{item.favorite}</a>
+					</>
+				)}
+			</li>
+		))}
+	</ul>
+
+    ## Links
+
+    <ul class="ps-0">
+        {Links.map((link) => (
+            <li class="flex items-start gap-3">
+                <LinkIcon class="size-6 shrink-0 mt-0.5" icon={link.icon} badgeIcon={link.badgeIcon} />
+                <div>
+                    <a class="underline font-medium whitespace-nowrap" href={link.url} title={link.name} target="_blank" rel="noopener noreferrer">
+                        {link.name}
+                    </a>
+                    {link.description && <span>: {link.description}</span> } 
+                </div>
+            </li>
+        ))}
+    </ul>
+
+</PageLayout>

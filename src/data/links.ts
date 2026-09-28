@@ -1,0 +1,85 @@
+export const Links = [
+    {
+        name: "Discord",
+        description: "My preferred IM platform. Add me if you'd like to chat.",
+        url: "https://discordapp.com/users/382774230267330567",
+        icon: "simple-icons:discord",
+    },
+    {
+        name: "Telegram",
+        url: "https://discordapp.com/users/382774230267330567",
+        icon: "simple-icons:telegram"
+    },
+    {
+        description: "Mostly photos and jokes. This is my main account.",
+        url: "https://x.com/errai",
+        icon: "simple-icons:twitter",
+        name: "Twitter",
+    },
+    {
+        name: "Twitter (personal)",
+        label: "Personal",
+        description: "My daily life. Feel free to send a follow request.",
+        url: "https://x.com/dryflat",
+        icon: "simple-icons:twitter",
+        badgeIcon: "material-symbols:lock"
+    },
+    {
+        name: "BlueSky",
+        url: "https://x.com/errai",
+        icon: "simple-icons:bluesky",
+    },
+    {
+        description: "What I've been coding.",
+        url: "https://x.com/liladragon",
+        icon: "simple-icons:github",
+        name: "GitHub",
+    },
+    {
+        name: "Last.FM",
+        description: "What I've been listening to.",
+        url: "https://x.com/liladragon",
+        icon: "simple-icons:lastdotfm",
+    },
+    {
+        name: "Backloggd",
+        description: "What games I've been playing.",
+        url: "https://x.com/liladragon",
+        icon: "material-symbols:b-circle",
+    },
+    {
+        name: "Simkl",
+        description: "What movies, anime, and TV shows I've been watching.",
+        url: "https://x.com/liladragon",
+        icon: "simple-icons:simkl",
+    },
+    {
+        name: "Steam",
+        label: "Steam",
+        url: "https://x.com/liladragon",
+        icon: "simple-icons:steam",
+    },
+    {
+        name: "Twitter (18+)",
+        label: "18+",
+        description: "NSFW furry pictures.",
+        url: "https://x.com/liladragon",
+        icon: "simple-icons:twitter",
+        badgeIcon: "material-symbols:warning-rounded"
+    },
+    {
+        name: "BlueSky (18+)",
+        label: "18+",
+        description: "Mirror of my NSFW Twitter posts.",
+        url: "https://x.com/liladragon",
+        icon: "simple-icons:bluesky",
+        badgeIcon: "material-symbols:warning-rounded"
+    },
+    {
+        name: "FurAffinity",
+        label: "FurAffinity",
+        description: "Furry art gallery.",
+        url: "https://x.com/liladragon",
+        icon: "simple-icons:furrynetwork",
+    },
+];

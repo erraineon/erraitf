@@ -1,0 +1,106 @@
+---
+import { Icon } from "astro-icon/components";
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"dialog"> {
+  id?: string;
+  header: string;
+  body: string;
+  confirmText: string;
+  cancelText: string;
+  triggerEvent: string;
+  icon?: string;
+}
+
+const {
+  id = `dialog-${crypto.randomUUID()}`,
+  header,
+  body,
+  confirmText,
+  cancelText,
+  triggerEvent,
+  icon = "material-symbols:warning-outline",
+  ...props
+} = Astro.props;
+---
+
+<dialog
+  id={id}
+  data-generic-dialog
+  data-trigger-event={triggerEvent}
+  class="not-prose font-sans fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:backdrop-blur-sm"
+  {...props}
+>
+  <div
+    tabindex="0"
+    class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+  >
+    <div data-dialog-panel class="text-center sm:text-left">
+      <div class="bg-white p-4">
+        <div class="grid gap-x-3 gap-y-1">
+          <Icon
+            class="size-12 m-2 text-accent-600 mx-auto row-start-1 sm:row-span-2"
+            name={icon}
+          />
+          <h2 class="sm:col-start-2 font-semibold text-gray-900">
+            {header}
+          </h2>
+          <p class="sm:col-start-2 text-sm text-gray-500">
+            {body}
+          </p>
+        </div>
+      </div>
+      <div class="bg-gray-50 p-2 flex flex-col sm:flex-row-reverse gap-2">
+        <a
+          data-confirm-button
+          href="#"
+          class="bg-accent-600 px-3 py-2 text-sm font-semibold text-white hover:bg-accent-500 text-center"
+        >
+          {confirmText}
+        </a>
+        <button
+          type="button"
+          command="close"
+          commandfor={id}
+          class="bg-white px-3 py-2 text-sm font-semibold text-gray-900 inset-ring inset-ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+        >
+          {cancelText}
+        </button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const dialogs = document.querySelectorAll<HTMLDialogElement>(
+    "dialog[data-generic-dialog]",
+  );
+  dialogs.forEach((dialog) => {
+    const confirmButton =
+      dialog.querySelector<HTMLAnchorElement>("[data-confirm-button]");
+    const triggerEvent = dialog.dataset.triggerEvent;
+
+    if (confirmButton && triggerEvent) {
+      window.addEventListener(triggerEvent, ((e: CustomEvent) => {
+        const { href, target, rel } = e.detail || {};
+
+        confirmButton.href = href || "#";
+
+        if (target) confirmButton.target = target;
+        else confirmButton.removeAttribute("target");
+
+        if (rel) confirmButton.rel = rel;
+        else confirmButton.removeAttribute("rel");
+
+        dialog.showModal();
+      }) as EventListener);
+    }
+
+    dialog.addEventListener("click", (e) => {
+      const panel = dialog.querySelector("[data-dialog-panel]");
+      if (panel && !panel.contains(e.target as Node)) {
+        dialog.close();
+      }
+    });
+  });
+</script>

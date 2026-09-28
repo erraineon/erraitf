@@ -1,0 +1,25 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    icon: string;
+    badgeIcon?: string;
+    class: string;
+}
+const { icon, badgeIcon, class: className, ...rest } = Astro.props;
+---
+
+<div class:list={["relative", className]} {...rest}>
+    <Icon name={icon || "lucide:link"} class="size-full" />
+    {
+        badgeIcon && (
+            <span class="absolute -bottom-1 -right-1 p-0.5 size-2/3">
+                <Icon
+                    name={badgeIcon}
+                    class="absolute inset-0 size-full stroke-4 stroke-white"
+                />
+                <Icon name={badgeIcon} class="absolute inset-0 size-full" />
+            </span>
+        )
+    }
+</div>

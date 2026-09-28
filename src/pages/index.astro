@@ -1,18 +1,48 @@
 ---
-import "../styles/global.css";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { execSync } from "child_process";
+
+const gitTimestamp = execSync("git log -1 --format=%ct").toString().trim();
+const lastUpdatedDate = new Date(Number(gitTimestamp) * 1000);
+
+const links = [
+	{ tag: "txt", label: "posts", href: "/posts", color: "text-cyan-400" },
+	{ tag: "jpeg", label: "photos", href: "/photos", color: "text-accent-600" },
+	{ tag: "meta", label: "about", href: "/about", color: "text-yellow-400" },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="sitemap" href="/sitemap-index.xml" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-red-200">Astro</h1>
-	</body>
-</html>
+<BaseLayout
+	title="Home"
+	description="Errai's personal website"
+	class="min-h-screen w-full flex flex-col items-center p-6"
+>
+	<div class="flex-1 flex flex-col items-center justify-center gap-6">
+		<header class="text-center">
+			<p class=" text-8xl">
+				<span class="tracking-tight font-bold text-gray-800">errai</span>
+				<span class="tracking-tighter font-medium text-gray-600">.tf</span>
+			</p>
+		</header>
+		<nav
+			class="w-full max-w-2xs uppercase font-thin text-3xl grid grid-cols-[auto_1fr_auto] gap-y-1 items-center"
+		>
+			{
+				links.map((link) => (
+					<a class:list={["contents", link.color]} href={link.href}>
+						<span class="text-left">{link.tag}</span>
+						<span class="text-center">/</span>
+						<span class="text-right">{link.label}</span>
+					</a>
+				))
+			}
+		</nav>
+	</div>
+
+	<footer class="text-center">
+		<p class="text-gray-300 font-light text-sm">
+			Last updated on <FormattedDate date={lastUpdatedDate} />
+		</p>
+	</footer>
+</BaseLayout>

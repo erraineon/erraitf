@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "./BaseLayout.astro";
+import NavBar from "../components/NavBar.astro";
+
+export type { Props } from "../components/BaseHead.astro";
+
+const { title, description, image} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+	<NavBar />
+	<main
+		class="max-w-[83ch] bg-white flex flex-col p-8 outline outline-black/5"
+	>
+		<header class="flex gap-8 mb-4">
+			{
+				image && (
+					<Image
+						src={image}
+						alt=""
+						class="size-20 outline-1 outline-black/5 -outline-offset-1"
+					/>
+				)
+			}
+			<h1 class="flex-1 text-6xl font-bold text-gray-800">
+				{title}
+			</h1>
+		</header>
+		<article class="prose prose-gray dark:prose-invert prose-h2:mt-10 prose-headings:font-sans font-serif">
+			<slot />
+		</article>
+	</main>
+</BaseLayout>

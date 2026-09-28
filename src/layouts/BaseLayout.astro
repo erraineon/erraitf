@@ -1,0 +1,31 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+export type { Props } from "../components/BaseHead.astro";
+const { title, description, image, class: className } = Astro.props;
+---
+
+<html lang="en" class="overflow-x-clip">
+	<head>
+		<BaseHead title={title} description={description} image={image} />
+	</head>
+	<body
+		class="min-h-screen w-full grid place-items-center relative overflow-x-clip"
+	>
+		<!-- Both max-w-full min-w-0 needed for <pre> tags to resize down responsively. -->
+		<div class:list={["max-w-full min-w-0 text-gray-700", className]}>
+			<slot />
+		</div>
+		<svg
+			class="-z-10 fixed inset-0 size-full opacity-20"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<filter id="noise">
+				<feTurbulence
+					type="fractalNoise"
+					baseFrequency="0.55"
+					numOctaves="1"></feTurbulence>
+			</filter>
+			<rect class="size-full" filter="url(#noise)"></rect>
+		</svg>
+	</body>
+</html>
