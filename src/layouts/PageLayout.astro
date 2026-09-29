@@ -1,33 +1,57 @@
 ---
 import { Image } from "astro:assets";
 import BaseLayout from "./BaseLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 import NavBar from "../components/NavBar.astro";
 
-export type { Props } from "../components/BaseHead.astro";
+import type { Props as BaseProps } from "../components/BaseHead.astro";
 
-const { title, description, image} = Astro.props;
+interface Props extends BaseProps {
+	pubDate?: Date;
+	heroImage?: ImageMetadata;
+	headerSeparator: boolean;
+}
+
+const { title, description, pubDate, heroImage, headerSeparator } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} image={heroImage}>
 	<NavBar />
-	<main
-		class="max-w-[83ch] bg-white flex flex-col p-8 outline outline-black/5"
-	>
-		<header class="flex gap-8 mb-4">
+	<main class="max-w-[83ch] w-full mx-auto bg-white outline outline-black/5">
+		<header>
 			{
-				image && (
+				heroImage && (
 					<Image
-						src={image}
+						class="w-full aspect-3/1 object-cover mb-0"
+						src={heroImage}
 						alt=""
-						class="size-20 outline-1 outline-black/5 -outline-offset-1"
 					/>
 				)
 			}
-			<h1 class="flex-1 text-6xl font-bold text-gray-800">
-				{title}
-			</h1>
+			<div class="mx-8 mt-6">
+				<hgroup>
+					<h1 class="text-6xl font-bold text-gray-800">
+						{title}
+					</h1>
+					<p class="mt-2 font-light text-xl text-gray-500">
+						{description}
+					</p>
+				</hgroup>
+				{
+					pubDate && (
+						<p class="uppercase text-sm my-6 text-gray-400">
+							Posted <FormattedDate date={pubDate} />
+						</p>
+					)
+				}
+			</div>
 		</header>
-		<article class="prose prose-gray dark:prose-invert prose-h2:mt-10 prose-headings:font-sans font-serif">
+		{headerSeparator && <hr class="mx-8 my-8 border-px border-black/10" />}
+
+		<!-- The prose-pre stuff is to let pre elements shrink  -->
+		<article
+			class="m-8 prose-pre:w-0 prose-pre:min-w-full max-w-full prose prose-gray prose-h2:mt-10 prose-headings:font-sans font-serif"
+		>
 			<slot />
 		</article>
 	</main>

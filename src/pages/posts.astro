@@ -15,7 +15,7 @@ const posts = (await getCollection("blog")).sort(
 	title="My posts"
 	description="A list of every article on this site."
 >
-	<ul class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-2">
+	<ul class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-2 mt-6 ">
 		{
 			posts.map((post) => (
 				<li>
@@ -30,7 +30,8 @@ const posts = (await getCollection("blog")).sort(
 								class="col-start-1 row-start-1 size-full object-cover"
 							/>
 						)}
-						<div class="font-sans col-start-1 row-start-1 self-end z-10 flex justify-between items-center bg-black/60 py-1 px-2">
+						{/* min-w-0 is to let the h3 truncate as it shrinks. */}
+						<div class="min-w-0 font-sans col-start-1 row-start-1 self-end z-10 flex justify-between items-baseline bg-black/60 py-1 px-2 gap-2">
 							<h3 class="truncate text-gray-100">
 								{post.data.title}
 							</h3>

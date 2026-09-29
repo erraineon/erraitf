@@ -7,6 +7,7 @@ import heroImage from "../assets/hero.png";
 import PageLayout from "../layouts/PageLayout.astro";
 import { Links } from "../data/links";
 import LinkIcon from "../components/LinkIcon.astro";
+import FloatingFigure from "../components/FloatingFigure.astro";
 
 export const likes = [
     { subject: "Programming", favorite: "C#" },
@@ -25,7 +26,7 @@ export const likes = [
     { subject: "Post-Metal", favorite: "Genghis Tron" },
     { subject: "Tea & coffee", favorite: "Espresso" },
     { subject: "Whiskey & wine", favorite: "Santori Hibiki" },
-    { subject: "Cooking"},
+    { subject: "Cooking" },
     { subject: "Home improvement" },
     { subject: "Fashion" },
     { subject: "Minimalism" },
@@ -33,12 +34,11 @@ export const likes = [
     { subject: "Curry" },
 ];
 
-<PageLayout title="About me" description="My bio and tidbits about me.">
+<PageLayout title="About me">
 
-    <figure class="sm:float-right sm:ml-4 flex flex-col mx-auto mt-[1.5em] sm:mb-4 p-4 max-w-72 outline outline-black/5">
-        <Image src={heroImage} alt="Artwork of Errai." />
-        <figcaption class="text-center">Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/).</figcaption>
-    </figure>
+    <FloatingFigure image={heroImage} alt="Artwork of Errai.">
+        Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/).
+    </FloatingFigure>
 
     I'm Errai (*eh-RA-ee*, he/him, 34)—a developer, photographer, and digital artist forever drawn to the unknown.
 

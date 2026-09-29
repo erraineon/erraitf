@@ -1,9 +1,16 @@
 ---
 title: 'Reversing Super Fighter M'
-description: 'Delightful little tricks'
+description: 'Delightful little tricks.'
 pubDate: '2024-02-16'
-heroImage: './devil.png'
+heroImage: './hero.png'
 ---
+
+import FloatingFigure from "/src/components/FloatingFigure.astro";
+import devil from './devil.png'
+
+<FloatingFigure image={devil} alt="Devil Mario.">
+  Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/).
+</FloatingFigure>
 
 Super Fighter M was a bootleg mobile gacha game using blatantly ripped assets from Nintendo games. It was shut down sometime in the early 2020s, and was known for its memorably absurd, often out of character voice lines of the caliber of "Your friend is waiting for you in the garage" or "I have something important to tell you in advance."
 
@@ -123,4 +130,4 @@ Most prefab models use the `GTParamComponent` MonoBehaviour, storing json data i
 
 Most of what was left was deduplicating some assets (many "pets" share voice lines and models), setting up the scene (I used the one named `CD-JJC` as the base), and writing a script to load and display the character models, audio clips, animations and details. At last, I used the Unity Recorder package to create the video below.
 
-iBsfAkI0T28
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iBsfAkI0T28?si=gMooZftoF7qeAd77" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
