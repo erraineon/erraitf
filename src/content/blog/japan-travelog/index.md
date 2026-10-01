@@ -4,7 +4,7 @@ description: 'My experiences and photos.'
 pubDate: '2025-09-27'
 heroImage: './p (8).jpg'
 ---
-{% topic(title="Observations") %}
+
 My boyfriend and I took a trip to Japan this year. Here are some fun patterns we've noticed.
 
 ## Environment
@@ -70,10 +70,6 @@ My boyfriend and I took a trip to Japan this year. Here are some fun patterns we
 1. 7-Elevens are staggeringly clean and welcoming.
 1. Most cafes don't open until 9am.
 
-{% end %}
-
-{% topic(title="Some of my favorite photos") %}
+## Some of my favorite photos
 
 {{photo(filenames=["p (1).jpg", "p (2).jpg", "p (3).jpg", "p (4).jpg", "p (5).jpg", "p (6).jpg", "p (7).jpg", "p (8).jpg", "p (9).jpg", "p (10).jpg", "p (11).jpg", "p (12).jpg", "p (13).jpg", "p (14).jpg", "p (15).jpg", "p (16).jpg", "p (17).jpg",  "p (18).jpg"])}}
-
-{% end %}

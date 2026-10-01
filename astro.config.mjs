@@ -1,18 +1,19 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config';
-
 import mdx from '@astrojs/mdx';
-
 import tailwindcss from '@tailwindcss/vite';
-
 import sitemap from '@astrojs/sitemap';
-
 import icon from "astro-icon";
+import cloudflare from '@astrojs/cloudflare';
+import { execSync } from 'child_process';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://errai.tf',
   integrations: [mdx(), sitemap(), icon()],
+  adapter: cloudflare({
+    imageService: 'passthrough',
+  }),
   fonts: [
     {
       provider: fontProviders.local(),
@@ -113,6 +114,10 @@ export default defineConfig({
     }
   ],
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    define: {
+      'import.meta.env.GIT_COMMIT_HASH': JSON.stringify(execSync('git rev-parse --short HEAD').toString().trim()),
+      'import.meta.env.GIT_COMMIT_DATE': JSON.stringify(new Date(Number(execSync('git log -1 --format=%ct').toString().trim()) * 1000).toISOString())
+    }
   }
 });
