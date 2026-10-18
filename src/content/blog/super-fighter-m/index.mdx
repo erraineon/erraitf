@@ -1,12 +1,12 @@
 ---
-title: 'Reversing Super Fighter M'
-description: 'Delightful little tricks.'
-pubDate: '2024-02-16'
-heroImage: './hero.png'
+title: "Reversing Super Fighter M"
+description: "Delightful little tricks."
+pubDate: "2024-02-16"
+heroImage: "./hero.png"
 ---
 
 import FloatingFigure from "/src/components/FloatingFigure.astro";
-import devil from './devil.png'
+import devil from "./devil.png";
 
 <FloatingFigure image={devil} alt="Devil Mario.">
   *Is it good for me to destroy... the world?*
@@ -27,6 +27,7 @@ I downloaded an [old version](https://www.vg-resource.com/thread-39792.html) of 
 ## Missing link
 
 In the decompiled assemblies, this part of `GTLauncher` stood out:
+
 ```
 byte[] sourceData = File.ReadAllBytes(
   GTResourceManagerBase.GetExtPath() + "/Geart3D.dll"
@@ -35,7 +36,9 @@ byte[] rawAssembly = ResEncryptDecrypt.DecryptBinaryFromFileData(
   sourceData
 );
 ```
+
 The called method is:
+
 ```
 public static byte[] DecryptBinaryFromFileData(byte[] sourceData)
 {
@@ -49,20 +52,24 @@ public static byte[] DecryptBinaryFromFileData(byte[] sourceData)
   return array;
 }
 ```
+
 Which subsequently calls:
+
 ```
 [DllImport("sqlite_unity_plugin", CallingConvention = CallingConvention.Cdecl)]
 private static extern IntPtr _DecryptBinaryFromFileData(IntPtr sourceData, int sourceSize);
 ```
+
 Why would a SQLite plugin expose encryption and decryption functions? I found `lib\armeabi-v7a\libsqlite_unity_plugin.so` in the game files. Could the devs had meant to add a layer of misdirection by hiding core logic in an unassuming "third party" library?
 
 Using [Ghidra](https://ghidra-sre.org/), I disassembled the library and found that it indeed did much more than just SQLite queries, including the function in question. The decompiled output was:
+
 ```
 void _DecryptBinaryFromFileData(int ptr,int len)
 {
   undefined auStack_cc [176];
   int local_1c;
-  
+
   local_1c = __stack_chk_guard;
   ExpandKey(&DAT_0008579c,auStack_cc);
   BinaryDecrypt(ptr + 4,len + -4,auStack_cc);
@@ -73,7 +80,9 @@ void _DecryptBinaryFromFileData(int ptr,int len)
   return;
 }
 ```
+
 Based off the contents of the `ExpandKey` and `BinaryDecrypt` functions, it became clear that the `Geart3D.dll` file was encrypted with AES, using the key at `&DAT_0008579c`. To decrypt it, I ran:
+
 ```
 using var aes = Aes.Create();
 aes.Key = [0, 1, 2, 4, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -90,7 +99,9 @@ using var cryptoStream = new CryptoStream(
 using var output = new FileStream("output.dll", FileMode.Create);
 cryptoStream.CopyTo(output);
 ```
+
 The decompiled output contained the `PakFileManager` class, which revealed the format of the .pak file. To unpack it, I used:
+
 ```
 var input = File.Open(
     "2020-10-23_17-33-36_Android.pak",
@@ -99,7 +110,7 @@ var input = File.Open(
 );
 var binaryReader = new BinaryReader(input);
 binaryReader.ReadInt64(); // Ignore
-while (binaryReader.ReadString() is {} fileName && 
+while (binaryReader.ReadString() is {} fileName &&
        !string.IsNullOrWhiteSpace(fileName))
 {
     var fileOffset = binaryReader.ReadInt32();
@@ -117,9 +128,11 @@ while (binaryReader.ReadString() is {} fileName &&
 binaryReader.Close();
 input.Close();
 ```
+
 I re-ran Asset Ripper, now also accounting for the newly unpacked asset bundles. With decompiled binaries (even though from an older version) and presumably most of the game assets unpacked, I was almost ready to put it all together.
 
 ## Showtime
+
 After decompiling the decrypted Geart3D.dll assembly, I realized that it not only handled the unpacking process for the .pak file, but also contained most of the game's logic, which came in handy to join sound clips, icons, and models together.
 
 The game actually does use SQLite to read asset associations from the `db.bytes` file (although in older version this file was encrypted and disguised as `UI.pak`. Another of God's little tests). I queried the information I needed from the `type_pet` table (containing the audio entries for each character), and translated some of the text from Chinese using DeepL.
@@ -130,4 +143,13 @@ Most prefab models use the `GTParamComponent` MonoBehaviour, storing json data i
 
 Most of what was left was deduplicating some assets (many "pets" share voice lines and models), setting up the scene (I used the one named `CD-JJC` as the base), and writing a script to load and display the character models, audio clips, animations and details. At last, I used the Unity Recorder package to create the video below.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iBsfAkI0T28?si=gMooZftoF7qeAd77" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/iBsfAkI0T28?si=gMooZftoF7qeAd77"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen
+></iframe>

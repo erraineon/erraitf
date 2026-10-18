@@ -7,52 +7,38 @@ import NavBar from "../components/NavBar.astro";
 import type { Props as BaseProps } from "../components/BaseHead.astro";
 
 interface Props extends BaseProps {
-	pubDate?: Date;
-	heroImage?: ImageMetadata;
-	headerSeparator?: boolean;
+  pubDate?: Date;
+  image?: ImageMetadata;
+  headerSeparator?: boolean;
 }
 
-const { title, description, pubDate, heroImage, headerSeparator } = Astro.props;
+const { title, description, pubDate, image, headerSeparator } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} image={heroImage}>
-	<NavBar />
-	<main class="max-w-[83ch] w-full mx-auto bg-white outline outline-black/5">
-		<header>
-			{
-				heroImage && (
-					<Image
-						class="w-full aspect-3/1 object-cover"
-						src={heroImage}
-						alt=""
-					/>
-				)
-			}
-			<div class="mx-8 mt-6">
-				<hgroup>
-					<h1 class="text-6xl font-bold text-gray-800">
-						{title}
-					</h1>
-					<p class="mt-2 font-light text-xl text-gray-500">
-						{description}
-					</p>
-				</hgroup>
-				{
-					pubDate && (
-						<p class="uppercase text-sm my-6 text-gray-400">
-							Posted <FormattedDate date={pubDate} />
-						</p>
-					)
-				}
-			</div>
-		</header>
-		{headerSeparator && <hr class="mx-8 my-8 border-px border-black/10" />}
+<BaseLayout title={title} description={description} image={image}>
+  <NavBar />
+  <main class="mx-auto w-full max-w-[83ch] bg-white outline outline-black/5">
+    <header>
+      {image && (
+        <Image class="aspect-3/1 w-full object-cover" src={image} alt="" />
+      )}
+      <div class="mx-8 mt-6">
+        <hgroup>
+          <h1 class="text-6xl font-bold text-gray-800">{title}</h1>
+          <p class="mt-2 text-xl font-light text-gray-500">{description}</p>
+        </hgroup>
+        {pubDate && (
+          <p class="my-6 text-sm text-gray-400 uppercase">
+            Posted <FormattedDate date={pubDate} />
+          </p>
+        )}
+      </div>
+    </header>
+    {headerSeparator && <hr class="border-px mx-8 my-8 border-black/10" />}
 
-		<!-- The prose-pre stuff is to let pre elements shrink  -->
-		<article
-			class="m-8 prose-pre:w-0 prose-pre:min-w-full max-w-full prose prose-gray prose-h2:mt-10 prose-headings:font-sans font-serif"
-		>
-			<slot />
-		</article>
-	</main>
+    <!-- The prose-pre stuff is to let pre elements shrink  -->
+    <article class="m-8 prose max-w-full font-serif prose-gray prose-headings:font-sans prose-h2:mt-10 prose-pre:w-0 prose-pre:min-w-full">
+      <slot />
+    </article>
+  </main>
 </BaseLayout>

@@ -1,8 +1,9 @@
 ---
-title: 'Screensaver logo simulator'
-description: 'Making things bounce'
-pubDate: '2026-01-25'
+title: "Screensaver logo simulator"
+description: "Making things bounce"
+pubDate: "2026-01-25"
 ---
+
 While I was making dinner one day, I thought "I wonder if you can predict when the DVD logo hits the corner." Sure enough, it's a [pretty simple equation](https://youtu.be/saq3JGOsB3M?si=TRW_57mb-cLEFKqN). But what if the motion wasn't linear? What if the shape wasn't an axis-aligned bounding box? I decided to simulate that in Unity.
 
 ## The basics
@@ -54,8 +55,8 @@ Next, my goal was to implement a turret that shot blades at logos, cutting them 
 
 ```c++
 virtual int32_t cut(
-    uint32_t chunkId, 
-    const NvcVec3& normal, 
+    uint32_t chunkId,
+    const NvcVec3& normal,
     const NvcVec3& position,
     const NoiseConfiguration& noise,
     bool replaceChunk,

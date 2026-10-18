@@ -28,7 +28,7 @@ const {
   id={id}
   data-generic-dialog
   data-trigger-event={triggerEvent}
-  class="not-prose font-sans fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent backdrop:backdrop-blur-sm"
+  class="not-prose fixed inset-0 size-auto max-h-none max-w-none overflow-y-auto bg-transparent font-sans backdrop:backdrop-blur-sm"
   {...props}
 >
   <div
@@ -39,22 +39,18 @@ const {
       <div class="bg-white p-4">
         <div class="grid gap-x-3 gap-y-1">
           <Icon
-            class="size-12 m-2 text-accent-600 mx-auto row-start-1 sm:row-span-2"
+            class="row-start-1 m-2 mx-auto size-12 text-accent-600 sm:row-span-2"
             name={icon}
           />
-          <h2 class="sm:col-start-2 font-semibold text-gray-900">
-            {header}
-          </h2>
-          <p class="sm:col-start-2 text-sm text-gray-500">
-            {body}
-          </p>
+          <h2 class="font-semibold text-gray-900 sm:col-start-2">{header}</h2>
+          <p class="text-sm text-gray-500 sm:col-start-2">{body}</p>
         </div>
       </div>
-      <div class="bg-gray-50 p-2 flex flex-col sm:flex-row-reverse gap-2">
+      <div class="flex flex-col gap-2 bg-gray-50 p-2 sm:flex-row-reverse">
         <a
           data-confirm-button
           href="#"
-          class="bg-accent-600 px-3 py-2 text-sm font-semibold text-white hover:bg-accent-500 text-center"
+          class="bg-accent-600 px-3 py-2 text-center text-sm font-semibold text-white hover:bg-accent-500"
         >
           {confirmText}
         </a>
@@ -76,8 +72,9 @@ const {
     "dialog[data-generic-dialog]",
   );
   dialogs.forEach((dialog) => {
-    const confirmButton =
-      dialog.querySelector<HTMLAnchorElement>("[data-confirm-button]");
+    const confirmButton = dialog.querySelector<HTMLAnchorElement>(
+      "[data-confirm-button]",
+    );
     const triggerEvent = dialog.dataset.triggerEvent;
 
     if (confirmButton && triggerEvent) {

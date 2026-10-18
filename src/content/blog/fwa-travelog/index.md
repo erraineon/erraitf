@@ -1,9 +1,10 @@
 ---
-title: 'FWA 2026'
-description: 'My first time in Atlanta'
-pubDate: '2026-05-13'
-heroImage: './p11.jpg'
+title: "FWA 2026"
+description: "My first time in Atlanta"
+pubDate: "2026-05-13"
+heroImage: "./p11.jpg"
 ---
+
 Furry Weekend Atlanta 2026 left a strong impression on me. I didn’t do a whole lot at the convention — actually, I barely attended it, but I had a great time regardless. Here’s a little of what stuck with me.
 
 ## Impressions
@@ -18,13 +19,13 @@ This shape doesn’t suit me.
 
 I am referring to the **party person**. My favorite environments are relatively quiet and calm. My favorite activities, meditative and measured. While I enjoy drinking, I don’t like getting drunk as a means to have fun.
 
-I like playing games and watching movies. I love taking walks and listening to music with enough acoustics left to exchange a word or ten million, depending on how chatty we feel. 
+I like playing games and watching movies. I love taking walks and listening to music with enough acoustics left to exchange a word or ten million, depending on how chatty we feel.
 
 “Maybe something’s missing inside me.” I considered that maybe I’m too childish, or simply incapable of having fun like normal people do, but that over time I could learn to enjoy partying, and all that it entails.
 
 I don’t lay judgment upon the psychology or the behavior of the party person. Watching people get rowdy and enjoy themselves is fun on its own merit, as though I experience their energy vicariously.
 
-But anything social at cons — Room parties, karaoke, raves, getting high — requires you to harness some degree of *letting go*. And after all, why travel and put yourself in a highly social place, if you don’t even like to socialize? So, year after year, I tried.
+But anything social at cons — Room parties, karaoke, raves, getting high — requires you to harness some degree of _letting go_. And after all, why travel and put yourself in a highly social place, if you don’t even like to socialize? So, year after year, I tried.
 
 ### The this
 
@@ -34,9 +35,9 @@ I visited Piedmont Park and the Botanical Gardens, the High Museum of Art, and t
 
 In the afternoons and evenings, I reconnected with my pals to participate in group activities. I was pleasantly surprised by how little downtime this approach involved. I’d wrap up my morning tours by the time people were ready to head out. Often I **had** to make an effort to be on time, rather than wait around the con space for something social to happen.
 
-At night, I mostly stayed in my room, reading a book, reviewing my photos, taking baths, listening to music, and playing games. I enjoyed the quiet unwinding much more than I expected. Hotels, in particular, are so measured, uncluttered, and *blank* that I feel mindful thought is naturally born out of the lack of foreground distractions. The coffee packets are lovely, too.
+At night, I mostly stayed in my room, reading a book, reviewing my photos, taking baths, listening to music, and playing games. I enjoyed the quiet unwinding much more than I expected. Hotels, in particular, are so measured, uncluttered, and _blank_ that I feel mindful thought is naturally born out of the lack of foreground distractions. The coffee packets are lovely, too.
 
-When my friends partied and attended raves, I was worried I’d end up feeling like I was missing out, but in the end my time felt incredibly *balanced*. I respected my preferences and chose who to see, what to do, and when to do it.
+When my friends partied and attended raves, I was worried I’d end up feeling like I was missing out, but in the end my time felt incredibly _balanced_. I respected my preferences and chose who to see, what to do, and when to do it.
 
 People probably thought I was weird and quiet, but I was happy to be myself, free of social obligation. The convention felt more like a vacation in a city where most of my friends already happened to be.
 

@@ -1,29 +1,12 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
+import Gallery from "../components/Gallery.astro";
 import { env } from "cloudflare:workers";
 
 export const prerender = false;
-
-const listResult = await env.ERRAITF_BUCKET.list();
-const photos = listResult.objects;
 ---
 
-<PageLayout title="My photos" description="A gallery with my photos.">
-  <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 [grid-template-rows: masonry]"
-  >
-    {
-      photos.map((photo) => (
-        <div class="outline outline-black/20">
-          <a href={`${env.IMAGES_CDN_URL}/${photo.key}`}>
-            <img
-              src={`${env.IMAGES_CDN_URL}/${photo.key}?size=thumbnail`}
-              alt={`Photo ${photo.key}`}
-              class="object-cover"
-            />
-          </a>
-        </div>
-      ))
-    }
-  </div>
+<PageLayout title="My photos" description="A gallery of my work.">
+  <p class="mb-6">A gallery with my favorite photographs.</p>
+  <Gallery bucket={env.ERRAITF_BUCKET} prefix="Favorites"/>
 </PageLayout>

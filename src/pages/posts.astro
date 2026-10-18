@@ -7,42 +7,38 @@ import FormattedDate from "../components/FormattedDate.astro";
 import { Image } from "astro:assets";
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
 <PageLayout
-	title="My posts"
-	description="A list of every article on this site."
+  title="My posts"
+  description="A list of every article on this site."
 >
-	<ul class="not-prose grid grid-cols-1 sm:grid-cols-2 gap-2 mt-6 ">
-		{
-			posts.map((post) => (
-				<li>
-					<a
-						class="grid grid-rows-1 aspect-video  bg-gray-100"
-						href={`/${post.id}`}
-					>
-						{post.data.heroImage && (
-							<Image
-								src={post.data.heroImage}
-								alt={post.data.title}
-								class="col-start-1 row-start-1 size-full object-cover"
-							/>
-						)}
-						{/* min-w-0 is to let the h3 truncate as it shrinks. */}
-						<div class="min-w-0 font-sans col-start-1 row-start-1 self-end z-10 flex justify-between items-baseline bg-black/60 py-1 px-2 gap-2">
-							<h3 class="truncate text-gray-100">
-								{post.data.title}
-							</h3>
-							<FormattedDate
-								class="text-sm text-gray-300 text-nowrap"
-								date={post.data.pubDate}
-							/>
-						</div>
-					</a>
-				</li>
-			))
-		}
-	</ul>
+  <ul class="not-prose mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
+    {posts.map((post) => (
+      <li>
+        <a
+          class="grid aspect-video grid-rows-1 bg-gray-100"
+          href={`/${post.id}`}
+        >
+          {post.data.heroImage && (
+            <Image
+              src={post.data.heroImage}
+              alt={post.data.title}
+              class="col-start-1 row-start-1 size-full object-cover"
+            />
+          )}
+          {/* min-w-0 is to let the h3 truncate as it shrinks. */}
+          <div class="z-10 col-start-1 row-start-1 flex min-w-0 items-baseline justify-between gap-2 self-end bg-black/60 px-2 py-1 font-sans">
+            <h3 class="truncate text-gray-100">{post.data.title}</h3>
+            <FormattedDate
+              class="text-sm text-nowrap text-gray-300"
+              date={post.data.pubDate}
+            />
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
 </PageLayout>

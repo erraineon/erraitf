@@ -6,28 +6,21 @@ type Props = HTMLAttributes<"nav">;
 const { class: className, ...rest } = Astro.props;
 
 const links = [
-	{ href: "/", label: "Home", bg: "bg-gray-900" },
-	{ href: "/posts", label: "Posts", bg: "bg-cyan-400" },
-	{ href: "/photos", label: "Photos", bg: "bg-accent-600" },
-	{ href: "/about", label: "About", bg: "bg-yellow-400" },
+  { href: "/", label: "Home", bg: "bg-gray-900" },
+  { href: "/posts", label: "Posts", bg: "bg-cyan-400" },
+  { href: "/photos", label: "Photos", bg: "bg-accent-600" },
+  { href: "/about", label: "About", bg: "bg-yellow-400" },
 ];
 ---
 
 <nav
-	class:list={["flex justify-center p-4 gap-4 font-light", className]}
-	{...rest}
+  class:list={["flex justify-center gap-4 p-4 font-light", className]}
+  {...rest}
 >
-	{
-		links.map(({ href, label, bg }) => (
-			<a href={href} class="flex flex-col">
-				{label}
-				<div
-					class:list={[
-						"w-full h-0.5",
-						bg,
-					]}
-				/>
-			</a>
-		))
-	}
+  {links.map(({ href, label, bg }) => (
+    <a href={href} class="flex flex-col">
+      {label}
+      <div class:list={["h-0.5 w-full", bg]} />
+    </a>
+  ))}
 </nav>

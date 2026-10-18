@@ -1,0 +1,258 @@
+---
+import { env } from "cloudflare:workers";
+
+interface Props {
+  bucket?: R2Bucket;
+  cdnUrl?: string;
+  showExif?: boolean;
+  sortByDate?: boolean;
+  thumbnailHeight?: number;
+  prefix: string;
+}
+
+const {
+  bucket = env.ERRAITF_BUCKET,
+  cdnUrl = import.meta.env.IMAGES_CDN_URL,
+  showExif = true,
+  sortByDate = true,
+  thumbnailHeight = 240,
+  prefix,
+} = Astro.props;
+
+let objects: R2Object[] = [];
+let cursor: string | undefined;
+
+// Inefficient for thousands of photos but it'll be fine here.
+do {
+  const res = await bucket.list({ prefix: prefix, cursor, limit: 1000 });
+  objects.push(...res.objects.filter((o) => o.size > 0));
+  cursor = res.truncated ? res.cursor : undefined;
+} while (cursor);
+
+const photos = sortByDate
+  ? objects.sort(
+      (a, b) => new Date(b.uploaded).getTime() - new Date(a.uploaded).getTime(),
+    )
+  : objects;
+---
+
+<ul
+  data-gallery
+  data-show-exif={showExif}
+  data-thumbnail-height={thumbnailHeight}
+  class="not-prose relative"
+>
+  {photos.map((photo) => (
+    <li data-gallery-item class="absolute">
+      <button
+        type="button"
+        class="block size-full cursor-zoom-in border-0 bg-transparent p-0 text-left"
+        data-full-src={`${cdnUrl}/${photo.key}`}
+      >
+        <img
+          src={`${cdnUrl}/${photo.key}?size=thumbnail`}
+          alt={`Photo ${photo.key}`}
+          loading="lazy"
+          decoding="async"
+          class="size-full object-cover outline outline-black/5"
+        />
+      </button>
+    </li>
+  ))}
+</ul>
+
+<dialog
+  data-modal
+  class="not-prose fixed inset-0 size-full max-h-none max-w-none bg-transparent font-sans backdrop:backdrop-brightness-25"
+>
+  <div class="relative flex size-full items-center justify-center p-4">
+    <div class="pointer-events-none absolute inset-x-4 top-1/2 z-20 flex -translate-y-1/2 justify-between px-2">
+      <button
+        type="button"
+        data-prev
+        class="pointer-events-auto grid size-8 cursor-pointer place-items-center rounded-full leading-none text-white/70 transition select-none hover:bg-black/20 focus:outline-none"
+      >
+        &#10094;
+      </button>
+      <button
+        type="button"
+        data-next
+        class="pointer-events-auto grid size-8 cursor-pointer place-items-center rounded-full leading-none text-white/70 transition select-none hover:bg-black/20 focus:outline-none"
+      >
+        &#10095;
+      </button>
+    </div>
+
+    <div data-dialog-panel class="grid max-h-full min-h-0 max-w-full min-w-0">
+      <img
+        src=""
+        alt=""
+        data-dialog-image
+        class="col-start-1 row-start-1 object-contain"
+      />
+
+      {showExif && (
+        <div class="z-10 col-start-1 row-start-1 m-3 size-fit flex-col text-gray-100 text-shadow-[1px_1.5px_1.5px] text-shadow-black/60">
+          <span class="text-base font-light sm:text-lg" data-exif="lens"></span>
+          <div class="flex gap-3 text-xs font-thin sm:text-sm">
+            <span data-exif="focal"></span>
+            <span data-exif="aperture"></span>
+            <span data-exif="shutter"></span>
+            <span data-exif="iso"></span>
+          </div>
+        </div>
+      )}
+    </div>
+  </div>
+</dialog>
+
+<script>
+  import justifiedLayout from "justified-layout";
+
+  document
+    .querySelectorAll<HTMLElement>("[data-gallery]")
+    .forEach((container) => {
+      const dialog = container.nextElementSibling as HTMLDialogElement;
+      if (!dialog || !dialog.hasAttribute("data-modal")) return;
+
+      const showExif = container.dataset.showExif === "true";
+      const thumbnailHeight = Number(container.dataset.thumbnailHeight);
+      const dialogPanel = dialog.querySelector(
+        "[data-dialog-panel]",
+      ) as HTMLElement;
+      const dialogImage = dialog.querySelector(
+        "[data-dialog-image]",
+      ) as HTMLImageElement;
+
+      const prevBtn = dialog.querySelector("[data-prev]") as HTMLButtonElement;
+      const nextBtn = dialog.querySelector("[data-next]") as HTMLButtonElement;
+
+      const items = [
+        ...container.querySelectorAll<HTMLElement>("[data-gallery-item]"),
+      ];
+      const thumbnails = [
+        ...container.querySelectorAll<HTMLImageElement>("img"),
+      ];
+      const expandThumbnailButtons = [
+        ...container.querySelectorAll<HTMLButtonElement>(
+          "button[data-full-src]",
+        ),
+      ];
+      const exifElements = dialog.querySelectorAll<HTMLElement>("[data-exif]");
+
+      const sources = expandThumbnailButtons.map(
+        (button) => button.dataset.fullSrc || "",
+      );
+      let currentIndex = 0;
+
+      const showPhoto = (index: number) => {
+        if (index < 0) index = sources.length - 1;
+        if (index >= sources.length) index = 0;
+        currentIndex = index;
+
+        const fullSrc = sources[currentIndex];
+        if (!fullSrc) return;
+
+        dialogImage.src = "";
+        exifElements.forEach((el) => (el.textContent = ""));
+
+        if (!dialog.open) dialog.showModal();
+        dialogImage.src = fullSrc;
+      };
+
+      expandThumbnailButtons.forEach((expandButton, index) => {
+        expandButton.addEventListener("click", () => {
+          expandButton.blur();
+          showPhoto(index);
+        });
+      });
+
+      prevBtn?.addEventListener("click", () => {
+        showPhoto(currentIndex - 1);
+      });
+
+      nextBtn?.addEventListener("click", () => {
+        showPhoto(currentIndex + 1);
+      });
+
+      window.addEventListener("keydown", (e) => {
+        if (!dialog.open) return;
+        if (e.key === "ArrowLeft") showPhoto(currentIndex - 1);
+        if (e.key === "ArrowRight") showPhoto(currentIndex + 1);
+        if (e.key === "Escape") dialog.close();
+      });
+
+      dialogImage.onload = async () => {
+        // Necessary for the image height to get capped correctly.
+        dialogPanel.style.aspectRatio = `${dialogImage.naturalWidth}/${dialogImage.naturalHeight}`;
+
+        if (showExif) {
+          const ExifReader = (await import("exifreader")).default;
+          const tags = await ExifReader.load(dialogImage.src);
+
+          const values: Record<string, string | undefined> = {
+            lens: tags.LensModel?.description,
+            focal: tags.FocalLength?.description,
+            aperture: tags.FNumber?.description,
+            shutter: tags.ExposureTime?.description,
+            iso: `ISO ${tags.ISOSpeedRatings?.description}`,
+          };
+
+          exifElements.forEach((exifElement) => {
+            const key = exifElement.dataset.exif;
+            if (key) {
+              exifElement.textContent = values[key] ?? "";
+            }
+          });
+        }
+      };
+
+      const updateLayout = () => {
+        const geometry = justifiedLayout(
+          thumbnails.map(
+            (thumbnail) =>
+              (thumbnail.naturalWidth || 3) / (thumbnail.naturalHeight || 2),
+          ),
+          {
+            containerWidth: container.clientWidth,
+            targetRowHeight: thumbnailHeight,
+            boxSpacing: 4,
+            containerPadding: 0,
+          },
+        );
+
+        container.style.height = `${geometry.containerHeight}px`;
+
+        geometry.boxes.forEach((box, i) => {
+          const item = items[i];
+          if (item)
+            Object.assign(item.style, {
+              top: `${box.top}px`,
+              left: `${box.left}px`,
+              width: `${box.width}px`,
+              height: `${box.height}px`,
+            });
+        });
+      };
+
+      updateLayout();
+
+      thumbnails.forEach((img) => {
+        if (!img.complete)
+          img.addEventListener("load", updateLayout, { once: true });
+      });
+
+      new ResizeObserver(updateLayout).observe(container);
+
+      dialog.addEventListener("click", (e) => {
+        if (
+          dialogPanel &&
+          !dialogPanel.contains(e.target as Node) &&
+          !prevBtn.contains(e.target as Node) &&
+          !nextBtn.contains(e.target as Node)
+        ) {
+          dialog.close();
+        }
+      });
+    });
+</script>
