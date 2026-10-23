@@ -6,18 +6,36 @@ import NavBar from "../components/NavBar.astro";
 
 import type { Props as BaseProps } from "../components/BaseHead.astro";
 
+type LayoutSize = "standard" | "wide" | "full";
+
+const sizeClasses: Record<LayoutSize, string> = {
+  standard: "max-w-[83ch]",
+  wide: "max-w-[90rem]",
+  full: "max-w-screen",
+};
+
 interface Props extends BaseProps {
   pubDate?: Date;
   image?: ImageMetadata;
   headerSeparator?: boolean;
+  size?: LayoutSize;
 }
 
-const { title, description, pubDate, image, headerSeparator } = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  image,
+  headerSeparator,
+  size = "standard",
+} = Astro.props;
+
+const currentSizeClass = sizeClasses[size];
 ---
 
 <BaseLayout title={title} description={description} image={image}>
   <NavBar />
-  <main class="mx-auto w-full max-w-[83ch] bg-white outline outline-black/5">
+  <main class=`w-full ${currentSizeClass} bg-white outline outline-black/5`>
     <header>
       {image && (
         <Image class="aspect-3/1 w-full object-cover" src={image} alt="" />

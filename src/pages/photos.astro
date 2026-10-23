@@ -6,7 +6,7 @@ import { env } from "cloudflare:workers";
 export const prerender = false;
 ---
 
-<PageLayout title="My photos" description="A gallery of my work.">
+<PageLayout title="My photos" description="A gallery of my work." size="wide">
   <p class="mb-6">A gallery with my favorite photographs.</p>
-  <Gallery bucket={env.ERRAITF_BUCKET} prefix="Favorites"/>
+  <Gallery bucket={env.ERRAITF_BUCKET} prefix="Favorites" />
 </PageLayout>
