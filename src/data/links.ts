@@ -44,13 +44,13 @@ export const Links = [
   {
     name: "Backloggd",
     description: "What games I've been playing.",
-    url: "https://x.com/liladragon",
+    url: "https://backloggd.com/u/errai/",
     icon: "material-symbols:b-circle",
   },
   {
     name: "Letterboxd",
     description: "What movies I've been watching.",
-    url: "https://backloggd.com/u/errai/",
+    url: "https://letterboxd.com/errai/",
     icon: "simple-icons:letterboxd",
   },
   {
