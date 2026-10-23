@@ -8,7 +8,7 @@ const { title, description, image } = Astro.props;
   <head>
     <BaseHead title={title} description={description} image={image} />
   </head>
-  <body class="relative flex min-h-screen w-full flex-col items-center justify-center overflow-x-clip">
+  <body class="relative flex min-h-dvh w-full flex-col items-center justify-center">
     <slot />
     <svg
       class="fixed inset-0 -z-10 size-full opacity-20"
