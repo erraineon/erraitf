@@ -4,6 +4,7 @@ description: "My first time in Atlanta"
 pubDate: "2026-05-13"
 heroImage: "./p11.jpg"
 ---
+import Gallery from '/src/components/Gallery.astro'
 
 Furry Weekend Atlanta 2026 left a strong impression on me. I didn’t do a whole lot at the convention — actually, I barely attended it, but I had a great time regardless. Here’s a little of what stuck with me.
 
@@ -77,29 +78,4 @@ Here are a few other random facts I noticed.
 
 Here are some of my favorite photos I took in Atlanta.
 
-{{photo(filenames=[
-"p1.jpg",
-"p2.jpg",
-"p3.jpg",
-"p4.jpg",
-"p5.jpg",
-"p6.jpg",
-"p7.jpg",
-"p8.jpg",
-"p9.jpg",
-"p10.jpg",
-"p11.jpg",
-"p12.jpg",
-"p13.jpg",
-"p14.jpg",
-"p15.jpg",
-"p16.jpg",
-"p17.jpg",
-"p18.jpg",
-"p19.jpg",
-"p20.jpg",
-"p21.jpg",
-"p22.jpg",
-"p23.jpg",
-"p24.jpg"
-])}}
+<Gallery prefix="Atlanta" thumbnailHeight="180" sortByDate={false} />
