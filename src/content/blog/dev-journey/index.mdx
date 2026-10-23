@@ -1,44 +1,146 @@
 ---
-title: "My journey as a dev"
-description: "Learning that doesn't feel like learning"
-pubDate: "2026-08-25"
+title: "Code and curiosity"
+description: "A story about a black box."
+pubDate: "2026-10-20"
 ---
 
 import FloatingFigure from "/src/components/FloatingFigure.astro";
 import glity from "./glity.png";
 import m from "./m.png";
 import xploder from "./xploder.png";
+import s4league from "./s4league.png";
+import olly from "./olly.png";
+import rotmg from "./rotmg.png";
+import noita from "./noita.png";
 
-<FloatingFigure image={glity} alt="Glitch City in Pokemon Red">
-  Glitch City in Pokemon Red.
+I work as a software engineer for an enterprise company. It's not very interesting. Most days repeat themselves, and a lot of our projects are about applying the same patterns in different contexts.
+
+What I do find interesting is that I owe most of my computer knowledge to videogames--or more specifically, cheating and hacking. In this article I retrace the steps that brought me where I am today.
+
+## Glitching
+
+<FloatingFigure alt="Glitch City in Pokémon Red" image={glity}>
+  [Glitch City](https://bulbapedia.bulbagarden.net/wiki/Glitch_City) in Pokémon Red.
 </FloatingFigure>
 
-I was fascinated by computer bugs ever since I was eight. My first encounter was [Glitch City](https://bulbapedia.bulbagarden.net/wiki/Glitch_City) in Pokemon Red. Saving and reloading the game while in the Safari Zone would lead to a corrupted map filled with random tiles and no way out. 
+I have been fascinated by computer bugs ever since I was eight. My first experience was [Glitch City](https://bulbapedia.bulbagarden.net/wiki/Glitch_City) in Pokémon Red. Saving and reloading the game while in the Safari Zone would lead to a corrupted map filled with random tiles and no way out. 
 
-Back then, these urban legends would spread via word of mouth (see [Mew Under The Truck](https://gaming-urban-legends.fandom.com/wiki/Mew_Under_the_Truck)). So I thought that Glitch City was a deliberate secret place hidden by the game's developers, and couldn't help but wonder: what else laid beyond those broken lands? My imagination ran wild.
+That same summer, a kid taught me how to encounter [MissingNo.](https://en.wikipedia.org/wiki/MissingNo.) The first time the glitch Pokémon's jagged silhouette appeared on screen, I felt an adrenaline rush. It was forbidden and exciting, like meeting a ghost in the machine.
 
-Later that summer, another kid told me about MissingNo. I'm still not sure how he knew the exact steps to perform the glitch, given that it only applied to English copies of the game. I'm also not sure why I happened to own one, given I lived in Italy. Anyway, A few weeks later, having returned from summer camp and regained access to my GameBoy, I gave it a try.
+I thought that both were deliberate secrets hidden by the game's developers, and couldn't help but wonder: what else laid past those broken lands? Ever since, I tried to break out of bounds in just about every game I played. My imagination ran wild, and my passion for the beyond was lit.
 
-<FloatingFigure image={m} alt="MissingNo encounter">
-  MissingNo, or more precisely, ['M (00)](https://bulbapedia.bulbagarden.net/wiki/%27M_(00)).
+## Cheating
+
+<FloatingFigure alt="Blaze Xploder" image={xploder}>
+  The [Xploder](https://en.wikipedia.org/wiki/Xploder) was a cartridge proxying console and game, and allowing editing and scanning memory addresses.
 </FloatingFigure>
 
-The first time MissingNo's jagged silhouette appeared on screen, I felt an adrenaline rush. Seeing level 127 Pokemon in the wild, when the whole time the game enforced the "Level 100 is the limit" framework, felt forbidden and exciting. It felt like meeting a ghost in the machine. Exploring further was scary, but I couldn't resist.
+Somehow, I learned of a magical device called the [Xploder](https://en.wikipedia.org/wiki/Xploder). This cartridge let you do otherwise impossible things in any Game Boy game, provided you had the right cheat codes. I managed to convince my mom to buy it for me, and later that day I caught a Mew. I didn't know how it worked, just that it did.
 
-Not long after, I acquired my first Gameshark. Just eight digits (`0115D8CF`) would trigger a Mew encounter, an otherwise unobtainable Pokemon. I had no idea of why or how, and was only armed with a game console, my curiosity, and a lot of free time.
+My interest in cheating grew with every new game and console. As emulators became widespread, transcribing codes from magazines was no longer enough, and I learned to craft my own. With the advent of Flash games, I got the hang of [Cheat Engine](https://en.wikipedia.org/wiki/Cheat_Engine).
 
-<FloatingFigure image={xploder} alt="Blaze Xploder">
-  The Blaze Xploder was a cartridge acting as a proxy between console and game, and allowing editing and scanning memory values.
+Each discovery led to many more, always with the same drive: what was beyond that invisible wall, that numeric boundary, that locked door?
+
+## Hacking
+
+<FloatingFigure alt="S4 League" image={s4league}>
+  S4 League was my first action-shooter online game.
 </FloatingFigure>
 
-When I eventually upgraded to a GameBoy Advance, Pokemon Ruby, and a GBA-compatible cheat device, I started bringing the setup with me to summer camp and applying cheats to other kids' cartridges. 
+By high school, I thought I was hot shit for knowing how to hack [Habbo Hotel](https://en.wikipedia.org/wiki/Habbo). I was half-decent at computer stuff, at least compared to people in my area, but nowhere near many of the other talented kids around the world. It was definitely a small pond, big fish situation, but being unaware of it helped me continue growing unbothered.
 
-Later, I learned that freezing certain memory values was not the same editing the code that wrote them were very different disciplines.
+My classmates had been obsessing over an online action shooter named [S4 League](https://en.wikipedia.org/wiki/S4_League). I gave it a try at a friend's place, instantly falling in love with its stylish designs and fast-paced action. I wanted to play the hell out of it, and like every other game I enjoyed, I wanted to break it open.
 
-I memorized enough Assembly to write manual code caves in OllyDbg. I banged my head trying to unpack Themida manually, and somehow succeeded. I rode the highs of writing new hacks for several MMOs, and decompiling Undertale's code and assets long before anyone else did.
+As S4 League featured several anti-tamper routines, Cheat Engine wasn't going to cut it. Thankfully, by now I had consistent Internet access, so I found [OllyDbg](https://en.wikipedia.org/wiki/OllyDbg), and entire communities devoted to reverse engineering.
 
-Almost 30 years later, I realize that it was never about learning how to code. Programming had always been a tool to achieve whichever goal I was after. It was always about my curiosity, and the intoxicating dance around the boundary of the seen and the concealed, the known and the undefined.
+<FloatingFigure alt="OllyDbg" image={olly}>
+  OllyDbg's main window.
+</FloatingFigure>
 
-I still do game and software reverse engineering -- Animal Well and Noita were two of my most recent challenges. Most of the time I'm not working, however, I channel my coding urges towards creating something new, primarily videogames, rather than dissecting something that's already out there.
+Nowadays, I think that learning how to effectively use an [x86 debugger](https://en.wikipedia.org/wiki/X86_assembly) was the greatest software lesson I ever got. Not only are the basics of Assembly not particularly difficult, but knowing the building blocks of every program helps to make sense of many high-level abstractions later on.
 
-I would thank the kid who told me about Glitch City many summers ago, but I think my lead into programming would've happened even if he hadn't. I was always curious, and I always loved videogames. The two locks share a common key.
+Each new finding in S4 League revealed that there were still layers to peel: a reasonably tough anti-cheat system, a simple asset encryption and decryption system, tons of unused or beta content hidden in the files, and some absolutely bonkers server-side exploits.
+
+Being part of a fun in-game guild was an extra carrot on a stick. It was the first time I felt part of a friend group, and being revered as a cool hacker was undoubtedly an ego trip, even before I knew what that meant. Those days went by carefree.
+
+## Automating
+
+As my hacks became more elaborate, I realized that executing them manually each time was untenable. Outside of a few Flash games, Assembly code caves, macros and scripts, I'd never written software from scratch.
+
+<FloatingFigure alt="Realm Of The Mad God" image={rotmg}>
+  Realm Of The Mad God was a perma-death "mini-MMO" written in Flash.
+</FloatingFigure>
+
+[Realm of the Mad God](https://en.wikipedia.org/wiki/Realm_of_the_Mad_God) was my first excuse to do so. After discovering a timing-dependent item duplication glitch (and later realizing it could also be used to spawn any item), I knew that it was time to learn how to automate it. Of all languages, I picked C++/CLI, which I shortly after abandoned in favor of C#. 
+
+A day and a night later, my first program ever was chugging along on my PC. It orchestrated account creation, login, item generation and storage, and it managed to scale out surprisingly well. I grew armies of bots crammed with rare items and maxed-out characters, and even managed to make a few bucks on PayPal from selling life potions and resurrection amulets.
+
+But it didn't feel like it was enough. It may have worked, but my code sucked absolute ass and consisted of one giant set of nested loops. It felt like there had to be a better way.
+
+## Programming
+
+That software underwent several iterations. From a practical standpoint, I wanted to make it more efficient and robust in order to increase output. But also, I felt the urge to make my high-level code borrow the efficient, expressive minimalism Assembly had forced me to embrace up until then.
+
+As part of that process, the entry points for my hacks were also being refined. I started analyzing data packets and reversing structures rather than laser-focused byte array patches. I learned that a simple command-line process simulating the client's network protocol was often more effective than a tool hooking the game's process. I realized that cracking a serial key generation algorithm was much more elegant than bypassing the routines checking the software's trial status.
+
+And so, for the next few years, I wrote in-game bots, moderation tools, private servers, proxies, mods, chat clients, data unpackers, and even [a patcher that added a feature to Telegram](https://github.com/erraineon/telegram-scroll). Sometimes my work was helpful to many others, and other times plain old hacks for myself. I changed aliases a few times. I even thought about becoming a gray-hat hacker for a living.
+
+Reversing the `data.win` structure and building a GameMaker Language decompiler specifically for Undertale was probably my favorite undertaking. Knowing it helped speedrunners and the modding community still feels resonant with the game's spirit and encourages me to keep my innovations public.
+
+It never felt like learning. Figuring out "the right way" to achieve a solution was its own prize. Every single project was satisfying. And as life would have it, time flies when you're having fun.
+
+## The present
+
+I didn't become a gray-hat, white-hat, or any-hat-at-all. I still pick up new coding skills here and there, but also spend a lot less time at the computer than I used to.
+
+I lost interest in online games, instead preferring story-driven single-player ones. No PvP, no grinding, and little to no repetition.
+
+While I don't find glitches all that mysterious and cool anymore, I continue to enjoy breaking out of bounds whenever I can. Falling through horizonless void still gives me a shiver.
+
+I've come to accept that when I cheat in games, I rapidly lose interest in them. I save doing it for a victory lap, or to speed up mind-numbing sections of a playthrough. Playing fair is, unsurprisingly, the intended and ideal way to enjoy most games.
+
+<FloatingFigure alt="Noita" image={noita}>
+  Noita's eyes message is still unsolved, but I hope to decipher it someday.
+</FloatingFigure>
+
+Occasionally, I crack software (just for myself) and reverse engineer games. Rabbit holes like [Reversing Super Fighter M](/src/content/blog/super-fighter-m/) are always a fun dive. Most recently, Animal Well, Blue Prince, and Noita had me brushing up my skills with [IDA Pro](https://en.wikipedia.org/wiki/Interactive_Disassembler). At work, my favorite tasks usually involve pinpointing obscure bugs that have been haunting our systems for years.
+
+Sometimes I feel like I'm falling behind with the times. Anti-cheats have become mind-bogglingly complex, and GenAI can reverse engineer whole games in hours. I enjoy the analysis, proof of concept, and execution phases just as much as the actual result, but it's not as compelling when someone else has already figured it all out and posted it online.
+
+Still, this journey hasn't just affected my skills, but also deeply shaped my personality, reasoning, and sense of aesthetics. My goal for the future is to *create* a videogame I'm proud of, rather than *break* existing ones. So, whether or not I become outdated as a hacker, I'm happy I get to use my legacy to build a new experience and tell a story that will resonate with many others.
+
+## Mindset
+
+Over 25 years have passed since I first played Pokémon Red. I've created good things, bad things, and dumb things. But curiosity wasn't my main drive the entire time. Outside of what I did, I'd also like to describe my mindset over time.
+
+As a kid, I was unarguably, whole-heartedly fascinated by mystery and exploration, interfacing with an object I couldn't even begin to understand. Videogames felt like an extension of my imagination, and I was addicted to them.
+
+But in my teenage years, my technical knowledge kind of turned to social currency. Sure, finding cool beta weapons hidden inside of S4 League still evoked that pure, child-like wonder, but my ego had taken the front seat. I didn't have many friends through high school, so my online escapades made me feel validated, seen, and useful to my classmates (and later, online pals).
+
+I also had this misguided idea that being the author of my own hacks made them okay to use in online games. I told myself that I wasn't really ruining it for others, but the odds were artificially stacked in my favor--they just didn't *know* it. And that lack of confrontation gave me the convenient illusion that I was maximizing my enjoyment without diluting other players' legitimate efforts.
+
+If I were to hack a new MMO today, I would still automate the boring, grindy shit without any guilt, but I'd leave player interactions alone. A cheap victory feels worse than losing nowadays.
+
+One thing I did right, though: I never distributed my hacks, not even among friends. I had multiple reasons: 
+1. Obviously I didn't want my attack vectors to get patched out.
+2. I also never wished to harm the game's economy, moderators, or even other players (and speedhacking cheaters one-shotting you for 10 minutes *were* undeniably more annoying than me). I understood very well that spreading my work would cause a lot of chaos for everyone.
+3. Being the sole owner of that knowledge made me feel superior to script kiddies.
+4. I didn't care to gain clout from strangers, so I had nothing to gain from a public release.
+
+Despite my motives not being very ethical, I am glad I stuck to that principle. It helped me practice self-restraint, prolonged my fun, and from a consequentialist perspective, was the better option.
+
+In my early adulthood, my drive shifted from social reverence to *agency*. My initiative to sell in-game items for money was driven by enthusiastic naivete rather than greed or malice, as it was proven that my abstract actions could result in real-world value. It was an ambitious time of my life when I felt confident in my abilities and wanted to see how far I could take it.
+
+As I aged and turned self-sufficient, I also became increasingly reserved, maybe even kinda dull. I wanted a low-key lifestyle, as it felt like my favorite type of attention was the kind I didn't actively seek. My wish to create refined, self-contained work and release it modestly was morally gray, but since it aligned with my transition towards building open-source utilities, I consider it a net positive.
+
+## The circle
+
+<FloatingFigure alt="MissingNo" image={m}>
+  The Pokémon that started it all.
+</FloatingFigure>
+
+Having turned software development into my career, craft and curiosity returned to be my main hobby. It's a little bittersweet to look at the big picture and realize that I have circled back to where I started: solving puzzles because they exist.
+
+I've come to understand that it's not videogames I'm specifically interested in, but that I fixated on them so much as a kid simply because they were all I had. Nowadays, I find myself interested in just about anything mysterious or even just complex. I like cooking because each recipe entails chemistry I don't necessarily understand, I like birding because each species has its own sophisticated behaviors. I like storytelling because, at its purest, it's the unknown unfolding with every event.
+
+As for glitches, granted, knowing the trick behind every exploit I abused makes them feel a whole lot less magical, but my eyes still widen a little when I break out of bounds.
