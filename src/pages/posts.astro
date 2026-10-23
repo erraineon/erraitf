@@ -6,7 +6,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 import { Image } from "astro:assets";
 
-const posts = (await getCollection("blog")).sort(
+const posts = (await getCollection("blog", (x) => !x.data.isDraft)).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---

@@ -2,7 +2,13 @@
 title: "Screensaver logo simulator"
 description: "Making things bounce"
 pubDate: "2026-01-25"
+heroImage: "hero.jpg"
 ---
+
+import FloatingFigure from "/src/components/FloatingFigure.astro";
+import logocollider from "./logo-collider.png"
+import bob from "./bob.gif"
+import dllviewer from "./dllviewer.png"
 
 While I was making dinner one day, I thought "I wonder if you can predict when the DVD logo hits the corner." Sure enough, it's a [pretty simple equation](https://youtu.be/saq3JGOsB3M?si=TRW_57mb-cLEFKqN). But what if the motion wasn't linear? What if the shape wasn't an axis-aligned bounding box? I decided to simulate that in Unity.
 
@@ -12,7 +18,9 @@ My first goal was making a box bounce around, just like in the classic scenario.
 
 For the visuals, I wanted to try out [Unity's Vector Graphics](https://docs.unity3d.com/Packages/com.unity.vectorgraphics@2.0/manual/index.html) library which, at the time of writing, is still in preview. The library allows working with SVG files, which implies:
 
-{{figure(title="Rendered SVG example", filename="logo-collider.png")}}
+<FloatingFigure alt="Rendered SVG example" image={logocollider}>
+  Rendered SVG example
+</FloatingFigure>
 
 - **Unlimited logo resolution**: nice to have instead of hunting for high-resolution PNGs.
 - **Arbitrarily high collider definition**: since SVGs get tessellated and mapped to vertices, creating a perfect polygon collider is effortless.
@@ -33,7 +41,9 @@ Mapping to meshes was already supported by the Vector Graphics API, so all I had
 
 ### Switching from vertex colors to textures
 
-{{figure(caption="Z-fighting around the eyes.", filename="bob.gif")}}
+<FloatingFigure alt="Bob" image={bob}>
+  Z-fighting around the eyes.
+</FloatingFigure>
 
 The fracture library doesn't set vertex colors on chunks, so it was simpler to sample each vertex and add its color to a texture map to [generate a texture at runtime](https://github.com/erraineon/ScreenSaverTests/blob/5b8a373367588608042df509d55953f6e5e946fc/Assets/Scripts/VertexColorBaker.cs).
 
@@ -66,7 +76,9 @@ virtual int32_t cut(
 
 Easy, right? Nope.
 
-{{figure(caption="NvBlastExtUnity_x64 exports", filename="dllviewer.png")}}
+<FloatingFigure alt="NvBlastExtUnity_x64 exports" image={dllviewer}>
+  NvBlastExtUnity_x64 exports
+</FloatingFigure>
 
 The unity-fracture library relies on a wrapper named `NvBlastExtUnity_x64.dll`. This file is old and doesn't expose a function that wraps around NVBlast's `cut` (not to be confused with slicing, which is fracturing alongside a grid rather than a voronoi diagram), which I verified by looking at the exports with DLL Export Viewer.
 
@@ -84,4 +96,4 @@ Coming up with new mechanics and making these logos fight is fun. I considered m
 
 I'm also uploading each simulation on my [YouTube channel](https://www.youtube.com/@erraineon). You can find a playlist below.
 
-{{ youtube(id="videoseries?si=R6JNSLaRNwOaFWJC&amp;list=PL6hGkuc1GXT_PmevncCPX8sQ6Gwd8Rz94")}}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=AblSNhamstAiuHX8&amp;list=PL6hGkuc1GXT_PmevncCPX8sQ6Gwd8Rz94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
