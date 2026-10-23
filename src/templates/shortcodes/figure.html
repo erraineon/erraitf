@@ -1,9 +1,0 @@
-<figure>
-    {%- if title %}<h3>{{title}}</h3>{% endif %}
-    <div>
-        {%- set basePath = page.colocated_path | default(value="") -%}
-        {%- set path = basePath ~ filename -%}
-        <img src="{{get_url(path=path)}}" />
-        {% if caption %}<figcaption>{{caption}}</figcaption>{% endif %}
-    </div>
-</figure>

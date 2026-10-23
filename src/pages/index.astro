@@ -1,0 +1,44 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+const commitDate = new Date(import.meta.env.GIT_COMMIT_DATE);
+const commitHash = import.meta.env.GIT_COMMIT_HASH;
+const links = [
+  { tag: "txt", label: "posts", href: "/posts", color: "text-cyan-400" },
+  { tag: "jpeg", label: "photos", href: "/photos", color: "text-accent-600" },
+  { tag: "meta", label: "about", href: "/about", color: "text-yellow-400" },
+];
+---
+
+<BaseLayout title="Home" description="Errai's personal website">
+  <div class="flex flex-1 flex-col items-center justify-center gap-6">
+    <header class="text-center">
+      <p class="text-8xl">
+        <span class="font-bold tracking-tight text-gray-800">errai</span>
+        <span class="font-medium tracking-tighter text-gray-600">.tf</span>
+      </p>
+    </header>
+    <nav class="grid w-full max-w-2xs grid-cols-[auto_1fr_auto] items-center gap-y-1 text-3xl font-thin uppercase">
+      {links.map((link) => (
+        <a class:list={["contents", link.color]} href={link.href}>
+          <span class="text-left">{link.tag}</span>
+          <span class="text-center">/</span>
+          <span class="text-right">{link.label}</span>
+        </a>
+      ))}
+    </nav>
+  </div>
+
+  <footer class="p-2 text-center">
+    <p class="text-sm font-light text-gray-300">
+      Last updated on{" "}
+      <a
+        class="underline"
+        href={`https://github.com/erraineon/erraitf/commit/${commitHash}`}
+      >
+        <FormattedDate date={commitDate} />
+      </a>
+    </p>
+  </footer>
+</BaseLayout>

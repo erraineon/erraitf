@@ -1,0 +1,12 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import Gallery from "../components/Gallery.astro";
+import { env } from "cloudflare:workers";
+
+export const prerender = false;
+---
+
+<PageLayout title="My photos" description="A gallery of my work.">
+  <p class="mb-6">A gallery with my favorite photographs.</p>
+  <Gallery bucket={env.ERRAITF_BUCKET} prefix="Favorites"/>
+</PageLayout>

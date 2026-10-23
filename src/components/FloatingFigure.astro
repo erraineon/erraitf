@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+}
+const { image, alt } = Astro.props;
+---
+
+<figure class="mx-auto mt-0 w-fit max-w-72 p-2 outline outline-black/5 sm:float-right sm:mb-4 sm:ml-4">
+  <Image src={image} alt={alt} />
+  <figcaption class="w-0 min-w-full text-center prose-p:m-2">
+    <slot />
+  </figcaption>
+</figure>
