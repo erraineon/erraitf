@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import { Icon } from "astro-icon/components";
 
 const commitDate = new Date(import.meta.env.GIT_COMMIT_DATE);
 const commitHash = import.meta.env.GIT_COMMIT_HASH;
@@ -30,8 +31,8 @@ const links = [
     </nav>
   </div>
 
-  <footer class="p-4 text-center">
-    <p class="text-sm font-light text-gray-300">
+  <footer class="flex items-center gap-4 p-4 text-center text-gray-300">
+    <p class="text-sm font-light">
       Last updated on{" "}
       <a
         class="underline"
@@ -40,5 +41,9 @@ const links = [
         <FormattedDate date={commitDate} />
       </a>
     </p>
+
+    <a href="rss.xml">
+      <Icon name="lucide:rss" />
+    </a>
   </footer>
 </BaseLayout>
