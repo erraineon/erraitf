@@ -31,14 +31,14 @@ export const Links = [
   },
   {
     description: "What I've been coding.",
-    url: "https://x.com/liladragon",
+    url: "https://github.com/erraineon",
     icon: "simple-icons:github",
     name: "GitHub",
   },
   {
     name: "Last.FM",
     description: "What I've been listening to.",
-    url: "https://x.com/liladragon",
+    url: "https://www.last.fm/user/erraineon",
     icon: "simple-icons:lastdotfm",
   },
   {
@@ -48,15 +48,21 @@ export const Links = [
     icon: "material-symbols:b-circle",
   },
   {
-    name: "Simkl",
-    description: "What movies, anime, and TV shows I've been watching.",
-    url: "https://x.com/liladragon",
-    icon: "simple-icons:simkl",
+    name: "Letterboxd",
+    description: "What movies I've been watching.",
+    url: "https://backloggd.com/u/errai/",
+    icon: "simple-icons:letterboxd",
+  },
+  {
+    name: "MyAnimeList",
+    description: "What Anime I've been watching.",
+    url: "https://myanimelist.net/animelist/erraineon?status=7&order=4&order2=0",
+    icon: "simple-icons:myanimelist",
   },
   {
     name: "Steam",
     label: "Steam",
-    url: "https://x.com/liladragon",
+    url: "https://steamcommunity.com/id/erraineon/",
     icon: "simple-icons:steam",
   },
   {
@@ -71,7 +77,7 @@ export const Links = [
     name: "BlueSky (18+)",
     label: "18+",
     description: "Mirror of my NSFW Twitter posts.",
-    url: "https://x.com/liladragon",
+    url: "https://bsky.app/profile/liladragon.bsky.social",
     icon: "simple-icons:bluesky",
     badgeIcon: "material-symbols:warning-rounded",
   },
@@ -79,7 +85,7 @@ export const Links = [
     name: "FurAffinity",
     label: "FurAffinity",
     description: "Furry art gallery.",
-    url: "https://x.com/liladragon",
+    url: "https://www.furaffinity.net/user/errai",
     icon: "simple-icons:furrynetwork",
   },
 ];

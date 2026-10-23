@@ -30,7 +30,7 @@ const posts = (await getCollection("blog", (x) => !x.data.isDraft)).sort(
             />
           )}
           {/* min-w-0 is to let the h3 truncate as it shrinks. */}
-          <div class="z-10 col-start-1 row-start-1 flex min-w-0 items-baseline justify-between gap-2 self-end bg-black/60 px-2 py-1 font-sans">
+          <div class="z-10 col-start-1 row-start-1 flex min-w-0 items-baseline justify-between gap-2 self-end bg-black/70 px-2 py-1 font-sans">
             <h3 class="truncate text-gray-100">{post.data.title}</h3>
             <FormattedDate
               class="text-sm text-nowrap text-gray-300"
