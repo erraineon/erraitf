@@ -13,7 +13,7 @@
     "generate-types": "wrangler types"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^14.4.0",
+    "@astrojs/cloudflare": "^14.4.2",
     "@astrojs/mdx": "^8.1.0",
     "@astrojs/sitemap": "^3.7.4",
     "@iconify-json/lucide": "^1.2.124",
@@ -27,13 +27,14 @@
     "justified-layout": "^4.1.0",
     "masonry-layout": "^4.2.2",
     "tailwindcss": "^4.3.3",
-    "wrangler": "^4.145.0"
+    "wrangler": "^4.152.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.20",
     "@types/imagesloaded": "^4.1.7",
     "@types/justified-layout": "^4.1.4",
     "@types/masonry-layout": "^4.2.8",
+    "cf": "^1.0.0-beta.20",
     "prettier": "3.9.10",
     "prettier-plugin-astro": "1.1.1",
     "prettier-plugin-tailwindcss": "0.0.0-insiders.5b27f94"

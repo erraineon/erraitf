@@ -140,71 +140,71 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/tiempos/TiemposFineWeb-Light.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposfineweb-light.woff2"],
             weight: "300",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposFineWeb-LightItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposfineweb-lightitalic.woff2",
             ],
             weight: "300",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposFineWeb-Regular.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposfineweb-regular.woff2"],
             weight: "400",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposFineWeb-RegularItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposfineweb-regularitalic.woff2",
             ],
             weight: "400",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposFineWeb-Medium.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposfineweb-medium.woff2"],
             weight: "500",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposFineWeb-MediumItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposfineweb-mediumitalic.woff2",
             ],
             weight: "500",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposFineWeb-Semibold.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposfineweb-semibold.woff2"],
             weight: "600",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposFineWeb-SemiboldItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposfineweb-semibolditalic.woff2",
             ],
             weight: "600",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposFineWeb-Bold.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposfineweb-bold.woff2"],
             weight: "700",
             style: "normal",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposFineWeb-BoldItalic.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposfineweb-bolditalic.woff2"],
             weight: "700",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposFineWeb-Black.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposfineweb-black.woff2"],
             weight: "900",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposFineWeb-BlackItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposfineweb-blackitalic.woff2",
             ],
             weight: "900",
             style: "italic",
@@ -219,77 +219,77 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/tiempos/TiemposHeadlineWeb-Light.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposheadlineweb-light.woff2"],
             weight: "300",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposHeadlineWeb-LightItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposheadlineweb-lightitalic.woff2",
             ],
             weight: "300",
             style: "italic",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposHeadlineWeb-Regular.woff2",
+              "./src/assets/fonts/tiempos/tiemposheadlineweb-regular.woff2",
             ],
             weight: "400",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposHeadlineWeb-RegularItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposheadlineweb-regularitalic.woff2",
             ],
             weight: "400",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposHeadlineWeb-Medium.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposheadlineweb-medium.woff2"],
             weight: "500",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposHeadlineWeb-MediumItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposheadlineweb-mediumitalic.woff2",
             ],
             weight: "500",
             style: "italic",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposHeadlineWeb-Semibold.woff2",
+              "./src/assets/fonts/tiempos/tiemposheadlineweb-semibold.woff2",
             ],
             weight: "600",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposHeadlineWeb-SemiboldItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposheadlineweb-semibolditalic.woff2",
             ],
             weight: "600",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposHeadlineWeb-Bold.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposheadlineweb-bold.woff2"],
             weight: "700",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposHeadlineWeb-BoldItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposheadlineweb-bolditalic.woff2",
             ],
             weight: "700",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposHeadlineWeb-Black.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiemposheadlineweb-black.woff2"],
             weight: "900",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposHeadlineWeb-BlackItalic.woff2",
+              "./src/assets/fonts/tiempos/tiemposheadlineweb-blackitalic.woff2",
             ],
             weight: "900",
             style: "italic",
@@ -304,48 +304,48 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/tiempos/TiemposTextWeb-Regular.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiempostextweb-regular.woff2"],
             weight: "400",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposTextWeb-RegularItalic.woff2",
+              "./src/assets/fonts/tiempos/tiempostextweb-regularitalic.woff2",
             ],
             weight: "400",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposTextWeb-Medium.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiempostextweb-medium.woff2"],
             weight: "500",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposTextWeb-MediumItalic.woff2",
+              "./src/assets/fonts/tiempos/tiempostextweb-mediumitalic.woff2",
             ],
             weight: "500",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposTextWeb-Semibold.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiempostextweb-semibold.woff2"],
             weight: "600",
             style: "normal",
           },
           {
             src: [
-              "./src/assets/fonts/tiempos/TiemposTextWeb-SemiboldItalic.woff2",
+              "./src/assets/fonts/tiempos/tiempostextweb-semibolditalic.woff2",
             ],
             weight: "600",
             style: "italic",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposTextWeb-Bold.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiempostextweb-bold.woff2"],
             weight: "700",
             style: "normal",
           },
           {
-            src: ["./src/assets/fonts/tiempos/TiemposTextWeb-BoldItalic.woff2"],
+            src: ["./src/assets/fonts/tiempos/tiempostextweb-bolditalic.woff2"],
             weight: "700",
             style: "italic",
           },
