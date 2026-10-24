@@ -24,8 +24,8 @@ let cursor: string | undefined;
 
 // Inefficient for thousands of photos but it'll be fine here.
 do {
-  const res = await bucket.list({ prefix: prefix, cursor, limit: 1000 });
-  objects.push(...res.objects.filter((o) => o.size > 0));
+  const res = await bucket.list({ prefix: prefix, cursor, limit: 1000 }); // 1000 is limit, but not specifying it can shrink the batch
+  objects.push(...res.objects.filter((o) => o.size > 0)); // Skip the 0-byte prefix files
   cursor = res.truncated ? res.cursor : undefined;
 } while (cursor);
 

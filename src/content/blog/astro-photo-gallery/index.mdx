@@ -1,0 +1,168 @@
+---
+title: "Hosting my own photos"
+description: "A tutorial on how to build a free photo gallery for your Astro website."
+pubDate: "2026-10-23"
+heroImage: hero.png
+---
+
+import FloatingFigure from "/src/components/FloatingFigure.astro";
+import workflow from "./transformation-workflow.png";
+import grid from "./grid.png";
+
+I wanted a place where I could post my favorite photos, but every option out there had some kind of compromise.
+
+- Social media sites like Twitter or BlueSky are fine for sharing but suck as galleries.
+- Dedicated photography sites like Flickr feel too detached, incur costs and impose their layouts on your gallery.
+- I couldn't find a free image hosting service that would let you truly embed a photo album on your site.
+- Posting them on my previous iteration of this site (which was built with [Zola](https://www.getzola.org)) would've required adding them to source control or uploading them somewhere first and hotlinking each photo manually.
+  - Crucially, since pages were static, adding or removing an image to a gallery would require a site rebuild for the change to take into effect.
+
+I had been wanting to refresh my website, so I switched my Static Site Generator to [Astro](https://astro.build) and decided to try hosting the whole gig in Cloudflare.
+
+The first goal was to recreate my site in Astro and familiarize myself with its component-driven architecture. It ended up being very similar to its Zola equivalent, but I took the opportunity to give its layout a refresh.
+
+Then, I picked a place to host my images. [Cloudflare R2](https://www.cloudflare.com/products/r2/) seemed like the perfect option: a fairly generous 10 GB of storage for the free tier, and free egress. For a gallery with a few hundred photos at 4K resolution, it's hard to beat.
+
+So, I created a bucket for my site named `erraitf-images` and associated it to the `images.errai.tf` subdomain.
+
+## Thumbnail generation
+
+Afterwards, I started looking into generating thumbnails, as to avoid downloading large image files until the user selected them. My two main paths were:
+
+1. Write a custom uploader, or a Cloudflare Worker triggered by each upload to my R2 bucket, which would automatically generate a thumbnail file and store it in the same bucket.
+2. Use Cloudflare Image Transformations to dynamically create thumbnails on the fly.
+
+<FloatingFigure alt="Cloudflare Transformation flows" image={workflow}>
+    My thumbnail generation workflow.
+</FloatingFigure>
+
+I went with the second option because of its convenience, and because it's free for the first 5,000 *unique* image transformations each month. Since transformed images are cached, as long as my gallery stays under 5,000 files, I don't need to worry about hitting that limit.
+
+To restrict transformations to exactly one standard thumbnail format, I built a Transformation flow that runs when `?size=thumbnail` is appended to any of the images served from the CDN.
+
+Then, to lock down the API to only allow the workflow above, I added a security rule in Cloudflare that blocks all traffic that matches `http.request.uri.path contains "cdn-cgi"`. This prevents a bot or a malicious actor from requesting image transformations with different parameters, wasting my free transformation slots.
+
+## Dynamically updating the photos page
+
+Then, knowing that the [photos](../../photos) page would need to be dynamic, I started examining my options.
+
+| Option | Pros | Cons |
+| --- | --- | --- |
+| #1 Intercept new uploads or deletions to the R2 Bucket and trigger a site rebuild. | Lets the site be fully statically generated | Extra complexity |
+| #2 Let the photos page be static, but use Javascript to query an API endpoint that returns the actual gallery items. | Self-contained solution | Not really static, the dynamic aspect is just hidden behind the endpoint |
+| #3 Use server-side rendering only for the photos page, and statically render the rest of the site. | Elegant and works out of the box | SSR consumes a small amount of CloudFlare Workers CPU time |
+
+The third option was the clear winner, since thumbnail generation was delegated to its own workflow and querying an R2 bucket is hardly a CPU-intensive operation.
+
+After configuring my site to use the [Cloudflare adapter](https://docs.astro.build/en/guides/integrations-guide/cloudflare/), all I had to do was declare `export const prerender = false;` on my photos page to let it opt-in to server-side rendering, which is automatically delegated to a Cloudflare worker behind the scenes.
+
+## Binding to the R2 bucket
+
+I decided to encapsulate the photos querying and rendering logic into a new component I named `Gallery.astro`.
+
+To interface with the R2 bucket, I had two options: use the `@aws-sdk/client-s3` library and wire it up by adding Cloudflare tokens to my .env file, or rely on the Cloudflare adapter I had already installed above to provide that bridge for me.
+
+While I tried both solutions, I stuck to the latter as it reduced boilerplate code by quite a bit, and as it wouldn't be difficult to switch it out in case I decide to change where I host my site.
+
+In the `wrangler.jsonc` file that gets added by the adapter, I added:
+
+```
+"r2_buckets": [                     
+  {                                 
+    "binding": "ERRAITF_BUCKET",    
+    "bucket_name": "erraitf-images",
+    "remote": true,                 
+  },                                
+],                                  
+```
+
+The `"remote": true` property allowed me to test against the actual R2 bucket instead of a local dev instance of it, which was helpful to measure performance without duplicating my gallery.
+
+## Querying the bucket
+
+Next, I needed to find a way to efficiently list a bunch of photo URLs from R2. Here are a couple of important concepts to keep in mind:
+
+Queries aren't really paginated: if there are extra files beyond what the query yielded, a `cursor` object is also returned. Then, the cursor is used to obtain the next batch of files, and so on.
+
+Also, files in R2 are always returned in alphabetical order. There is no way to request other sorting criteria when querying them. While I could name my files in their display order, it seemed like a rather annoying solution, and I wanted to order images from newest to oldest by default, but also potentially let the user select other sorting criteria.
+
+While at first I intended for my gallery to have some kind of page navigation feature, the restrictions above would cause it to be clunky.
+
+| Option | Pros | Cons | Can sort
+| --- | --- | --- | --- |
+| #1 Implement pages in the gallery. Pass the page number as an URL query parameter. | Simple, familiar navigation style. Small networking footprint. | Wasteful: instead of relying on the cursor, each render would recreate a new query and skip the elements up until the current page. | No |
+| #2 Implement pages in the gallery. Pass the cursor as an URL query parameter. | More efficient than #1. | Passing the R2 cursor as an URL parameter straight up looked ugly. Also, paginated navigation just isn't great UX for a photo gallery. | No |
+| #3 Return to querying a custom API endpoint via JavaScript that would return the next batch of images when the user clicks "Load more" or scrolls to the bottom. | Efficient and fairly common UX. | I still wanted to avoid XHR requests. Extra complexity | No |
+| #4 Get all the matching files in the bucket, sort them during rendering, and mark the thumbnails with `loading="lazy"` and `decoding="async"` | By far the simplest approach. Thumbnails aren't downloaded until the user scrolls down. | Doesn't scale indefinitely. | Yes |
+| #5 When files are uploaded to or deleted from the bucket, automatically invoke a script to update an index file or database with information about that image. Query the database from `Gallery.astro` instead of the R2 bucket. | Efficient, scalable, allows sorting and even filtering. | Significantly more complex architecturally. | Yes |
+
+I ended up picking option #4. If I decide to implement custom sorting, filtering by keywords and metadata, or if performance starts to suffer, I will implement option #5.
+
+For now, the code is simple to read and performant enough.
+
+```
+let objects: R2Object[] = [];
+let cursor: string | undefined;
+
+// Inefficient for thousands of photos but it'll be fine here.
+do {
+  const res = await bucket.list({ prefix: prefix, cursor, limit: 1000 }); // 1000 is limit, but not specifying it can shrink the batch
+  objects.push(...res.objects.filter((o) => o.size > 0)); // Skip the 0-byte prefix files
+  cursor = res.truncated ? res.cursor : undefined;
+} while (cursor);
+
+const photos = sortByDate
+  ? objects.sort(
+      (a, b) => new Date(b.uploaded).getTime() - new Date(a.uploaded).getTime(),
+    )
+  : objects;
+```
+
+## Rendering the gallery
+
+While this isn't architecturally complex or unique, there were a couple of interesting design questions that needed to be tackled in the process.
+
+### Gallery layout
+
+<FloatingFigure alt="Grid image layout" image={grid}>
+    Apple Photos uses a grid image layout.
+</FloatingFigure>
+
+There were a few layout options I could've used to actually display the thumbnails. 
+
+The simplest was a grid-like layout where each cell has the same size. This could be accomplished via pure CSS, but causes uneven margins between photos whenever their aspect ratios differed.
+
+Another popular option is the **masonry layout**, where columns have fixed widths and files are stacked in uneven rows. While there are several libraries that offer this, and even [a native CSS feature](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Grid_lanes) (still mostly unsupported as of me writing), I was never a big fan of it since there isn't a clear reading order.
+
+I ended up picking [Flickr's Justified Layout](https://github.com/flickr/justified-layout). Whenever the container is resized or images are loaded, the geometry is recalculated to try to let gallery items approach their target height. I liked how lightweight and framework-agnostic the library is, and the results look readable and clean.
+
+### A lightweight image viewer
+
+While I'm sure there are countless of frameworks to achieve this, I wanted to implement a tiny image viewer with as little extra frills as possible. I ended up using a native `dialog` element that activates when a thumbnail is clicked and updated with the selected image's full version. I also added navigation controls via keyboard and buttons. I'm pleased with the result doing nothing more or less than exactly what was needed!
+
+### Displaying EXIF metadata
+
+I use [ExifReader](https://github.com/mattiasw/ExifReader) to extract metadata information from the images and overlay it onto the image. While at first the thought of stacking text onto photos sounded kind of obstructive (imagine adding a plaque *onto* a painting at the museum instead of next to it), I like how clean and modest the result looks.
+
+I played with text backgrounds and filters for a while to ensure the EXIF data would stand out from the background, but opted for simple white text with a dark gray shadow, similarly to how Lightroom does it in Loupe view.
+
+## The result
+
+The resulting component is easy to implement, works with or without server-side rendering, lets you filter by prefix/folder, and allows multiple galleries on the same page. This is the whole content of my [photos page](../../photos)'s source!
+
+```
+---
+import PageLayout from "../layouts/PageLayout.astro";
+import Gallery from "../components/Gallery.astro";
+import { env } from "cloudflare:workers";
+
+export const prerender = false;
+---
+
+<PageLayout title="My photos" description="A gallery of my work." size="wide">
+  <p class="mb-6">A gallery with my favorite photographs.</p>
+  <Gallery prefix="Favorites" />
+</PageLayout>
+```
+
+You can find the complete `Gallery.astro` component on [my GitHub](https://github.com/erraineon/erraitf/blob/7d80bfa0c8214b10e11e1b29d547d71e1fe36c93/src/components/Gallery.astro). I hope this article helps others implement their own portfolio!
