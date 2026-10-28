@@ -37,9 +37,7 @@ const currentSizeClass = sizeClasses[size];
   <NavBar />
   <main class=`w-full ${currentSizeClass} bg-white outline outline-black/5`>
     <header>
-      {image && (
-        <Image class="aspect-3/1 w-full object-cover" src={image} alt="" />
-      )}
+      {image && <Image class="w-full object-cover" src={image} alt="" />}
       <div class="mx-8 mt-6">
         <hgroup>
           <h1 class="text-6xl font-bold text-gray-800">{title}</h1>

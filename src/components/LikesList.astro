@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+
+type Like =
+  | string
+  | {
+      subject: string;
+      favorite?: string;
+    };
+
+interface Props {
+  likes: Like[];
+}
+
+const { likes } = Astro.props;
+---
+
+<ul class="not-prose flex flex-wrap gap-2 ps-0">
+  {likes.map((item) => {
+    const isObj = typeof item === "object";
+    const subject = isObj ? item.subject : item;
+    const favorite = isObj ? item.favorite : undefined;
+
+    return (
+      <li class="mt-0 mb-0 flex items-baseline gap-1.5 bg-gray-200 px-2 py-0.5 font-sans text-nowrap">
+        <span>{subject}</span>
+        {favorite && (
+          <>
+            <Icon
+              name="lucide:heart"
+              class="shrink-0 text-xs text-accent-600"
+            />
+            <a class="text-xs text-gray-500 no-underline" href={favorite}>
+              {favorite}
+            </a>
+          </>
+        )}
+      </li>
+    );
+  })}
+</ul>

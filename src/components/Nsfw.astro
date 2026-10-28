@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  label?: string;
+}
+
+const {
+  label = "Click to reveal spoiler",
+  class: className,
+  ...rest
+} = Astro.props;
+const id = `nsfw-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div class="relative overflow-hidden">
+  <input type="checkbox" id={id} class="peer sr-only" />
+
+  <div
+    class:list={[
+      "pointer-events-none blur-md peer-checked:pointer-events-auto peer-checked:blur-none",
+      className,
+    ]}
+    {...rest}
+  >
+    <slot />
+  </div>
+
+  <label
+    for={id}
+    class="absolute inset-0 flex cursor-pointer items-center justify-center bg-gray-200/70 font-sans peer-checked:pointer-events-none peer-checked:opacity-0"
+  >
+    <span class="bg-gray-500/20 px-4 py-2">{label}</span>
+  </label>
+</div>
