@@ -1,73 +1,125 @@
 ---
+title: "Errai's reference page"
 ---
 
-import { Image } from "astro:assets";
-import "../styles/global.css";
 import heroImage from "../assets/hero.png";
 import PageLayout from "../layouts/PageLayout.astro";
-import { Links } from "../data/links";
 import LinkIcon from "../components/LinkIcon.astro";
 import LikesList from "../components/LikesList.astro";
 import FloatingFigure from "../components/FloatingFigure.astro";
 
-export const likes = [
-  { subject: "Programming" },
-  { subject: "Game development" },
-  { subject: "Reverse engineering" },
-  { subject: "Glitches" },
-  { subject: "Photography" },
-  { subject: "Puzzle games", favorite: "Blue Prince" },
-  { subject: "Metroidvanias", favorite: "Animal Well" },
-  { subject: "Stealth games", favorite: "Hitman" },
-  { subject: "Surreal games", favorite: "Killer7" },
-  { subject: "Psychological thrillers" },
-  { subject: "Movies", favorite: "One Battle After Another" },
-  { subject: "TV shows", favorite: "The Wire" },
-  { subject: "Anime", favorite: "Kaiba" },
-  { subject: "Playing music" },
-  { subject: "Ambient techno", favorite: "cv313" },
-  { subject: "Post-Metal", favorite: "Genghis Tron" },
-  { subject: "Tea", favorite: "Darjeeling" },
-  { subject: "Espresso" },
-  { subject: "Whiskey", favorite: "Santori Hibiki" },
-  { subject: "Wine" },
-  { subject: "Cooking" },
-  { subject: "Home improvement" },
-  { subject: "Fashion" },
-  { subject: "Minimalism" },
+export const Links = [
+  {
+    name: "Discord",
+    url: "https://discordapp.com/users/382774230267330567",
+    icon: "simple-icons:discord",
+  },
+  {
+    name: "Telegram",
+    url: "https://t.me/errai",
+    icon: "simple-icons:telegram",
+  },
+  {
+    url: "https://x.com/errai",
+    icon: "simple-icons:twitter",
+    name: "Twitter",
+  },
+  {
+    name: "Twitter (personal)",
+    label: "Personal",
+    url: "https://x.com/dryflat",
+    icon: "simple-icons:twitter",
+    badgeIcon: "material-symbols:lock",
+  },
+  {
+    name: "BlueSky",
+    url: "https://bsky.app/profile/errai.bsky.social",
+    icon: "simple-icons:bluesky",
+  },
+  {
+    url: "https://github.com/erraineon",
+    icon: "simple-icons:github",
+    name: "GitHub",
+  },
+  {
+    name: "Last.FM",
+    url: "https://www.last.fm/user/erraineon",
+    icon: "simple-icons:lastdotfm",
+  },
+  {
+    name: "Backloggd",
+    url: "https://backloggd.com/u/errai/",
+    icon: "material-symbols:b-circle",
+  },
+  {
+    name: "Letterboxd",
+    url: "https://letterboxd.com/errai/",
+    icon: "simple-icons:letterboxd",
+  },
+  {
+    name: "MyAnimeList",
+    url: "https://myanimelist.net/animelist/erraineon?status=7&order=4&order2=0",
+    icon: "simple-icons:myanimelist",
+  },
+  {
+    name: "Steam",
+    label: "Steam",
+    url: "https://steamcommunity.com/id/erraineon/",
+    icon: "simple-icons:steam",
+  },
+  {
+    name: "Twitter (18+)",
+    label: "18+",
+    url: "https://x.com/liladragon",
+    icon: "simple-icons:twitter",
+    badgeIcon: "material-symbols:warning-rounded",
+  },
+  {
+    name: "BlueSky (18+)",
+    label: "18+",
+    url: "https://bsky.app/profile/liladragon.bsky.social",
+    icon: "simple-icons:bluesky",
+    badgeIcon: "material-symbols:warning-rounded",
+  },
+  {
+    name: "FurAffinity",
+    label: "FurAffinity",
+    url: "https://www.furaffinity.net/user/errai",
+    icon: "simple-icons:furrynetwork",
+  },
 ];
 
 <PageLayout title="About me">
 
     <FloatingFigure image={heroImage} alt="Artwork of Errai.">
-        Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/).
+        Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/ ).
     </FloatingFigure>
 
-    I'm Errai (*eh-RA-ee*, he/him, 34)—an introverted developer, photographer, and digital artist forever drawn to the unknown.
+    I'm Errai (*eh-RA-ee*, he/him, 34), an introverted developer, photographer, and digital artist forever drawn to the unknown.
 
     Originally from Rome, Italy, I currently live in the dense and eclectic neighborhoods of Somerville, MA with my boyfriend, a freelance artist who goes by [Sumiaou](https://sumiaou.carrd.co).
 
-    By day, I work as a remote software engineer. Off the clock, I shoot street and wildlife photography, build games, and experiment with new projects and recipes.
+    I work remote as a programmer and, in my free time, like to shoot [street and nature photography](/photos), build games, and learn new recipes. Sometimes [I reverse engineer things](/dev-journey), and I'm always looking for new [music](https://www.last.fm/user/erraineon) to listen to and [movies](https://letterboxd.com/errai/) to watch.
 
-    I love exploring mysteries, learning new skills, and having a good laugh. Shy at first but I melt quickly—and I'm always happy to connect with people on the same wavelength.
+    Shy and curious in equal measures. Funny, self-aware people are my favorite. I tend to isolate, but I don't mind the quiet.
 
-    Part of the furry fandom (mostly on the digital side), and my avatar is a dragon/monster of some kind. If you'd like to know more, check out [Errai's reference page](/reference-page).
+    Part of the furry fandom, mostly on the digital side. My avatar is a gooey dragon of some kind. If you'd like to know more, check out [Errai's reference page](/reference-page).
 
     ## Hobbies
 
-    <LikesList likes={likes} />
+    <LikesList likes={["Programming", "Game development", "Reverse engineering", "Photography", "Comedy", { subject: "Movies", favorite: "One Battle After Another" }, { subject: "TV shows", favorite: "The Wire" }, { subject: "Anime", favorite: "Kaiba" }, { subject: "Puzzle games", favorite: "Blue Prince" }, { subject: "Metroidvanias", favorite: "Animal Well" }, { subject: "Stealth games", favorite: "Hitman" }, { subject: "Surreal games", favorite: "Killer7" }, "Playing music", { subject: "Ambient techno", favorite: "cv313" }, { subject: "Post-Metal", favorite: "Genghis Tron" }, { subject: "Tea", favorite: "Darjeeling" }, "Espresso", "Wine", { subject: "Whiskey", favorite: "Santori Hibiki" }, "Cooking", "Home improvement", "Fashion"]} />
 
     ## Likes
 
-    <LikesList likes={["Street signs", "Cities", "Oceans", "Space", "Skyscrapers", "Graffiti", "Night", "Bridges", "Overcast weather", "Rain", "Electric plants", "Deserts", "Ferrofluids", "Carnivorous plants", "Occult", "Sitars", "Junkyards", "Glass marbles", "Mirror mazes", "Rust", "Radars", "Rubber duckies", "Industrial decay", "Cacti", "Curry", "Cells and patterns", "Subways", "Weather"]} />
+    <LikesList likes={["Mysteries", "Street signs", "Cities", "Oceans", "Space", "Skyscrapers", "Graffiti", "Night", "Bridges", "Overcast weather", "Rain", "Electric plants", "Deserts", "Ferrofluids", "Carnivorous plants", "Occult", "Sitars", "Junkyards", "Glass marbles", "Mirror mazes", "Rubber duckies", "Rust", "Radars", "Cacti", "Curry", "Industrial decay", "Cells and patterns", "Subways", "Weather", "Minimalism", "Existentialism"]} />
 
     ## Dislikes
 
-    <LikesList likes={["Touch screen keyboards", "Cutesy talk", "Whimsy", "People who are always late", "Liars"]} />
+    <LikesList likes={["Touch screen keyboards", "Cutesy talk", "Whimsy", "People who are always late", "Greed", "Insincerity"]} />
 
     ## Links
 
-    <ul class="ps-0">
+    <ul class="ps-0 **:no-underline [&_a]:font-normal font-sans grid sm:grid-cols-2 grid-cols-1 not-prose gap-3">
         {Links.map((link) => (
             <li class="flex items-start gap-3">
                 <LinkIcon class="size-6 shrink-0 mt-0.5" icon={link.icon} badgeIcon={link.badgeIcon} />
@@ -75,7 +127,6 @@ export const likes = [
                     <a class="underline font-medium whitespace-nowrap" href={link.url} title={link.name} target="_blank" rel="noopener noreferrer">
                         {link.name}
                     </a>
-                    {link.description && <span>: {link.description}</span> }
                 </div>
             </li>
         ))}
