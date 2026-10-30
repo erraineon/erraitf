@@ -91,45 +91,127 @@ export const Links = [
 
 <PageLayout title="About me">
 
-    <FloatingFigure image={heroImage} alt="Artwork of Errai.">
-        Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/ ).
-    </FloatingFigure>
+<FloatingFigure image={heroImage} alt="Artwork of Errai.">
+  Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/).
+</FloatingFigure>
 
-    I'm Errai (*eh-RA-ee*, he/him, 34), an introverted developer, photographer, and digital artist forever drawn to the unknown.
+Hi, I'm Errai (_eh-RA-ee_, he/him, 34), an introverted developer, photographer, and digital artist forever drawn to the unknown. I hope we can become friends.
 
-    Originally from Rome, Italy, I currently live in the dense and eclectic neighborhoods of Somerville, MA with my boyfriend, a freelance artist who goes by [Sumiaou](https://sumiaou.carrd.co).
+Originally from Rome, Italy, I moved to the US in 2019 and currently live in the dense and eclectic neighborhoods of Somerville, MA with my boyfriend, a brilliant freelance artist who goes by [Sumiaou](https://sumiaou.carrd.co).
 
-    I work remote as a programmer and, in my free time, like to shoot [street and nature photography](/photos), build games, and learn new recipes. Sometimes [I reverse engineer things](/dev-journey), and I'm always looking for new [music](https://www.last.fm/user/erraineon) to listen to and [movies](https://letterboxd.com/errai/) to watch.
+Mystery and storytelling shape every aspect of my life. When I'm not writing code, I'm [reverse engineering it](/dev-journey). I devour music and cinema. While I enjoy drawing and composing music, most of my art is [photographic](/photos). I'm currently working on an unannounced indie video game project.
 
-    Shy and curious in equal measures. Funny, self-aware people are my favorite. I tend to isolate, but I don't mind the quiet.
+I am shy and curious in equal measure, but very talkative when I open up, especially if you match my flow. I like quiet places, and think a lot about time. I love being alive.
 
-    Part of the furry fandom, mostly on the digital side. My avatar is a gooey dragon of some kind. If you'd like to know more, check out [Errai's reference page](/reference-page).
+My avatar is some kind of gooey dragon. If you'd like to know more, check out [Errai's reference page](/reference-page). Add me on [Discord](https://discordapp.com/users/382774230267330567) or [Telegram](https://t.me/errai) if you'd like to chat!
 
-    ## Hobbies
+## Hobbies
 
-    <LikesList likes={["Programming", "Game development", "Reverse engineering", "Photography", "Comedy", { subject: "Movies", favorite: "One Battle After Another" }, { subject: "TV shows", favorite: "The Wire" }, { subject: "Anime", favorite: "Kaiba" }, { subject: "Puzzle games", favorite: "Blue Prince" }, { subject: "Metroidvanias", favorite: "Animal Well" }, { subject: "Stealth games", favorite: "Hitman" }, { subject: "Surreal games", favorite: "Killer7" }, "Playing music", { subject: "Ambient techno", favorite: "cv313" }, { subject: "Post-Metal", favorite: "Genghis Tron" }, { subject: "Tea", favorite: "Darjeeling" }, "Espresso", "Wine", { subject: "Whiskey", favorite: "Santori Hibiki" }, "Cooking", "Home improvement", "Fashion"]} />
+<LikesList
+  likes={[
+    "Programming",
+    "Game development",
+    "Reverse engineering",
+    "Photography",
+    "Playing music",
+    { subject: "Movies", favorite: "Nightcrawler" },
+    { subject: "TV shows", favorite: "The Wire" },
+    { subject: "Ambient techno", favorite: "cv313" },
+    { subject: "Post-Metal", favorite: "Genghis Tron" },
+    { subject: "Anime", favorite: "Kaiba" },
+    { subject: "Puzzle games", favorite: "Blue Prince" },
+    { subject: "Metroidvanias", favorite: "Animal Well" },
+    { subject: "Stealth games", favorite: "Hitman" },
+    { subject: "Weird games", favorite: "Killer7" },
+    { subject: "Tea", favorite: "Darjeeling" },
+    "Espresso",
+    "Wine",
+    { subject: "Whiskey", favorite: "Santori Hibiki" },
+    "Cooking",
+    "Home improvement",
+    "Fashion",
+  ]}
+/>
 
-    ## Likes
+## Likes
 
-    <LikesList likes={["Mysteries", "Street signs", "Cities", "Oceans", "Space", "Skyscrapers", "Graffiti", "Night", "Bridges", "Overcast weather", "Rain", "Electric plants", "Deserts", "Ferrofluids", "Carnivorous plants", "Occult", "Sitars", "Junkyards", "Glass marbles", "Mirror mazes", "Rubber duckies", "Rust", "Radars", "Cacti", "Curry", "Industrial decay", "Cells and patterns", "Subways", "Weather", "Minimalism", "Existentialism"]} />
+<LikesList
+  likes={[
+    "Mysteries",
+    "Glitches",
+    "Street signs",
+    "Cities",
+    "Oceans",
+    "Satellites",
+    "Skyscrapers",
+    "Graffiti",
+    "Nighttime",
+    "Bridges",
+    "Overcast weather",
+    "Rain",
+    "Electric plants",
+    "Deserts",
+    "Ferrofluids",
+    "Carnivorous plants",
+    "Occult",
+    "Sitars",
+    "Junkyards",
+    "Glass marbles",
+    "Mirror mazes",
+    "Rubber duckies",
+    "Rust",
+    "Radars",
+    "Cacti",
+    "Curry",
+    "Cells and patterns",
+    "Subways",
+    "Weather",
+    "Funny people",
+    "Industrial decay",
+    "Surrealism",
+    "Minimalism",
+    "Brutalism",
+    "Existentialism",
+    "Optimism",
+  ]}
+/>
 
-    ## Dislikes
+## Dislikes
 
-    <LikesList likes={["Touch screen keyboards", "Cutesy talk", "Whimsy", "People who are always late", "Greed", "Insincerity"]} />
+<LikesList
+  likes={[
+    "Touch screen keyboards",
+    "Cutesy talk",
+    "Whimsy",
+    "People who are always late",
+    "Greed",
+    "Insincerity",
+  ]}
+/>
 
-    ## Links
+## Links
 
-    <ul class="ps-0 **:no-underline [&_a]:font-normal font-sans grid sm:grid-cols-2 grid-cols-1 not-prose gap-3">
-        {Links.map((link) => (
-            <li class="flex items-start gap-3">
-                <LinkIcon class="size-6 shrink-0 mt-0.5" icon={link.icon} badgeIcon={link.badgeIcon} />
-                <div>
-                    <a class="underline font-medium whitespace-nowrap" href={link.url} title={link.name} target="_blank" rel="noopener noreferrer">
-                        {link.name}
-                    </a>
-                </div>
-            </li>
-        ))}
-    </ul>
+<ul class="not-prose grid grid-cols-1 gap-3 ps-0 font-sans **:no-underline sm:grid-cols-2 [&_a]:font-normal">
+  {Links.map((link) => (
+    <li class="flex items-start gap-3">
+      <LinkIcon
+        class="mt-0.5 size-6 shrink-0"
+        icon={link.icon}
+        badgeIcon={link.badgeIcon}
+      />
+      <div>
+        <a
+          class="font-medium whitespace-nowrap underline"
+          href={link.url}
+          title={link.name}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {link.name}
+        </a>
+      </div>
+    </li>
+  ))}
+</ul>
 
 </PageLayout>
