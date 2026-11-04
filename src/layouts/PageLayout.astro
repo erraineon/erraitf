@@ -16,6 +16,7 @@ const sizeClasses: Record<LayoutSize, string> = {
 
 interface Props extends BaseProps {
   pubDate?: Date;
+  updatedDate?: Date;
   image?: ImageMetadata;
   headerSeparator?: boolean;
   size?: LayoutSize;
@@ -25,6 +26,7 @@ const {
   title,
   description,
   pubDate,
+  updatedDate,
   image,
   headerSeparator,
   size = "standard",
@@ -44,8 +46,16 @@ const currentSizeClass = sizeClasses[size];
           <p class="mt-2 text-xl font-light text-gray-500">{description}</p>
         </hgroup>
         {pubDate && (
-          <p class="my-6 text-sm text-gray-400 uppercase">
-            Posted <FormattedDate date={pubDate} />
+          <p class="my-6 flex gap-2 text-sm text-gray-400 uppercase">
+            <span>
+              Posted <FormattedDate date={pubDate} />
+            </span>
+            {updatedDate && "•"}
+            {updatedDate && (
+              <span>
+                Updated <FormattedDate date={updatedDate} />
+              </span>
+            )}
           </p>
         )}
       </div>
