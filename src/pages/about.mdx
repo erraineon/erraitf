@@ -3,6 +3,7 @@ title: "Errai's reference page"
 ---
 
 import heroImage from "../assets/hero.png";
+import icon from "../assets/icon.png";
 import PageLayout from "../layouts/PageLayout.astro";
 import LinkIcon from "../components/LinkIcon.astro";
 import LikesList from "../components/LikesList.astro";
@@ -89,7 +90,7 @@ export const Links = [
   },
 ];
 
-<PageLayout title="About me">
+<PageLayout title="About me" image={icon} showHero={false}>
 
 <FloatingFigure image={heroImage} alt="Artwork of Errai.">
   Artwork of my avatar drawn by [urct](https://www.instagram.com/kakeratosho/).

@@ -18,6 +18,7 @@ interface Props extends BaseProps {
   pubDate?: Date;
   updatedDate?: Date;
   image?: ImageMetadata;
+  showHero?: boolean;
   headerSeparator?: boolean;
   size?: LayoutSize;
 }
@@ -28,6 +29,7 @@ const {
   pubDate,
   updatedDate,
   image,
+  showHero = true,
   headerSeparator,
   size = "standard",
 } = Astro.props;
@@ -39,7 +41,9 @@ const currentSizeClass = sizeClasses[size];
   <NavBar />
   <main class=`w-full ${currentSizeClass} bg-white outline outline-black/5`>
     <header>
-      {image && <Image class="w-full object-cover" src={image} alt="" />}
+      {showHero && image && (
+        <Image class="w-full object-cover" src={image} alt="" />
+      )}
       <div class="mx-8 mt-6">
         <hgroup>
           <h1 class="text-6xl font-bold text-gray-800">{title}</h1>

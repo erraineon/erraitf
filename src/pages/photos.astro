@@ -1,11 +1,21 @@
 ---
 import PageLayout from "../layouts/PageLayout.astro";
 import Gallery from "../components/Gallery.astro";
+import hero from "../assets/photos-hero.jpg";
 
 export const prerender = false;
 ---
 
-<PageLayout title="My photos" description="A gallery of my work." size="wide">
-  <p class="mb-6">A gallery with my favorite photographs.</p>
+<PageLayout
+  title="My photos"
+  description="A gallery of my work."
+  size="wide"
+  image={hero}
+  showHero={false}
+>
+  <p class="mb-6">
+    Here's a gallery of my favorite photographs. If you're curious about how it
+    works, you can read about it <a href="/astro-photo-gallery">here</a>.
+  </p>
   <Gallery prefix="Favorites" />
 </PageLayout>
