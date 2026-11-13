@@ -39,18 +39,27 @@ const currentSizeClass = sizeClasses[size];
 
 <BaseLayout title={title} description={description} image={image}>
   <NavBar />
-  <main class=`w-full ${currentSizeClass} bg-white outline outline-black/5`>
+  <main
+    class=`w-full ${currentSizeClass} bg-white outline outline-black/5 print:outline-none`
+  >
     <header>
       {showHero && image && (
-        <Image class="w-full object-cover" src={image} alt="" />
+        <Image
+          class="w-full object-cover print:hidden"
+          src={image}
+          alt=""
+          width="1440"
+        />
       )}
       <div class="mx-8 mt-6">
         <hgroup>
           <h1 class="text-6xl font-bold text-gray-800">{title}</h1>
-          <p class="mt-2 text-xl font-light text-gray-500">{description}</p>
+          {description && (
+            <p class="mt-2 text-xl font-light text-gray-500">{description}</p>
+          )}
         </hgroup>
         {pubDate && (
-          <p class="my-6 flex gap-2 text-sm text-gray-400 uppercase">
+          <p class="my-6 flex gap-2 text-sm text-gray-400 uppercase print:hidden">
             <span>
               Posted <FormattedDate date={pubDate} />
             </span>
@@ -64,7 +73,9 @@ const currentSizeClass = sizeClasses[size];
         )}
       </div>
     </header>
-    {headerSeparator && <hr class="border-px mx-8 my-8 border-black/10" />}
+    {headerSeparator && (
+      <hr class="border-px mx-8 border-black/10 print:hidden" />
+    )}
 
     <!-- The prose-pre stuff is to let pre elements shrink  -->
     <article class="m-8 prose max-w-full font-serif prose-gray prose-headings:font-sans prose-h2:mt-10 prose-pre:w-0 prose-pre:min-w-full">

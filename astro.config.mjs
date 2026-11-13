@@ -6,6 +6,8 @@ import sitemap from "@astrojs/sitemap";
 import icon from "astro-icon";
 import cloudflare from "@astrojs/cloudflare";
 import { execSync } from "child_process";
+import { satteri } from "@astrojs/markdown-satteri";
+import { recipeIngredientsPlugin } from "./src/plugins/recipeIngredientsPlugin.js";
 
 // https://astro.build/config
 export default defineConfig({
@@ -365,5 +367,10 @@ export default defineConfig({
         ).toISOString(),
       ),
     },
+  },
+  markdown: {
+    processor: satteri({
+      hastPlugins: [recipeIngredientsPlugin],
+    }),
   },
 });

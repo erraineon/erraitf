@@ -1,0 +1,17 @@
+---
+import { getCollection } from "astro:content";
+import EntryList from "@/components/EntryList.astro";
+
+const posts = (await getCollection("recipes", (x) => !x.data.isDraft)).sort(
+  (a, b) =>
+    (b.data.updatedDate ?? b.data.pubDate).valueOf() -
+    (a.data.updatedDate ?? a.data.pubDate).valueOf(),
+);
+---
+
+<EntryList
+  entries={posts}
+  title="My recipes"
+  description="What I'm cooking."
+  hrefPrefix="recipes/"
+/>

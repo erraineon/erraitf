@@ -14,7 +14,10 @@ const links = [
 ---
 
 <nav
-  class:list={["flex justify-center gap-4 p-4 font-light", className]}
+  class:list={[
+    "flex justify-center gap-4 p-4 font-light print:hidden",
+    className,
+  ]}
   {...rest}
 >
   {links.map(({ href, label, bg }) => (

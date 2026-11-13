@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import FormattedDate from "./FormattedDate.astro";
+import PageLayout from "../layouts/PageLayout.astro";
+import type { DatedContentEntry } from "../types/content";
+
+interface Props {
+  entries: DatedContentEntry[];
+  title: string;
+  description: string;
+  hrefPrefix: string;
+}
+
+const { entries, title, description, hrefPrefix } = Astro.props;
+---
+
+<PageLayout title={title} description={description}>
+  <ul class="not-prose mt-6 grid grid-cols-1 gap-2 sm:grid-cols-2">
+    {entries.map((entry) => (
+      <li>
+        <a
+          class="grid aspect-video grid-rows-1 bg-gray-100"
+          href={`${hrefPrefix}${entry.id}`}
+        >
+          {entry.data.heroImage && (
+            <Image
+              src={entry.data.heroImage}
+              alt={entry.data.title}
+              class="col-start-1 row-start-1 size-full object-cover"
+            />
+          )}
+          {/* min-w-0 is to let the h3 truncate as it shrinks. */}
+          <div class="z-10 col-start-1 row-start-1 flex min-w-0 items-baseline justify-between gap-2 self-end bg-black/70 px-2 py-1 font-sans">
+            <h3 class="truncate text-gray-100">{entry.data.title}</h3>
+            <FormattedDate
+              class="text-sm text-nowrap text-gray-300"
+              date={entry.data.updatedDate ?? entry.data.pubDate}
+            />
+          </div>
+        </a>
+      </li>
+    ))}
+  </ul>
+</PageLayout>
