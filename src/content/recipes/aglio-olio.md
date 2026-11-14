@@ -2,6 +2,7 @@
 title: "Aglio & olio"
 categories:
   dishType: pasta
+  cuisine: italian
 pubDate: 2026-11-14
 heroImage: aglio-olio.jpeg
 ---

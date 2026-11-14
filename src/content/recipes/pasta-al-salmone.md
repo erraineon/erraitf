@@ -2,6 +2,7 @@
 title: "Pasta al salmone"
 categories:
   dishType: pasta
+  cuisine: italian
 pubDate: 2026-11-14
 heroImage: pasta-al-salmone.jpeg
 ---

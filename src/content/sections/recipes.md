@@ -1,6 +1,6 @@
 ---
 title: My recipes
-description: What I'm cooking.
+description: What I'm cooking (Work in progress!)
 sourceCollection: recipes
 showPostDate: false
 mainCategory: dishType
@@ -29,4 +29,25 @@ categories:
         label: Breakfast
       - key: dessert
         label: Desserts
+  cuisine:
+    label: Cuisine
+    options:
+      - key: american
+        label: American
+      - key: cajun-creole
+        label: Cajun & Creole
+      - key: chinese
+        label: Chinese
+      - key: french
+        label: French
+      - key: german
+        label: German
+      - key: italian
+        label: Italian
+      - key: japanese
+        label: Japanese
+      - key: middle-eastern
+        label: Middle Eastern
+      - key: polish
+        label: Polish
 ---

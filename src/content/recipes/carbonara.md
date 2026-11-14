@@ -2,6 +2,7 @@
 title: "Carbonara"
 categories:
   dishType: pasta
+  cuisine: italian
 pubDate: 2026-11-14
 heroImage: carbonara.jpg
 ---
