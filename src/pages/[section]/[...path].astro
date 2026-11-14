@@ -60,12 +60,12 @@ if (currentCategoryKey !== undefined) {
     (post) => post.data.categories?.[currentCategoryKey] ?? null,
   );
 
-  postGroups = [...categories[currentCategoryKey].options, null].map(
-    (option) => ({
-      option,
+  postGroups = [...categories[currentCategoryKey].options, null]
+    .map((option) => ({
+      option: option ?? { label: "Uncategorized", description: null },
       posts: postsByOption.get(option?.key ?? null) ?? [],
-    }),
-  );
+    }))
+    .filter((x) => x.posts.length > 0);
 } else {
   postGroups = [{ option: null, posts }];
 }

@@ -21,21 +21,32 @@ categories:
         label: Stews
       - key: meat
         label: Meat
+      - key: seafood
+        label: Seafood
       - key: salad
         label: Salads
-      - key: side
-        label: Sides
+      - key: vegetable
+        label: Vegetables
+  course:
+    label: Course
+    options:
       - key: breakfast
         label: Breakfast
+      - key: appetizer
+        label: Appetizers
+      - key: main
+        label: Main dishes
+      - key: side
+        label: Side dishes
       - key: dessert
         label: Desserts
+      - key: drinks
+        label: Drinks
   cuisine:
     label: Cuisine
     options:
       - key: american
         label: American
-      - key: cajun-creole
-        label: Cajun & Creole
       - key: chinese
         label: Chinese
       - key: french

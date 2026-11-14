@@ -1,6 +1,7 @@
 ---
-title: "Aglio & olio"
+title: Aglio & olio
 categories:
+  course: main
   dishType: pasta
   cuisine: italian
 pubDate: 2026-11-14

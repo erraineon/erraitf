@@ -1,8 +1,9 @@
 ---
-title: "Blackened Cajun salmon"
+title: Blackened Cajun salmon
 categories:
   dishType: meat
-  cuisine: cajun-creole
+  course: main
+  cuisine: american
 pubDate: 2026-11-14
 heroImage: cajun-salmon.jpeg
 ---
@@ -10,8 +11,8 @@ heroImage: cajun-salmon.jpeg
 ## Ingredients
 
 - 4 ounce salmon fillet
-- 1 teaspoon cajun seasoning
-- 1 tablespoon butter, melted
+- 1 teaspoon of cajun seasoning
+- 1 tablespoon of butter, melted
 - Lemon juice
 - Vegetable oil
 

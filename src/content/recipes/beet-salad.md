@@ -1,7 +1,8 @@
 ---
-title: "Beet salad"
+title: Beet salad
 categories:
-  dishType: side
+  dishType: salad
+  course: side
 pubDate: 2026-11-14
 ---
 
