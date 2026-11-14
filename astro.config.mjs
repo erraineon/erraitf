@@ -7,7 +7,7 @@ import icon from "astro-icon";
 import cloudflare from "@astrojs/cloudflare";
 import { execSync } from "child_process";
 import { satteri } from "@astrojs/markdown-satteri";
-import { recipeIngredientsPlugin } from "./src/plugins/recipeIngredientsPlugin.js";
+import { recipesPlugin } from "./src/plugins/recipesPlugin.js";
 
 // https://astro.build/config
 export default defineConfig({
@@ -370,7 +370,7 @@ export default defineConfig({
   },
   markdown: {
     processor: satteri({
-      hastPlugins: [recipeIngredientsPlugin],
+      mdastPlugins: [recipesPlugin],
       features: {
         gfm: {
           footnotes: {
