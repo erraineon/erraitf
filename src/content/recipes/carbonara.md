@@ -1,6 +1,8 @@
 ---
 title: "Pasta alla carbonara"
-pubDate: "2026-11-12"
+categories:
+  dishType: pasta
+pubDate: "2026-11-14"
 heroImage: "carbonara.jpg"
 ---
 

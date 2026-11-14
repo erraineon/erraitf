@@ -1,17 +1,31 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import { getCollection, render } from "astro:content";
 import PageLayout from "../layouts/PageLayout.astro";
 
-export async function getStaticPaths() {
-  const posts = await getCollection("blog");
-  return posts.map((post) => ({
-    params: { slug: post.id },
-    props: post,
-  }));
-}
-type Props = CollectionEntry<"blog">;
+export const prerender = true;
 
-const post = Astro.props;
+export async function getStaticPaths() {
+  const sections = await getCollection("sections");
+  const paths = await Promise.all(
+    sections.map(async (section) => {
+      const posts = await getCollection(section.data.sourceCollection);
+      return posts.map((post) => {
+        // Blog posts don't get a route prefix, everything else does
+        const slug =
+          section.data.sourceCollection === "blog"
+            ? post.id
+            : `${section.data.sourceCollection}/${post.id}`;
+        return {
+          params: { slug },
+          props: { post },
+        };
+      });
+    }),
+  );
+  return paths.flat();
+}
+
+const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
