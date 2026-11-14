@@ -1,9 +1,9 @@
 ---
-title: "Pasta alla carbonara"
+title: "Carbonara"
 categories:
   dishType: pasta
-pubDate: "2026-11-14"
-heroImage: "carbonara.jpg"
+pubDate: 2026-11-14
+heroImage: carbonara.jpg
 ---
 
 ## Ingredients

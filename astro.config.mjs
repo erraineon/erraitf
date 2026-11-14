@@ -371,6 +371,13 @@ export default defineConfig({
   markdown: {
     processor: satteri({
       hastPlugins: [recipeIngredientsPlugin],
+      features: {
+        gfm: {
+          footnotes: {
+            backContent: "",
+          },
+        },
+      },
     }),
   },
 });

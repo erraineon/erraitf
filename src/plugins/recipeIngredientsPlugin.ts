@@ -1,5 +1,28 @@
 import { defineHastPlugin } from "satteri";
 import type { HastNode, PluginFactoryContext } from "satteri";
+import type { ElementContent } from "hast";
+
+function findNextSectionEnd(children: HastNode[], start: number) {
+  const next = children.findIndex(
+    (node, index) =>
+      index > start &&
+      node.type === "element" &&
+      (node.tagName === "h2" ||
+        (node.tagName === "section" && node.properties.dataFootnotes === true)),
+  );
+  return next < 0 ? children.length : next;
+}
+
+function wrapSection(children: HastNode[], className?: string[]) {
+  return {
+    type: "element" as const,
+    tagName: "div",
+    properties: className ? { className } : {},
+    children: children.filter(
+      (node): node is ElementContent => node.type !== "doctype",
+    ),
+  };
+}
 
 export function recipeIngredientsPlugin({ fileURL }: PluginFactoryContext) {
   if (!fileURL?.pathname.includes("/src/content/recipes/")) return false;
@@ -7,53 +30,61 @@ export function recipeIngredientsPlugin({ fileURL }: PluginFactoryContext) {
   return defineHastPlugin({
     name: "recipe-ingredients",
     after(root, context) {
-      if (context.data.astro?.frontmatter.singleColumn) return;
-
       const { children } = root;
       const isHeading = (node: HastNode) =>
         node.type === "element" && node.tagName === "h2";
-      const ingredients = children.findIndex(
-        (node) =>
-          isHeading(node) && context.textContent(node) === "Ingredients",
-      );
-      if (ingredients < 0) return;
+      let updatedChildren = children;
 
-      const next = children.findIndex(
-        (node, index) => index > ingredients && isHeading(node),
-      );
-      if (next < 0) return;
-      const afterNext = children.findIndex(
-        (node, index) => index > next && isHeading(node),
-      );
-      const end = afterNext < 0 ? children.length : afterNext;
-      const section = (start: number, stop: number) => ({
-        type: "element" as const,
-        tagName: "div",
-        properties: {},
-        children: children.slice(start, stop),
-      });
+      if (!context.data.astro?.frontmatter.singleColumn) {
+        const ingredients = children.findIndex(
+          (node) =>
+            isHeading(node) && context.textContent(node) === "Ingredients",
+        );
+        if (ingredients >= 0) {
+          const next = children.findIndex(
+            (node, index) => index > ingredients && isHeading(node),
+          );
+          if (next >= 0) {
+            const end = findNextSectionEnd(children, next);
 
-      context.setProperty(root, "children", [
-        ...children.slice(0, ingredients),
-        {
-          type: "element" as const,
-          tagName: "div",
-          properties: {
-            // The last class is to prevent h2s from getting a margin, as if they were the first item in the div
-            className: [
-              "sm:grid",
-              "sm:grid-cols-2",
-              "sm:gap-4",
-              "[&_ol,&_ul]:list-none",
-              "[&_ol,&_ul]:ps-0",
-              "[&_li]:ps-0",
-              "[&_h2]:mt-0",
-            ],
-          },
-          children: [section(ingredients, next), section(next, end)],
-        },
-        ...children.slice(end),
-      ]);
+            updatedChildren = [
+              ...children.slice(0, ingredients),
+              wrapSection(
+                [
+                  wrapSection(children.slice(ingredients, next)),
+                  wrapSection(children.slice(next, end)),
+                ],
+                [
+                  "sm:grid",
+                  "sm:grid-cols-2",
+                  "sm:gap-4",
+                  "[&_ol,&_ul]:list-none",
+                  "[&_ol,&_ul]:ps-0",
+                  "[&_li]:ps-0",
+                  "[&_h2]:mt-0",
+                ],
+              ),
+              ...children.slice(end),
+            ];
+          }
+        }
+      }
+
+      // Don't print links, they're pointless
+      const links = updatedChildren.findIndex(
+        (node) => isHeading(node) && context.textContent(node) === "Links",
+      );
+      if (links >= 0) {
+        const end = findNextSectionEnd(updatedChildren, links);
+
+        updatedChildren = [
+          ...updatedChildren.slice(0, links),
+          wrapSection(updatedChildren.slice(links, end), ["print:hidden"]),
+          ...updatedChildren.slice(end),
+        ];
+      }
+
+      context.setProperty(root, "children", updatedChildren);
     },
   });
 }
