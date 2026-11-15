@@ -1,5 +1,5 @@
 ---
-title: "Pasta with sausage and mushrooms"
+title: "Sausage & mushrooms pasta"
 categories:
   dishType: pasta
   course: main
@@ -9,16 +9,17 @@ pubDate: 2026-11-15
 
 ## Ingredients
 
-1 pound of pasta
-2 tablespoons of olive oil
-4 cloves of garlic, minced
-1 onion, minced
-1 pound of baby bella mushrooms, sliced
-1 pound of sausages, crumbled
-½ cup of white wine
-1 cup of grated Parmesan
-Sage and rosemary
-Red pepper flakes
+- 1 pound of pasta
+- 2 tablespoons of olive oil
+- 4 cloves of garlic, minced
+- 1 onion, minced
+- 1 pound of baby bella mushrooms, sliced
+- 1 pound of good quality sausages, crumbled
+- ½ cup of white wine
+- 1 cup of grated Parmesan
+- Sage and rosemary
+- Red pepper flakes
+- Paprika
 
 ## Directions
 
