@@ -18,9 +18,9 @@ isDraft: true
 
 Yields 8 square sandwiches.
 
-- ⅔ pound deli ham
-- ⅓ pound sliced mozzarella or gruyere
-- 1 pound sliced mushrooms
+- ⅔ pound of deli ham
+- ⅓ pound of sliced mozzarella or gruyere
+- 1 pound of sliced mushrooms
 - Cream cheese
 - Herbs
 - Mayonnaise

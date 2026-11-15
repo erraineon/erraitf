@@ -1,23 +1,24 @@
 ---
-title: "Creamed spinach"
+title: Creamed spinach
 categories:
-  dishType: side
+  dishType: vegetables
+  course: side
   cuisine: american
 pubDate: 2026-11-14
-isDraft: true
+heroImage: creamed-spinach.jpeg
 ---
 
 ## Ingredients
 
-- 3 Tbsp unsalted butter
-- ½ cups finely chopped shallots (1-2)
-- 2 cloves garlic, finely chopped
-- 2 cups heavy cream
-- ½ teaspoon salt
-- ¼ teaspoon black pepper
-- Pinch of nutmeg
-- ½ cups shredded parmesan
-- 2 lbs frozen cut leaf spinach
+- 3 tablespoons of unsalted butter
+- ½ cup of finely chopped shallots (1-2)
+- 2 cloves of garlic, finely chopped
+- 1 cup of heavy cream
+- ½ teaspoon of salt
+- ¼ teaspoon of black pepper
+- A pinch of nutmeg
+- ½ cup of shredded parmesan
+- 2 pounds of frozen cut leaf spinach
 
 ## Directions
 
@@ -26,10 +27,10 @@ isDraft: true
 3. Add garlic and cook for 1 minute while stirring, don’t want browning.
 4. Add heavy cream, salt, pepper, and nutmeg and bring to a gentle boil.
 5. Thicken for about 10 minutes.
-6. Stir in the cheese until melted.
-7. Stir in the spinach until combined.
+6. Turn the heat off and stir in the cheese until melted.
+7. Stir in the spinach until combined and warm for 2-3 minutes.
 
 ## Links
 
-- No cream cheese version: Creamed Spinach Recipe (Classic & Easy)
-- With cream cheese: The Best Creamed Spinach
+- No cream cheese version: https://www.onceuponachef.com/recipes/creamed-spinach.html
+- With cream cheese: https://www.saltandlavender.com/creamed-spinach/

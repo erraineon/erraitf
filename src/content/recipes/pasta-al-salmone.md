@@ -23,7 +23,7 @@ heroImage: pasta-al-salmone.jpeg
 
 ### Optionals
 
-- 4 ounces cherry tomatoes
+- 4 ounces of cherry tomatoes
 - Capers, rinsed and roughly chopped
 - Thyme
 - Sage

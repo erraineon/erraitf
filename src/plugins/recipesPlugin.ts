@@ -29,10 +29,7 @@ export function recipesPlugin({ fileURL }: PluginFactoryContext) {
     name: "recipes",
     after(root, context) {
       const children = root.children;
-      if (context.data.astro?.frontmatter?.singleColumn !== true) {
-        sectionIngredientsTwoColumns(children, context, root);
-      }
-
+      sectionIngredientsTwoColumns(children, context, root);
       hideLinksInPrinting(children, context);
     },
   });
@@ -89,7 +86,9 @@ function sectionIngredientsTwoColumns(
         ],
         [
           "sm:grid",
-          "sm:grid-cols-2",
+          context.data.astro?.frontmatter?.singleColumn !== true
+            ? "sm:grid-cols-2"
+            : "sm:grid-cols-1",
           "sm:gap-4",
           "[&_ol,&_ul]:list-none",
           "[&_ol,&_ul]:ps-0",

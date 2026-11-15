@@ -9,9 +9,9 @@ isDraft: true
 
 ## Ingredients
 
-- 1 cup polenta
+- 1 cup of polenta
 - 4 cups of water or broth, can also use some milk or heavy cream
-- 1 teaspoon sea salt
+- 1 teaspoon of sea salt
 - 2 tablespoons of butter
 - Grated parmesan cheese
 - Ground black pepper

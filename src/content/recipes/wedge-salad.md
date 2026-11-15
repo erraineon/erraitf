@@ -11,23 +11,23 @@ Yields 2 large servings
 
 ## Ingredients
 
-- 1 head iceberg lettuce, with outer leaves and bottom removed, quartered in wedges
+- 1 head of iceberg lettuce, with outer leaves and bottom removed, quartered in wedges
 - 4 slices of bacon, sliced or crumbled
 - ½ red onion
 - 2 small tomatoes, diced
-- 2 ounces breadcrumbs
-- ½ cups blue cheese dressing
+- 2 ounces of breadcrumbs
+- ½ cup of blue cheese dressing
 
 ### Dressing
 
-- ⅓ cups light sour cream
-- ⅓ cups buttermilk
-- ⅓ cups mayonnaise
-- 40 grams blue cheese or gorgonzola
+- ⅓ cup of light sour cream
+- ⅓ cup of buttermilk
+- ⅓ cup of mayonnaise
+- 40 grams of blue cheese or gorgonzola
 - Black pepper
-- 3 teaspoons red wine vinegar
-- ½ teaspoon Worcestershire sauce
-- ¼ teaspoon garlic salt
+- 3 teaspoons of red wine vinegar
+- ½ teaspoon of Worcestershire sauce
+- ¼ teaspoon of garlic salt
 - Mint, chives, scallions, parsley or herbs
 
 ## Directions

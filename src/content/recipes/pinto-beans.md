@@ -11,13 +11,13 @@ Makes 2 servings
 
 ## Ingredients
 
-- 1 can pinto beans, drained and rinsed
-- 2 garlic cloves, sliced
+- 1 can of pinto beans, drained and rinsed
+- 2 cloves of garlic, sliced
 - ¼ onion, coarsely chopped
 - 3 slices of bacon, cut into slices
-- ¼ tsp kosher salt
-- ½ tsp cumin
-- ¼ cup broth
+- ¼ teaspoon of kosher salt
+- ½ teaspoon of cumin
+- ¼ cup of broth
 - Thyme
 - Black pepper
 

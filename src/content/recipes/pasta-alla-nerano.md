@@ -12,9 +12,9 @@ Serving suggestion: sausages
 ## Ingredients
 
 - 1 pound of spaghetti
-- 2 pounds zucchini, sliced thin (but not too thin)
+- 2 pounds of zucchini, sliced thin (but not too thin)
 - 65 grams of provolone, grated, or a mixture of pecorino and parmesan.
-- 3 garlic cloves
+- 3 cloves of garlic
 - Basil leaves
 - Olive oil
 - Salt and pepper

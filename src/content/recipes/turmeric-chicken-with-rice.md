@@ -8,25 +8,25 @@ isDraft: true
 
 ## Ingredients
 
-- 5 cups cooked short-grain rice
-- 2 pounds chicken thighs
-- 5 tablespoons olive oil
-- 1 bunch sliced scallions, white and green separated
-- ½ cup cilantro leaves, chopped
+- 5 cups of cooked short-grain rice
+- 2 pounds of chicken thighs
+- 5 tablespoons of olive oil
+- 1 bunch of sliced scallions, white and green separated
+- ½ cup of cilantro leaves, chopped
 
 ### Marinade
 
-- 4 ounces lemon juice
-- 6 garlic cloves, grated
+- 4 ounces of lemon juice
+- 6 cloves of garlic, grated
 - 2 tablespoon or inches of ginger, grated
-- 1 ½ teaspoon salt
-- 2 teaspoons turmeric
-- 2 teaspoons coriander
-- 1 teaspoon ground pepper
+- 1 ½ teaspoons of salt
+- 2 teaspoons of turmeric
+- 2 teaspoons of coriander
+- 1 teaspoon of ground pepper
 
 ## Directions
 
-1. Heat oven to 450F with sheet pan inside.
+1. Heat oven to 450 degrees Fahrenheit with sheet pan inside.
 2. Save 1 tablespoon of the marinade to a ramekin for later.
 3. Marinate the chicken at room temp for 20 minutes.
 4. Meanwhile, toss the rice with ½ teaspoon of salt, scallion whites, and 3 tablespoons olive oil.

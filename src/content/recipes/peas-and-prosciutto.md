@@ -9,7 +9,7 @@ isDraft: true
 
 ## Ingredients
 
-- 1 pound frozen peas
+- 1 pound of frozen peas
 - ½ medium onion, finely chopped
 - 2-3 slices of prosciutto, sliced into thin strips
 - Salt and pepper

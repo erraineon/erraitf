@@ -11,12 +11,12 @@ Serving suggestion: green beans boiled in pasta water
 
 ## Ingredients
 
-- 1 pound pasta
+- 1 pound of pasta
 - 3 cups of basil (1 large bunch)
 - 3 cloves of garlic
-- 100 grams parmesan/pecorino mix
-- 1 cup walnuts
-- ½ cup olive oil
+- 100 grams of parmesan/pecorino mix
+- 1 cup of walnuts
+- ½ cup of olive oil
 - Juice from half a lemon
 - Chili flakes
 

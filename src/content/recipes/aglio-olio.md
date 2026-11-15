@@ -11,7 +11,7 @@ heroImage: aglio-olio.jpeg
 ## Ingredients
 
 - 8 ounces of pasta, spaghetti preferred
-- 6 garlic cloves, sliced thin
+- 6 cloves of garlic, sliced thin
 - 2 dried peperoncini
 - 4 tablespoons of olive oil
 - 2 pinches of kosher salt

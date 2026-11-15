@@ -8,23 +8,23 @@ isDraft: true
 
 ## Ingredients
 
-- 8 ounces spaghetti
-- 8 ounces small shrimp
-- 3 tablespoons olive oil
+- 8 ounces of spaghetti
+- 8 ounces of small shrimp
+- 3 tablespoons of olive oil
 - ½ onion, minced
-- 1 garlic cloves, minced
-- 2 ounces white wine
-- ½ cup heavy cream
-- ¼ cup pasta water
-- 1 tablespoon lemon juice
+- 1 clove of garlic, minced
+- 2 ounces of white wine
+- ½ cup of heavy cream
+- ¼ cup of pasta water
+- 1 tablespoon of lemon juice
 - Parmesan, to taste
 - Chopped parsley as garnish
 
 ### Shrimp seasonings
 
-- ½ teaspoon salt
-- ⅛ teaspoon paprika
-- ⅛ teaspoon baking soda
+- ½ teaspoon of salt
+- ⅛ teaspoon of paprika
+- ⅛ teaspoon of baking soda
 - Black pepper
 
 ## Directions

@@ -1,5 +1,6 @@
 ---
 title: Broccoli strascinati
+description: Also known as dry sautéed broccoli.
 categories:
   dishType: vegetables
   course: side
@@ -7,14 +8,12 @@ categories:
 pubDate: 2026-11-14
 ---
 
-Also known as dry sautéed broccoli.
-
 ## Ingredients
 
 - 1 pound of fresh broccoli, cut into florets
 - 4 tablespoons of olive oil
 - ½ teaspoon of salt
-- 3 garlic cloves, crushed
+- 3 cloves of garlic, crushed
 - 2 ounces of white wine
 - Peperoncino
 

@@ -9,12 +9,12 @@ isDraft: true
 
 ## Ingredients
 
-- 20 ounces tortellini
-- 250 grams frozen peas, optional
-- 250 grams cubed ham
+- 20 ounces of tortellini
+- 250 grams of frozen peas, optional
+- 250 grams of cubed ham
 - 2 tablespoons of butter
 - 1 small onion, chopped
-- 1 cup heavy cream
+- 1 cup of heavy cream
 - Parmesan
 - 2 twigs of thyme
 - Sage

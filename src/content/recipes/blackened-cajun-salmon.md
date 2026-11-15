@@ -5,12 +5,12 @@ categories:
   course: main
   cuisine: american
 pubDate: 2026-11-14
-heroImage: cajun-salmon.jpeg
+heroImage: blackened-cajun-salmon.jpeg
 ---
 
 ## Ingredients
 
-- 4 ounce salmon fillet
+- 4-ounce salmon fillet
 - 1 teaspoon of cajun seasoning
 - 1 tablespoon of butter, melted
 - Lemon juice

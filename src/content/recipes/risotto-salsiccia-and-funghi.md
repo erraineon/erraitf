@@ -9,16 +9,16 @@ isDraft: true
 
 ## Ingredients
 
-- 320 grams risotto
-- 1 liter broth
+- 320 grams of risotto
+- 1 liter of broth
 - 1 shallot, sliced
-- 1 pound sausage
+- 1 pound of sausage
 - 1 garlic clove, cut in half
-- 8 ounces mushrooms, rinsed
-- 6 tablespoons white wine
+- 8 ounces of mushrooms, rinsed
+- 6 tablespoons of white wine
 - 5-6 twigs of thyme
-- 3 tablespoons butter, cold
-- 40 grams parmesan
+- 3 tablespoons of butter, cold
+- 40 grams of parmesan
 - A drizzle of truffle oil
 
 ### Cookware

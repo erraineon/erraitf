@@ -9,7 +9,7 @@ isDraft: true
 ## Ingredients
 
 - 1 banana
-- 30g mixed nuts, unsalted
+- 30 grams of mixed nuts, unsalted
 - 2 dried figs
 - Honey
 

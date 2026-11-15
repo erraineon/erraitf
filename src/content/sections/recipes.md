@@ -25,8 +25,10 @@ categories:
         label: Seafood
       - key: salad
         label: Salads
-      - key: vegetable
+      - key: vegetables
         label: Vegetables
+      - key: pastry
+        label: Pastry
   course:
     label: Course
     options:
@@ -59,6 +61,6 @@ categories:
         label: Japanese
       - key: middle-eastern
         label: Middle Eastern
-      - key: polish
-        label: Polish
+      - key: eastern-european
+        label: Eastern European
 ---

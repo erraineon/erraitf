@@ -2,22 +2,23 @@
 title: "Pasta al tonno al crudo"
 categories:
   dishType: pasta
+  course: main
   cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
+heroImage: pasta-al-tonno-al-crudo.jpeg
 ---
 
 ## Ingredients
 
-- 8 ounces spaghetti
-- 1 garlic clove, cut in half
-- 1 can (150-200 grams) tuna, drained
-- 3 ounces cherry tomatoes, halved
+- 8 ounces of spaghetti
+- 1 clove of garlic, cut in half
+- 1 can (150-200 grams) of tuna in olive oil, drained
+- 3 ounces of cherry tomatoes, halved
 - Handful of capers, rinsed and squeezed dry
 - Handful of olives, pitted and chopped
 - Red pepper flakes
 - Fresh parsley, minced
-- 4 tablespoons olive oil
+- 4 tablespoons of olive oil
 - Salt
 
 ### Garnish

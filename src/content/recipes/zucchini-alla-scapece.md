@@ -10,7 +10,7 @@ isDraft: true
 ## Ingredients
 
 - 4 zucchini, sliced at the thickest mandolin setting.
-- 3 garlic cloves.
+- 3 cloves of garlic.
 
 ## Directions
 

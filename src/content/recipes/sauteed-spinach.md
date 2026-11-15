@@ -8,9 +8,9 @@ isDraft: true
 
 ## Ingredients
 
-- 1 pound baby spinach
+- 1 pound of baby spinach
 - 3 garlic cloves, crushed
-- 4 tablespoons olive oil
+- 4 tablespoons of olive oil
 - Salt
 - Pepper
 - Lemon juice

@@ -11,13 +11,13 @@ Going for a 65% nuts and 35% fruit ratio:
 
 ## Ingredients
 
-- 100 grams almonds
-- 60 grams pecans
-- 60 grams walnuts
-- 40 grams cashews
-- 60 grams dates or raisins
-- 40 grams dried mango
-- 40 grams dried pineapple
+- 100 grams of almonds
+- 60 grams of pecans
+- 60 grams of walnuts
+- 40 grams of cashews
+- 60 grams of dates or raisins
+- 40 grams of dried mango
+- 40 grams of dried pineapple
 - TODO: add pepitas and sunflower seeds
 
 ## Directions

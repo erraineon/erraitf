@@ -1,33 +1,37 @@
 ---
-title: "Japanese curry"
+title: Japanese curry
+description: "Yields 1 large pot • 8 servings • Pair with 4 cups of cooked rice"
 categories:
   dishType: stew
+  course: main
   cuisine: japanese
 pubDate: 2026-11-14
-isDraft: true
+heroImage: japanese-curry.jpeg
+singleColumn: true
 ---
-
-1 large pot • 8 servings • pair with 2.5 cups of cooked rice
 
 ## Ingredients
 
+- 3 tablespoons of butter
+- ½ teaspoon of baking soda
+- 2 tablespoons of vegetable oil
 - 2 pounds of sweet onions, sliced
 - ⅓ pound of carrots, cut into bite-sized pieces
-- 1 pound of Yukon Gold or yellow potatoes, peeled and cut
+- 1 pound of Yukon Gold or yellow potatoes, peeled and cut in 2 inch chunks
 - 1 gala apple, grated
-- 2 cloves garlic, minced
-- 1 teaspoon grated ginger
-- 1 ½ pound chicken thighs OR 2 pound chuck roast whole steak, about 1.5 inches thick
+- 2 cloves of garlic, minced
+- 1 teaspoon of grated ginger
+- 1 ½ pounds of chicken thighs OR 2 pounds of chuck roast, a whole steak about 1.5 inches thick
 - 3 cups of chicken stock
 - Red wine to deglaze
-- 95 grams of medium heat curry roux
-- ½ teaspoon of baking soda
+- 95 grams of medium heat curry roux, or 120 grams for a thicker version
+- Mozzarella cheese, shredded
 
 ### Flavor add-ons
 
-- 1 tablespoon ketchup
-- 1 tablespoon soy sauce
-- ½ cup milk or heavy cream
+- 1 tablespoon of ketchup
+- 1 tablespoon of soy sauce
+- ½ cup of heavy cream
 - Ground pepper
 - Coffee
 
@@ -56,10 +60,9 @@ isDraft: true
 
 ### Curry
 
-1. Heat the oven up to 300F.
 2. Transfer stew to the dutch oven and place on medium heat.
 3. Add curry roux and flavor add-ons and mix.
-4. Once reduced and thick, sprinkle mozzarella and bake in the oven until melted and brown.
+4. Once reduced and thick, sprinkle mozzarella and broil in the oven for 2-3 minutes until melted and brown.
 
 ## Links
 

@@ -1,5 +1,5 @@
 ---
-title: "Carbonara"
+title: Carbonara
 categories:
   dishType: pasta
   cuisine: italian
