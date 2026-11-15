@@ -2,8 +2,10 @@
 title: "Shrimp pasta"
 categories:
   dishType: pasta
+  course: main
+  cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
+heroImage: shrimp-pasta.jpeg
 ---
 
 ## Ingredients

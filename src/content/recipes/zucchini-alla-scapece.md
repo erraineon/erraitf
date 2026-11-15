@@ -1,10 +1,10 @@
 ---
 title: "Zucchini alla scapece"
 categories:
-  dishType: side
+  dishType: vegetables
   cuisine: italian
+  course: side
 pubDate: 2026-11-14
-isDraft: true
 ---
 
 ## Ingredients

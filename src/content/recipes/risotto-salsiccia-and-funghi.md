@@ -1,10 +1,11 @@
 ---
-title: "Risotto salsiccia & funghi"
+title: Risotto salsiccia & funghi
 categories:
   dishType: grain
+  course: main
   cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
+heroImage: risotto-salsiccia-and-funghi.jpeg
 ---
 
 ## Ingredients

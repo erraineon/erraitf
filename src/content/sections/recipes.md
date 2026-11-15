@@ -42,8 +42,10 @@ categories:
         label: Side dishes
       - key: dessert
         label: Desserts
-      - key: drinks
+      - key: drink
         label: Drinks
+      - key: snack
+        label: Snacks
   cuisine:
     label: Cuisine
     options:

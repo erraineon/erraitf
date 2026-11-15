@@ -1,13 +1,13 @@
 ---
 title: "Walnut pesto pasta"
+description: "Serving suggestion: green beans boiled in pasta water"
 categories:
   dishType: pasta
   cuisine: italian
+  course: main
 pubDate: 2026-11-14
-isDraft: true
+heroImage: walnut-pesto-pasta.jpeg
 ---
-
-Serving suggestion: green beans boiled in pasta water
 
 ## Ingredients
 

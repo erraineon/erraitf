@@ -1,10 +1,11 @@
 ---
-title: "Polenta"
+title: Polenta
 categories:
   dishType: grain
+  course: main
   cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
+heroImage: polenta.jpeg
 ---
 
 ## Ingredients
@@ -13,7 +14,7 @@ isDraft: true
 - 4 cups of water or broth, can also use some milk or heavy cream
 - 1 teaspoon of sea salt
 - 2 tablespoons of butter
-- Grated parmesan cheese
+- ½ cup grated parmesan cheese
 - Ground black pepper
 
 ## Directions

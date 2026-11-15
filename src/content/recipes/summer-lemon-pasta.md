@@ -2,8 +2,9 @@
 title: "Summer lemon pasta"
 categories:
   dishType: pasta
+  course: main
+  cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
 ---
 
 ## Ingredients

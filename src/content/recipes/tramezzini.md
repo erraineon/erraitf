@@ -2,9 +2,11 @@
 title: "Tramezzini"
 categories:
   dishType: sandwich
+  course: main
   cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
+heroImage: tramezzini.jpeg
+singleColumn: true
 ---
 
 ## Ingredients

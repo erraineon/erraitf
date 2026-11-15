@@ -2,9 +2,9 @@
 title: "Steak tips"
 categories:
   dishType: meat
+  course: main
   cuisine: american
 pubDate: 2026-11-14
-isDraft: true
 ---
 
 ## Ingredients

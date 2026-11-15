@@ -2,12 +2,11 @@
 title: "Wedge salad"
 categories:
   dishType: salad
+  course: main
   cuisine: american
 pubDate: 2026-11-14
-isDraft: true
+heroImage: wedge-salad.jpeg
 ---
-
-Yields 2 large servings
 
 ## Ingredients
 

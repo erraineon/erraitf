@@ -1,12 +1,13 @@
 ---
 title: "Steak"
+description: Pair with polenta, spinach, or broccoli.
 categories:
   dishType: meat
+  course: main
+  cuisine: american
 pubDate: 2026-11-14
-isDraft: true
+heroImage: steak.jpeg
 ---
-
-Pair with polenta, spinach, or broccoli.
 
 ## Ingredients
 

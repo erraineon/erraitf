@@ -2,15 +2,16 @@
 title: "Pasta salad"
 categories:
   dishType: pasta
+  course: main
   cuisine: american
 pubDate: 2026-11-14
-isDraft: true
+heroImage: pasta-salad.jpeg
 ---
 
 ## Ingredients
 
 - 1 pound of fusilli or rotini
-- 1 can of chickpeas
+- 1 can of chickpeas, drained and rinsed
 - 8 ounces of mozzarella or feta
 - Basil
 - Mint
@@ -28,8 +29,10 @@ isDraft: true
 - 3 cloves of garlic, minced
 - 1 teaspoon of herbes de Provence
 - 1 teaspoon of salt
-- Red pepper
+- Red pepper flakes
 
 ## Directions
 
-1. Pressure cook chicken for 0 minutes, then natural release for 6 minutes. Ensure it’s 165 degrees Fahrenheit.
+1. Pressure cook chicken for 0 minutes with ½ cup of liquid, then natural release for 6 minutes. Ensure it’s 165 degrees Fahrenheit.
+2. Mix the dressing together to emulsify.
+3. Put everything in an obscenely large bowl.

@@ -1,13 +1,12 @@
 ---
 title: "Trail mix"
+description: Going for a 65% nuts and 35% fruit ratio
 categories:
   dishType: dessert
+  course: snack
   cuisine: american
 pubDate: 2026-11-14
-isDraft: true
 ---
-
-Going for a 65% nuts and 35% fruit ratio:
 
 ## Ingredients
 

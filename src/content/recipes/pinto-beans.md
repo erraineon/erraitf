@@ -2,12 +2,10 @@
 title: "Pinto beans"
 categories:
   dishType: stew
+  course: side
   cuisine: american
 pubDate: 2026-11-14
-isDraft: true
 ---
-
-Makes 2 servings
 
 ## Ingredients
 
@@ -26,4 +24,5 @@ Makes 2 servings
 1. Cook bacon on medium heat until crispy.
 2. Add garlic and onion and cook until the onion softens.
 3. Add broth and beans and stir to deglaze.
-4. Add aromatics and simmer for 10 minutes.
+4. Add seasonings and simmer for 10 minutes.
+5. Mash some beans to release some starch and thicken the sauce.

@@ -1,10 +1,11 @@
 ---
 title: "Peas and prosciutto"
 categories:
-  dishType: side
+  dishType: vegetables
+  course: side
   cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
+heroImage: peas-and-prosciutto.jpeg
 ---
 
 ## Ingredients
@@ -19,7 +20,7 @@ isDraft: true
 
 1. Sweat finely chopped onion in olive oil until translucent.
 2. Add prosciutto, cut into thin strips, and cook until no longer raw.
-3. Stir in frozen peas and cook until they absorb the soffritto’s flavors, for about 5 minutes.
+3. Stir in frozen peas and 2-3 tablespoons of water and and cook until they absorb the soffritto’s flavors, for about 5 minutes.
 4. Season to taste.
 
 ## Links

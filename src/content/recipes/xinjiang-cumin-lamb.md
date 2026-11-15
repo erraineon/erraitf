@@ -2,9 +2,9 @@
 title: "Xinjiang cumin lamb"
 categories:
   dishType: meat
+  course: main
   cuisine: chinese
 pubDate: 2026-11-14
-isDraft: true
 ---
 
 Yields 5 servings • Serve with 2.5 cups cooked rice
@@ -54,6 +54,6 @@ Yields 5 servings • Serve with 2.5 cups cooked rice
 
 ## Links
 
-- Xinjiang Cumin Lamb Stir Fry - RecipeTin Eats
-- Using peppercorns: Real-Deal Xinjiang Cumin Lamb (孜然羊肉) - Omnivore's Cookbook
-- Using shoulder: Xinjiang Cumin Lamb - The Woks of Life
+- https://www.recipetineats.com/xinjiang-cumin-lamb-stir-fry/
+- Using peppercorns: https://omnivorescookbook.com/cumin-lamb/
+- Using shoulder: https://thewoksoflife.com/cumin-lamb/

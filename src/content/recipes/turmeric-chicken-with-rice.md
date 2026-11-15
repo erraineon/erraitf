@@ -2,8 +2,9 @@
 title: "Turmeric chicken with rice"
 categories:
   dishType: meat
+  course: main
+  cuisine: american
 pubDate: 2026-11-14
-isDraft: true
 ---
 
 ## Ingredients

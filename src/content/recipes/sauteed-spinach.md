@@ -1,9 +1,9 @@
 ---
 title: "Sautéed spinach"
 categories:
-  dishType: side
+  dishType: vegetables
+  course: side
 pubDate: 2026-11-14
-isDraft: true
 ---
 
 ## Ingredients

@@ -2,9 +2,10 @@
 title: "Tortellini panna & prosciutto"
 categories:
   dishType: dumpling
+  course: main
   cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
+heroImage: tortellini-panna-and-prosciutto.jpeg
 ---
 
 ## Ingredients
