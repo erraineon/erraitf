@@ -3,6 +3,7 @@ title: Beet salad
 categories:
   dishType: salad
   course: side
+  cuisine: eastern-european
 pubDate: 2026-11-14
 ---
 

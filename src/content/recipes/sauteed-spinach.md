@@ -3,6 +3,7 @@ title: "Sautéed spinach"
 categories:
   dishType: vegetables
   course: side
+  cuisine: italian
 pubDate: 2026-11-14
 ---
 

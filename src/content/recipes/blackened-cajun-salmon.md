@@ -1,7 +1,7 @@
 ---
 title: Blackened Cajun salmon
 categories:
-  dishType: meat
+  dishType: seafood
   course: main
   cuisine: american
 pubDate: 2026-11-14

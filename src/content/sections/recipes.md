@@ -19,6 +19,8 @@ categories:
         label: Sandwiches
       - key: stew
         label: Stews
+      - key: soup
+        label: Soups
       - key: meat
         label: Meat
       - key: seafood
@@ -29,6 +31,8 @@ categories:
         label: Vegetables
       - key: pastry
         label: Pastry
+      - key: bread
+        label: Bread
   course:
     label: Course
     options:
@@ -65,4 +69,10 @@ categories:
         label: Middle Eastern
       - key: eastern-european
         label: Eastern European
+      - key: vietnamese
+        label: Vietnamese
+      - key: indian
+        label: Indian
+      - key: filipino
+        label: Filipino
 ---

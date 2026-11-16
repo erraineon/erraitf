@@ -1,10 +1,9 @@
 ---
 title: "Pullman loaf (pain de mie)"
 categories:
-  dishType: sandwich
+  dishType: bread
   cuisine: french
 pubDate: 2026-11-14
-isDraft: true
 ---
 
 ## Ingredients

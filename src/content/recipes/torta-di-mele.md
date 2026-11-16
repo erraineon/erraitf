@@ -1,10 +1,10 @@
 ---
 title: "Torta di mele"
 categories:
-  dishType: dessert
+  dishType: pastry
+  course: dessert
   cuisine: italian
 pubDate: 2026-11-14
-isDraft: true
 ---
 
 ## Ingredients
