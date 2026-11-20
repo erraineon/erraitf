@@ -14,10 +14,13 @@ pubDate: 2026-11-14
 - 60 grams of pecans
 - 60 grams of walnuts
 - 40 grams of cashews
-- 60 grams of dates or raisins
-- 40 grams of dried mango
-- 40 grams of dried pineapple
-- TODO: add pepitas and sunflower seeds
+- 65 grams of pepitas
+- 45 grams of dates
+- 30 grams of raisins
+- 25 grams of cranberries
+- 30 grams of dried mango
+- 30 grams of dried pineapple
+- TODO: remove pecans, cashews, raisins, pineapple as I run out of each
 
 ## Directions
 
