@@ -40,7 +40,7 @@ const currentSizeClass = sizeClasses[size];
 <BaseLayout title={title} description={description} image={image}>
   <NavBar />
   <main
-    class=`w-full ${currentSizeClass} bg-white outline outline-black/5 print:outline-none`
+    class=`w-full ${currentSizeClass} bg-white outline outline-black/5 print:max-w-full print:outline-none`
   >
     <header>
       {showHero && image && (
@@ -51,7 +51,7 @@ const currentSizeClass = sizeClasses[size];
           width="1440"
         />
       )}
-      <div class="mx-8 mt-6">
+      <div class="mx-8 mt-6 print:m-0">
         <div class="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
           <hgroup class="contents">
             <h1 class="col-start-1 row-start-1 text-6xl font-bold text-gray-800">
@@ -87,7 +87,7 @@ const currentSizeClass = sizeClasses[size];
     )}
 
     <!-- The prose-pre stuff is to let pre elements shrink  -->
-    <article class="m-8 prose max-w-full font-serif prose-gray prose-headings:font-sans prose-h2:mt-10 prose-a:wrap-anywhere prose-pre:w-0 prose-pre:min-w-full prose-table:font-sans prose-th:font-medium [&_section[data-footnotes]]:text-sm">
+    <article class="m-8 prose max-w-full font-serif prose-gray print:m-0 print:mt-4 prose-headings:font-sans prose-h2:mt-10 prose-a:wrap-anywhere prose-pre:w-0 prose-pre:min-w-full prose-table:font-sans prose-th:font-medium [&_section[data-footnotes]]:text-sm">
       <slot />
     </article>
   </main>
