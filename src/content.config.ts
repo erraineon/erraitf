@@ -28,7 +28,7 @@ const recipes = defineCollection({
       heroImage: z.optional(image()),
       isDraft: z.boolean().optional(),
       singleColumn: z.boolean().optional(),
-      columnsRatio: z.string().optional(),
+      thinFirstColumn: z.boolean().optional(),
     }),
 });
 

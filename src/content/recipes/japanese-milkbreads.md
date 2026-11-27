@@ -5,7 +5,8 @@ categories:
   course: breakfast
   cuisine: japanese
 pubDate: 2026-11-16
-columnsRatio: 1fr_2fr
+thinFirstColumn: true
+heroImage: japanese-milkbreads.jpeg
 ---
 
 ## Ingredients

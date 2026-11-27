@@ -87,9 +87,9 @@ function sectionIngredientsTwoColumns(
         [
           "sm:grid",
           context.data.astro?.frontmatter?.singleColumn !== true
-            ? context.data.astro?.frontmatter?.columnsRatio == undefined
+            ? context.data.astro?.frontmatter?.thinFirstColumn !== true
               ? "sm:grid-cols-2"
-              : `sm:grid-cols-[${context.data.astro?.frontmatter?.columnsRatio}]`
+              : "sm:grid-cols-[1fr_2fr]"
             : "sm:grid-cols-1",
           "sm:gap-4",
           "[&_ol,&_ul]:list-none",
