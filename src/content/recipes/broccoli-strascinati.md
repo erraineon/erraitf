@@ -10,7 +10,7 @@ pubDate: 2026-11-14
 
 ## Ingredients
 
-- 1 pound of fresh broccoli, cut into florets
+- 1 pound of fresh broccoli, cut into florets[^1]
 - 4 tablespoons of olive oil
 - ½ teaspoon of salt
 - 3 cloves of garlic, crushed
@@ -28,3 +28,5 @@ pubDate: 2026-11-14
 ## Links
 
 https://memoriediangelina.com/2012/12/02/broccoli-strascinati-dry-sauteed-broccoli/
+
+[^1]: If using frozen, defrost by microwaving for 8 minutes, then pat dry before cooking, and reduce cooking time to 10 minutes.
